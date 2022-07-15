@@ -343,6 +343,9 @@
     <None Include="Resources\btnPress.png" />
     <None Include="Resources\btnDisa.png" />
     <None Include="Resources\btnDisa2.png" />
+    <None Include="Resources\btnDisa2Orange.png" />
+    <None Include="Resources\btnNorOrange.png" />
+    <None Include="Resources\btnPressOrange.png" />
     <Content Include="Resources\led_off_green.png" />
     <Content Include="Resources\led_off_red.png" />
     <Content Include="Resources\led_off_yellow.png" />

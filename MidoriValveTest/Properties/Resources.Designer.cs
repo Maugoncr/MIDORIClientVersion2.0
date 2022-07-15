@@ -603,6 +603,16 @@ namespace MidoriValveTest.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap btnDisa2Orange {
+            get {
+                object obj = ResourceManager.GetObject("btnDisa2Orange", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap btnNor {
             get {
                 object obj = ResourceManager.GetObject("btnNor", resourceCulture);
@@ -613,9 +623,29 @@ namespace MidoriValveTest.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap btnNorOrange {
+            get {
+                object obj = ResourceManager.GetObject("btnNorOrange", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap btnPress {
             get {
                 object obj = ResourceManager.GetObject("btnPress", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap btnPressOrange {
+            get {
+                object obj = ResourceManager.GetObject("btnPressOrange", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
