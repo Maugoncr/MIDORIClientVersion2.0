@@ -329,6 +329,7 @@
     <None Include="Resources\90 GRADOS.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\MIDORI OFICIAL2 ORANGE.png" />
     <None Include="Resources\signal5.png" />
     <None Include="Resources\signal4.png" />
     <None Include="Resources\signal3.png" />
