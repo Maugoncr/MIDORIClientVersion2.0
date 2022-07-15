@@ -124,7 +124,7 @@ namespace MidoriValveTest
         private void DisableBtn(Button btn) { 
             
             btn.BackgroundImage.Dispose();
-            btn.BackgroundImage = MidoriValveTest.Properties.Resources.btnDisa2;
+            btn.BackgroundImage = MidoriValveTest.Properties.Resources.btnDisa2Orange;
             btn.Enabled = false;
             btn.ForeColor = Color.White;
 
@@ -134,7 +134,7 @@ namespace MidoriValveTest
         {
 
             btn.BackgroundImage.Dispose();
-            btn.BackgroundImage = MidoriValveTest.Properties.Resources.btnNor;
+            btn.BackgroundImage = MidoriValveTest.Properties.Resources.btnNorOrange;
             btn.Enabled = true;
 
         }
@@ -1931,7 +1931,7 @@ namespace MidoriValveTest
             if (btn.Enabled == true)
             {
                 btn.BackgroundImage.Dispose();
-                btn.BackgroundImage = MidoriValveTest.Properties.Resources.btnPress;
+                btn.BackgroundImage = MidoriValveTest.Properties.Resources.btnPressOrange;
 
             }
 
@@ -1941,12 +1941,12 @@ namespace MidoriValveTest
             if (btn.Enabled == true)
             {
                 btn.BackgroundImage.Dispose();
-                btn.BackgroundImage = MidoriValveTest.Properties.Resources.btnNor;
+                btn.BackgroundImage = MidoriValveTest.Properties.Resources.btnNorOrange;
             }
             else
             {
                 btn.BackgroundImage.Dispose();
-                btn.BackgroundImage = MidoriValveTest.Properties.Resources.btnDisa2;
+                btn.BackgroundImage = MidoriValveTest.Properties.Resources.btnDisa2Orange;
             }
         }
 
@@ -2243,6 +2243,11 @@ namespace MidoriValveTest
                 frm.BringToFront();
                 return;
             }
+        }
+
+        private void PanelNav_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

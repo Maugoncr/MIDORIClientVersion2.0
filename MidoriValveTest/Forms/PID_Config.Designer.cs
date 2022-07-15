@@ -170,9 +170,10 @@ namespace MidoriValveTest
             // RamEnable1
             // 
             this.RamEnable1.AutoSize = true;
-            this.RamEnable1.Location = new System.Drawing.Point(26, 43);
+            this.RamEnable1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RamEnable1.Location = new System.Drawing.Point(14, 44);
             this.RamEnable1.Name = "RamEnable1";
-            this.RamEnable1.Size = new System.Drawing.Size(59, 17);
+            this.RamEnable1.Size = new System.Drawing.Size(69, 20);
             this.RamEnable1.TabIndex = 13;
             this.RamEnable1.Text = "Enable";
             this.RamEnable1.UseVisualStyleBackColor = true;
@@ -326,7 +327,7 @@ namespace MidoriValveTest
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.DarkCyan;
+            this.label1.ForeColor = System.Drawing.Color.Peru;
             this.label1.Location = new System.Drawing.Point(12, 11);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(115, 18);
@@ -365,11 +366,11 @@ namespace MidoriValveTest
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.SystemColors.InfoText;
             this.label11.Location = new System.Drawing.Point(17, 30);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(86, 13);
+            this.label11.Size = new System.Drawing.Size(101, 15);
             this.label11.TabIndex = 0;
             this.label11.Text = "Control Algorithm";
             this.label11.Click += new System.EventHandler(this.label11_Click);
@@ -1283,7 +1284,7 @@ namespace MidoriValveTest
             "Upstream"});
             this.CbDirec1.Location = new System.Drawing.Point(154, 127);
             this.CbDirec1.Name = "CbDirec1";
-            this.CbDirec1.Size = new System.Drawing.Size(149, 21);
+            this.CbDirec1.Size = new System.Drawing.Size(149, 23);
             this.CbDirec1.TabIndex = 4;
             this.CbDirec1.Visible = false;
             // 
@@ -1292,7 +1293,7 @@ namespace MidoriValveTest
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(24, 127);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(85, 13);
+            this.label4.Size = new System.Drawing.Size(98, 15);
             this.label4.TabIndex = 4;
             this.label4.Text = "Control Direction";
             this.label4.Visible = false;
@@ -1302,7 +1303,7 @@ namespace MidoriValveTest
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(24, 82);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(38, 13);
+            this.label5.Size = new System.Drawing.Size(43, 15);
             this.label5.TabIndex = 5;
             this.label5.Text = "I- Gain";
             // 
@@ -1311,7 +1312,7 @@ namespace MidoriValveTest
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(24, 47);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(39, 13);
+            this.label6.Size = new System.Drawing.Size(45, 15);
             this.label6.TabIndex = 6;
             this.label6.Text = "P-Gain";
             // 
@@ -1325,7 +1326,7 @@ namespace MidoriValveTest
             65536});
             this.NumP1.Location = new System.Drawing.Point(154, 45);
             this.NumP1.Name = "NumP1";
-            this.NumP1.Size = new System.Drawing.Size(149, 20);
+            this.NumP1.Size = new System.Drawing.Size(149, 21);
             this.NumP1.TabIndex = 4;
             this.NumP1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.NumP1.Value = new decimal(new int[] {
@@ -1344,7 +1345,7 @@ namespace MidoriValveTest
             65536});
             this.NumI1.Location = new System.Drawing.Point(154, 80);
             this.NumI1.Name = "NumI1";
-            this.NumI1.Size = new System.Drawing.Size(149, 20);
+            this.NumI1.Size = new System.Drawing.Size(149, 21);
             this.NumI1.TabIndex = 7;
             this.NumI1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.NumI1.Value = new decimal(new int[] {
@@ -1359,7 +1360,7 @@ namespace MidoriValveTest
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(24, 114);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(40, 13);
+            this.label12.Size = new System.Drawing.Size(46, 15);
             this.label12.TabIndex = 8;
             this.label12.Text = "D-Gain";
             // 
@@ -1373,7 +1374,7 @@ namespace MidoriValveTest
             65536});
             this.NumD1.Location = new System.Drawing.Point(154, 112);
             this.NumD1.Name = "NumD1";
-            this.NumD1.Size = new System.Drawing.Size(149, 20);
+            this.NumD1.Size = new System.Drawing.Size(149, 21);
             this.NumD1.TabIndex = 9;
             this.NumD1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.NumD1.Value = new decimal(new int[] {
@@ -1411,6 +1412,7 @@ namespace MidoriValveTest
             this.GroupS1.Controls.Add(this.label5);
             this.GroupS1.Controls.Add(this.label4);
             this.GroupS1.Controls.Add(this.CbDirec1);
+            this.GroupS1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GroupS1.Location = new System.Drawing.Point(21, 149);
             this.GroupS1.Name = "GroupS1";
             this.GroupS1.Size = new System.Drawing.Size(315, 160);
@@ -1420,12 +1422,12 @@ namespace MidoriValveTest
             // 
             // btnBackGround1
             // 
-            this.btnBackGround1.BackColor = System.Drawing.Color.DarkCyan;
+            this.btnBackGround1.BackColor = System.Drawing.Color.Peru;
             this.btnBackGround1.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnBackGround1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBackGround1.Location = new System.Drawing.Point(6, 75);
             this.btnBackGround1.Name = "btnBackGround1";
-            this.btnBackGround1.Size = new System.Drawing.Size(343, 258);
+            this.btnBackGround1.Size = new System.Drawing.Size(343, 255);
             this.btnBackGround1.TabIndex = 24;
             this.btnBackGround1.Text = "button1";
             this.btnBackGround1.UseVisualStyleBackColor = false;
