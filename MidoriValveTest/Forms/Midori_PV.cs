@@ -124,7 +124,7 @@ namespace MidoriValveTest
         private void DisableBtn(Button btn) { 
             
             btn.BackgroundImage.Dispose();
-            btn.BackgroundImage = MidoriValveTest.Properties.Resources.btnDisa2Orange;
+            btn.BackgroundImage = MidoriValveTest.Properties.Resources.btnDisa2;
             btn.Enabled = false;
             btn.ForeColor = Color.White;
 
@@ -134,7 +134,7 @@ namespace MidoriValveTest
         {
 
             btn.BackgroundImage.Dispose();
-            btn.BackgroundImage = MidoriValveTest.Properties.Resources.btnNorOrange;
+            btn.BackgroundImage = MidoriValveTest.Properties.Resources.btnNblue;
             btn.Enabled = true;
 
         }
@@ -500,7 +500,7 @@ namespace MidoriValveTest
         {
             picture_frontal.Image.Dispose();
             picture_plane.Image.Dispose();
-            picture_frontal.Image = MidoriValveTest.Properties.Resources._0_2;
+            picture_frontal.Image = MidoriValveTest.Properties.Resources.Front0;
             picture_plane.Image = MidoriValveTest.Properties.Resources._0_GRADOS2;
             base_value = 0;
             trackBar1.Value = 0;
@@ -522,8 +522,8 @@ namespace MidoriValveTest
         {
             picture_frontal.Image.Dispose();
             picture_plane.Image.Dispose();
-            picture_frontal.Image = MidoriValveTest.Properties.Resources._10_2;
-            picture_plane.Image = MidoriValveTest.Properties.Resources._10_GRADOS2;
+            picture_frontal.Image = MidoriValveTest.Properties.Resources.Front10;
+            picture_plane.Image = MidoriValveTest.Properties.Resources._10_GRADOS;
             base_value = 10;
             trackBar1.Value = 10;
            // precision_aperture = 10;
@@ -543,8 +543,8 @@ namespace MidoriValveTest
         {
             picture_frontal.Image.Dispose();
             picture_plane.Image.Dispose();
-            picture_frontal.Image = MidoriValveTest.Properties.Resources._20_2;
-            picture_plane.Image = MidoriValveTest.Properties.Resources._20_GRADOS2;
+            picture_frontal.Image = MidoriValveTest.Properties.Resources.Front20;
+            picture_plane.Image = MidoriValveTest.Properties.Resources._20_GRADOS;
             base_value = 20;
             trackBar1.Value = 20;
            // precision_aperture = 20;
@@ -565,8 +565,8 @@ namespace MidoriValveTest
         {
             picture_frontal.Image.Dispose();
             picture_plane.Image.Dispose();
-            picture_frontal.Image = MidoriValveTest.Properties.Resources._30_2;
-            picture_plane.Image = MidoriValveTest.Properties.Resources._30_GRADOS2;
+            picture_frontal.Image = MidoriValveTest.Properties.Resources.Front30;
+            picture_plane.Image = MidoriValveTest.Properties.Resources._30_GRADOS;
             base_value = 30;
             trackBar1.Value = 30;
             //precision_aperture = 30;
@@ -587,8 +587,8 @@ namespace MidoriValveTest
         {
             picture_frontal.Image.Dispose();
             picture_plane.Image.Dispose();
-            picture_frontal.Image = MidoriValveTest.Properties.Resources._40_2;
-            picture_plane.Image = MidoriValveTest.Properties.Resources._40_GRADOS2;
+            picture_frontal.Image = MidoriValveTest.Properties.Resources.Front40;
+            picture_plane.Image = MidoriValveTest.Properties.Resources._40_GRADOS;
             base_value = 40;
             trackBar1.Value = 40;
             //precision_aperture = 40;
@@ -608,8 +608,8 @@ namespace MidoriValveTest
         {
             picture_frontal.Image.Dispose();
             picture_plane.Image.Dispose();
-            picture_frontal.Image = MidoriValveTest.Properties.Resources._50_2;
-            picture_plane.Image = MidoriValveTest.Properties.Resources._50_GRADOS2;
+            picture_frontal.Image = MidoriValveTest.Properties.Resources.Front50;
+            picture_plane.Image = MidoriValveTest.Properties.Resources._50_GRADOS;
             base_value = 50;
             trackBar1.Value = 50;
             //precision_aperture = 50;
@@ -630,8 +630,8 @@ namespace MidoriValveTest
         {
             picture_frontal.Image.Dispose();
             picture_plane.Image.Dispose();
-            picture_frontal.Image = MidoriValveTest.Properties.Resources._60_2;
-            picture_plane.Image = MidoriValveTest.Properties.Resources._60_GRADOS2;
+            picture_frontal.Image = MidoriValveTest.Properties.Resources.Front60;
+            picture_plane.Image = MidoriValveTest.Properties.Resources._60_GRADOS;
             base_value = 60;
             trackBar1.Value = 60;
             //precision_aperture = 60;
@@ -652,8 +652,8 @@ namespace MidoriValveTest
         {
             picture_frontal.Image.Dispose();
             picture_plane.Image.Dispose();
-            picture_frontal.Image = MidoriValveTest.Properties.Resources._70_2;
-            picture_plane.Image = MidoriValveTest.Properties.Resources._70_GRADOS2;
+            picture_frontal.Image = MidoriValveTest.Properties.Resources.Front70;
+            picture_plane.Image = MidoriValveTest.Properties.Resources._70_GRADOS;
             base_value = 70;
             trackBar1.Value = 70;
             //precision_aperture = 70;
@@ -674,8 +674,8 @@ namespace MidoriValveTest
         {
             picture_frontal.Image.Dispose();
             picture_plane.Image.Dispose();
-            picture_frontal.Image = MidoriValveTest.Properties.Resources._80_2;
-            picture_plane.Image = MidoriValveTest.Properties.Resources._80_GRADOS2;
+            picture_frontal.Image = MidoriValveTest.Properties.Resources.Front80;
+            picture_plane.Image = MidoriValveTest.Properties.Resources._80_GRADOS;
             base_value = 80;
             trackBar1.Value = 80;
             //precision_aperture = 80;
@@ -696,8 +696,8 @@ namespace MidoriValveTest
         {
             picture_frontal.Image.Dispose();
             picture_plane.Image.Dispose();
-            picture_frontal.Image = MidoriValveTest.Properties.Resources._90_2;
-            picture_plane.Image = MidoriValveTest.Properties.Resources._90_GRADOS2;
+            picture_frontal.Image = MidoriValveTest.Properties.Resources.Front90;
+            picture_plane.Image = MidoriValveTest.Properties.Resources._90_GRADOS;
             base_value = 90;
             trackBar1.Value = 90;
             //precision_aperture = 90;
@@ -1931,7 +1931,7 @@ namespace MidoriValveTest
             if (btn.Enabled == true)
             {
                 btn.BackgroundImage.Dispose();
-                btn.BackgroundImage = MidoriValveTest.Properties.Resources.btnPressOrange;
+                btn.BackgroundImage = MidoriValveTest.Properties.Resources.btnPressBlue;
 
             }
 
@@ -1941,12 +1941,12 @@ namespace MidoriValveTest
             if (btn.Enabled == true)
             {
                 btn.BackgroundImage.Dispose();
-                btn.BackgroundImage = MidoriValveTest.Properties.Resources.btnNorOrange;
+                btn.BackgroundImage = MidoriValveTest.Properties.Resources.btnNblue;
             }
             else
             {
                 btn.BackgroundImage.Dispose();
-                btn.BackgroundImage = MidoriValveTest.Properties.Resources.btnDisa2Orange;
+                btn.BackgroundImage = MidoriValveTest.Properties.Resources.btnDisa2;
             }
         }
 

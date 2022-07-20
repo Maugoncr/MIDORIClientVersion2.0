@@ -223,14 +223,14 @@ namespace MidoriValveTest
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.SaddleBrown;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(651, 6);
+            this.label2.Location = new System.Drawing.Point(724, 6);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(860, 31);
+            this.label2.Size = new System.Drawing.Size(393, 31);
             this.label2.TabIndex = 13;
-            this.label2.Text = "MIDORI SOFTWARE CLIENT BCV40-0808 PROTOTYPE V1.4.1 ";
+            this.label2.Text = "MIDORI BCV40-0808 V1.4.1 ";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
@@ -1378,7 +1378,7 @@ namespace MidoriValveTest
             // 
             // PanelNav
             // 
-            this.PanelNav.BackColor = System.Drawing.Color.SaddleBrown;
+            this.PanelNav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(49)))), ((int)(((byte)(82)))));
             this.PanelNav.Controls.Add(this.IconMinima);
             this.PanelNav.Controls.Add(this.IconMaxin);
             this.PanelNav.Controls.Add(this.btn_menu);
@@ -1400,12 +1400,12 @@ namespace MidoriValveTest
             this.PanelNavTitle.Dock = System.Windows.Forms.DockStyle.Left;
             this.PanelNavTitle.Location = new System.Drawing.Point(0, 0);
             this.PanelNavTitle.Name = "PanelNavTitle";
-            this.PanelNavTitle.Size = new System.Drawing.Size(200, 45);
+            this.PanelNavTitle.Size = new System.Drawing.Size(324, 45);
             this.PanelNavTitle.TabIndex = 37;
             // 
             // PanelSideNav
             // 
-            this.PanelSideNav.BackColor = System.Drawing.Color.SaddleBrown;
+            this.PanelSideNav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(49)))), ((int)(((byte)(82)))));
             this.PanelSideNav.Controls.Add(this.iconCamera);
             this.PanelSideNav.Controls.Add(this.IconInfo);
             this.PanelSideNav.Controls.Add(this.IconReport);
@@ -1681,7 +1681,7 @@ namespace MidoriValveTest
             // 
             // btn_P_conf
             // 
-            this.btn_P_conf.BackColor = System.Drawing.Color.Chocolate;
+            this.btn_P_conf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(42)))), ((int)(((byte)(89)))));
             this.btn_P_conf.BackgroundImage = global::MidoriValveTest.Properties.Resources._568239;
             this.btn_P_conf.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_P_conf.Enabled = false;
@@ -1917,7 +1917,7 @@ namespace MidoriValveTest
             // picture_plane
             // 
             this.picture_plane.BackColor = System.Drawing.Color.Transparent;
-            this.picture_plane.Image = global::MidoriValveTest.Properties.Resources._0_GRADOS2;
+            this.picture_plane.Image = global::MidoriValveTest.Properties.Resources._0_GRADOS;
             this.picture_plane.Location = new System.Drawing.Point(277, 483);
             this.picture_plane.Name = "picture_plane";
             this.picture_plane.Size = new System.Drawing.Size(239, 174);
@@ -1928,7 +1928,7 @@ namespace MidoriValveTest
             // picture_frontal
             // 
             this.picture_frontal.BackColor = System.Drawing.Color.Transparent;
-            this.picture_frontal.Image = global::MidoriValveTest.Properties.Resources._0_2;
+            this.picture_frontal.Image = global::MidoriValveTest.Properties.Resources.Front0;
             this.picture_frontal.Location = new System.Drawing.Point(29, 483);
             this.picture_frontal.Name = "picture_frontal";
             this.picture_frontal.Size = new System.Drawing.Size(226, 174);
@@ -2102,7 +2102,7 @@ namespace MidoriValveTest
             // 
             // btnStop
             // 
-            this.btnStop.BackgroundImage = global::MidoriValveTest.Properties.Resources.btnNorOrange;
+            this.btnStop.BackgroundImage = global::MidoriValveTest.Properties.Resources.btnNblue;
             this.btnStop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnStop.FlatAppearance.BorderSize = 0;
             this.btnStop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -2120,7 +2120,7 @@ namespace MidoriValveTest
             // 
             // btnRestart
             // 
-            this.btnRestart.BackgroundImage = global::MidoriValveTest.Properties.Resources.btnNorOrange;
+            this.btnRestart.BackgroundImage = global::MidoriValveTest.Properties.Resources.btnNblue;
             this.btnRestart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnRestart.FlatAppearance.BorderSize = 0;
             this.btnRestart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -2149,7 +2149,7 @@ namespace MidoriValveTest
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.Transparent;
-            this.button3.BackgroundImage = global::MidoriValveTest.Properties.Resources.btnNorOrange;
+            this.button3.BackgroundImage = global::MidoriValveTest.Properties.Resources.btnNblue;
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -2242,7 +2242,7 @@ namespace MidoriValveTest
             this.btn_menu.BackColor = System.Drawing.Color.Transparent;
             this.btn_menu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_menu.Image = global::MidoriValveTest.Properties.Resources.menu;
-            this.btn_menu.Location = new System.Drawing.Point(240, 6);
+            this.btn_menu.Location = new System.Drawing.Point(358, 6);
             this.btn_menu.Name = "btn_menu";
             this.btn_menu.Size = new System.Drawing.Size(28, 28);
             this.btn_menu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -2276,7 +2276,7 @@ namespace MidoriValveTest
             this.iconBar.IconColor = System.Drawing.Color.White;
             this.iconBar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconBar.IconSize = 30;
-            this.iconBar.Location = new System.Drawing.Point(200, 0);
+            this.iconBar.Location = new System.Drawing.Point(324, 0);
             this.iconBar.Name = "iconBar";
             this.iconBar.Size = new System.Drawing.Size(35, 45);
             this.iconBar.TabIndex = 38;
@@ -2285,11 +2285,11 @@ namespace MidoriValveTest
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.SaddleBrown;
-            this.pictureBox1.Image = global::MidoriValveTest.Properties.Resources.MIDORI_OFICIAL2_ORANGE;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(49)))), ((int)(((byte)(82)))));
+            this.pictureBox1.Image = global::MidoriValveTest.Properties.Resources.MIDORI_OFICIAL3;
+            this.pictureBox1.Location = new System.Drawing.Point(27, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(199, 45);
+            this.pictureBox1.Size = new System.Drawing.Size(290, 45);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 22;
             this.pictureBox1.TabStop = false;

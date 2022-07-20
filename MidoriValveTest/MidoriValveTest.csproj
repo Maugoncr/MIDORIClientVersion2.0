@@ -329,6 +329,7 @@
     <None Include="Resources\90 GRADOS.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\MIDORI OFICIAL3.png" />
     <None Include="Resources\MIDORI OFICIAL2 ORANGE.png" />
     <None Include="Resources\signal5.png" />
     <None Include="Resources\signal4.png" />
@@ -347,6 +348,19 @@
     <None Include="Resources\btnDisa2Orange.png" />
     <None Include="Resources\btnNorOrange.png" />
     <None Include="Resources\btnPressOrange.png" />
+    <None Include="Resources\btnNblue.png" />
+    <None Include="Resources\btnNormaBlue.png" />
+    <None Include="Resources\btnPressBlue.png" />
+    <None Include="Resources\Front0.png" />
+    <None Include="Resources\Front10.png" />
+    <None Include="Resources\Front20.png" />
+    <None Include="Resources\Front30.png" />
+    <None Include="Resources\Front40.png" />
+    <None Include="Resources\Front50.png" />
+    <None Include="Resources\Front60.png" />
+    <None Include="Resources\Front70.png" />
+    <None Include="Resources\Front80.png" />
+    <None Include="Resources\Front90.png" />
     <Content Include="Resources\led_off_green.png" />
     <Content Include="Resources\led_off_red.png" />
     <Content Include="Resources\led_off_yellow.png" />
