@@ -134,7 +134,7 @@ namespace MidoriValveTest
         {
 
             btn.BackgroundImage.Dispose();
-            btn.BackgroundImage = MidoriValveTest.Properties.Resources.btnNormaBlue;
+            btn.BackgroundImage = MidoriValveTest.Properties.Resources.btnNBlue3;
             btn.Enabled = true;
 
         }
@@ -1931,7 +1931,7 @@ namespace MidoriValveTest
             if (btn.Enabled == true)
             {
                 btn.BackgroundImage.Dispose();
-                btn.BackgroundImage = MidoriValveTest.Properties.Resources.btnNblue;
+                btn.BackgroundImage = MidoriValveTest.Properties.Resources.btnNBlue2;
 
             }
 
@@ -1941,7 +1941,7 @@ namespace MidoriValveTest
             if (btn.Enabled == true)
             {
                 btn.BackgroundImage.Dispose();
-                btn.BackgroundImage = MidoriValveTest.Properties.Resources.btnNormaBlue;
+                btn.BackgroundImage = MidoriValveTest.Properties.Resources.btnNBlue3;
             }
             else
             {

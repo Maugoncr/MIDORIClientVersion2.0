@@ -361,6 +361,8 @@
     <None Include="Resources\Front70.png" />
     <None Include="Resources\Front80.png" />
     <None Include="Resources\Front90.png" />
+    <None Include="Resources\btnNBlue2.png" />
+    <None Include="Resources\btnNBlue3.png" />
     <Content Include="Resources\led_off_green.png" />
     <Content Include="Resources\led_off_red.png" />
     <Content Include="Resources\led_off_yellow.png" />
