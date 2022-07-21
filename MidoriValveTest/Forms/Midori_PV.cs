@@ -95,7 +95,7 @@ namespace MidoriValveTest
                 EnableBtn(button3);
                 //button3.Enabled = true;
             }
-            lbl_estado.ForeColor = Color.Red;                                   // Establece color rojo al lbl de estado de posicion de valvula. 
+            lbl_estado.ForeColor = Color.SteelBlue;                                   // Establece color rojo al lbl de estado de posicion de valvula. 
             ChartArea CA = chart1.ChartAreas[0];                                //
             CA.CursorX.AutoScroll = true;                                       // Activamos autoescala en la grafica.
                                                                                 // 
@@ -134,7 +134,7 @@ namespace MidoriValveTest
         {
 
             btn.BackgroundImage.Dispose();
-            btn.BackgroundImage = MidoriValveTest.Properties.Resources.btnNblue;
+            btn.BackgroundImage = MidoriValveTest.Properties.Resources.btnNormaBlue;
             btn.Enabled = true;
 
         }
@@ -219,7 +219,7 @@ namespace MidoriValveTest
                 picture_plane.Image.Dispose();
                 picture_plane.Image = MidoriValveTest.Properties.Resources._0_GRADOS2;
                 precision_aperture = 0;
-                lbl_estado.ForeColor = Color.Red;
+                lbl_estado.ForeColor = Color.SteelBlue;
                 lbl_estado.Text = "Close";
                 DisableBtn(btn_apagar);
                 DisableBtn(btn_90);
@@ -399,7 +399,7 @@ namespace MidoriValveTest
             picture_plane.Image = MidoriValveTest.Properties.Resources._90_GRADOS2;
             //precision_aperture = 90;
 
-            lbl_estado.ForeColor = Color.Green;
+            lbl_estado.ForeColor = Color.SteelBlue;
             lbl_estado.Text = "Open";
             //btn_encender.Enabled = false;
             DisableBtn(btn_encender);
@@ -454,7 +454,7 @@ namespace MidoriValveTest
             picture_plane.Image.Dispose();
             picture_plane.Image = MidoriValveTest.Properties.Resources._0_GRADOS2;
             precision_aperture = 0;
-            lbl_estado.ForeColor = Color.Red;
+            lbl_estado.ForeColor = Color.SteelBlue;
             lbl_estado.Text = "Close";
 
             //btn_encender.Enabled = true;
@@ -1931,7 +1931,7 @@ namespace MidoriValveTest
             if (btn.Enabled == true)
             {
                 btn.BackgroundImage.Dispose();
-                btn.BackgroundImage = MidoriValveTest.Properties.Resources.btnPressBlue;
+                btn.BackgroundImage = MidoriValveTest.Properties.Resources.btnNblue;
 
             }
 
@@ -1941,7 +1941,7 @@ namespace MidoriValveTest
             if (btn.Enabled == true)
             {
                 btn.BackgroundImage.Dispose();
-                btn.BackgroundImage = MidoriValveTest.Properties.Resources.btnNblue;
+                btn.BackgroundImage = MidoriValveTest.Properties.Resources.btnNormaBlue;
             }
             else
             {
@@ -2246,6 +2246,21 @@ namespace MidoriValveTest
         }
 
         private void PanelNav_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void groupBox7_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_90_BackColorChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox6_Enter(object sender, EventArgs e)
         {
 
         }
