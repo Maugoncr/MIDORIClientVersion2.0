@@ -115,7 +115,6 @@ namespace MidoriValveTest
             this.lbl_T_5 = new System.Windows.Forms.Label();
             this.lbl_T_6 = new System.Windows.Forms.Label();
             this.trackBar2 = new System.Windows.Forms.TrackBar();
-            this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.macTrackBar1 = new XComponent.SliderBar.MACTrackBar();
@@ -141,6 +140,7 @@ namespace MidoriValveTest
             this.lbl_P_0 = new System.Windows.Forms.Label();
             this.btn_0 = new System.Windows.Forms.Button();
             this.btn_set = new System.Windows.Forms.Button();
+            this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.lbl_P_10 = new System.Windows.Forms.Label();
             this.lbl_P_60 = new System.Windows.Forms.Label();
             this.lbl_P_80 = new System.Windows.Forms.Label();
@@ -204,8 +204,8 @@ namespace MidoriValveTest
             this.groupBox2.SuspendLayout();
             this.groupBox11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.groupBox9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picture_plane)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picture_frontal)).BeginInit();
             this.groupBox6.SuspendLayout();
@@ -1118,6 +1118,7 @@ namespace MidoriValveTest
             // 
             // groupBox11
             // 
+            this.groupBox11.Controls.Add(this.macTrackBar1);
             this.groupBox11.Controls.Add(this.macTrackBar2);
             this.groupBox11.Controls.Add(this.btn_P_conf);
             this.groupBox11.Controls.Add(this.lbl_units_track);
@@ -1135,7 +1136,6 @@ namespace MidoriValveTest
             this.groupBox11.Controls.Add(this.lbl_T_5);
             this.groupBox11.Controls.Add(this.lbl_T_6);
             this.groupBox11.Controls.Add(this.trackBar2);
-            this.groupBox11.Controls.Add(this.trackBar1);
             this.groupBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox11.Location = new System.Drawing.Point(277, 31);
             this.groupBox11.Name = "groupBox11";
@@ -1159,7 +1159,6 @@ namespace MidoriValveTest
             this.macTrackBar2.Orientation = System.Windows.Forms.Orientation.Vertical;
             this.macTrackBar2.Size = new System.Drawing.Size(45, 340);
             this.macTrackBar2.TabIndex = 69;
-            this.macTrackBar2.TextTickStyle = System.Windows.Forms.TickStyle.TopLeft;
             this.macTrackBar2.TickColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(146)))), ((int)(((byte)(148)))));
             this.macTrackBar2.TickHeight = 2;
             this.macTrackBar2.TrackerColor = System.Drawing.Color.Red;
@@ -1168,7 +1167,6 @@ namespace MidoriValveTest
             this.macTrackBar2.TrackLineHeight = 3;
             this.macTrackBar2.TrackLineSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(93)))), ((int)(((byte)(90)))));
             this.macTrackBar2.Value = 0;
-            this.macTrackBar2.ValueChanged += new XComponent.SliderBar.ValueChangedHandler(this.macTrackBar2_ValueChanged);
             // 
             // btn_P_conf
             // 
@@ -1333,19 +1331,6 @@ namespace MidoriValveTest
             this.trackBar2.TabIndex = 14;
             this.trackBar2.Scroll += new System.EventHandler(this.trackBar2_Scroll);
             // 
-            // trackBar1
-            // 
-            this.trackBar1.Enabled = false;
-            this.trackBar1.LargeChange = 1;
-            this.trackBar1.Location = new System.Drawing.Point(6, 19);
-            this.trackBar1.Maximum = 90;
-            this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.trackBar1.Size = new System.Drawing.Size(45, 346);
-            this.trackBar1.TabIndex = 28;
-            this.trackBar1.Visible = false;
-            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -1357,7 +1342,6 @@ namespace MidoriValveTest
             // 
             // groupBox9
             // 
-            this.groupBox9.Controls.Add(this.macTrackBar1);
             this.groupBox9.Controls.Add(this.lbl_P_90);
             this.groupBox9.Controls.Add(this.lbl_P_5);
             this.groupBox9.Controls.Add(this.btn_90);
@@ -1380,6 +1364,7 @@ namespace MidoriValveTest
             this.groupBox9.Controls.Add(this.lbl_P_0);
             this.groupBox9.Controls.Add(this.btn_0);
             this.groupBox9.Controls.Add(this.btn_set);
+            this.groupBox9.Controls.Add(this.trackBar1);
             this.groupBox9.Controls.Add(this.lbl_P_10);
             this.groupBox9.Controls.Add(this.lbl_P_60);
             this.groupBox9.Controls.Add(this.lbl_P_80);
@@ -1400,12 +1385,11 @@ namespace MidoriValveTest
             // macTrackBar1
             // 
             this.macTrackBar1.BackColor = System.Drawing.Color.Transparent;
-            this.macTrackBar1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.macTrackBar1.BorderColor = System.Drawing.Color.Transparent;
             this.macTrackBar1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.macTrackBar1.ForeColor = System.Drawing.Color.Transparent;
             this.macTrackBar1.IndentHeight = 6;
-            this.macTrackBar1.Location = new System.Drawing.Point(134, 17);
+            this.macTrackBar1.Location = new System.Drawing.Point(201, 17);
             this.macTrackBar1.Maximum = 90;
             this.macTrackBar1.Minimum = 0;
             this.macTrackBar1.Name = "macTrackBar1";
@@ -1420,7 +1404,6 @@ namespace MidoriValveTest
             this.macTrackBar1.TrackLineHeight = 3;
             this.macTrackBar1.TrackLineSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(93)))), ((int)(((byte)(90)))));
             this.macTrackBar1.Value = 0;
-            this.macTrackBar1.ValueChanged += new XComponent.SliderBar.ValueChangedHandler(this.macTrackBar1_ValueChanged);
             // 
             // lbl_P_90
             // 
@@ -1730,6 +1713,18 @@ namespace MidoriValveTest
             this.btn_set.Click += new System.EventHandler(this.btn_set_Click);
             this.btn_set.MouseEnter += new System.EventHandler(this.btn_set_MouseEnter);
             this.btn_set.MouseLeave += new System.EventHandler(this.btn_set_MouseLeave);
+            // 
+            // trackBar1
+            // 
+            this.trackBar1.Enabled = false;
+            this.trackBar1.LargeChange = 1;
+            this.trackBar1.Location = new System.Drawing.Point(141, 19);
+            this.trackBar1.Maximum = 90;
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.trackBar1.Size = new System.Drawing.Size(45, 346);
+            this.trackBar1.TabIndex = 28;
+            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
             // 
             // lbl_P_10
             // 
@@ -2408,9 +2403,9 @@ namespace MidoriValveTest
             this.groupBox11.ResumeLayout(false);
             this.groupBox11.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picture_plane)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picture_frontal)).EndInit();
             this.groupBox6.ResumeLayout(false);

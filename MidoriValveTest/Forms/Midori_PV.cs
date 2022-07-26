@@ -1226,7 +1226,7 @@ namespace MidoriValveTest
         {
             //btn_S_pressure.Enabled = true;
             EnableBtn(btn_S_pressure);
-            btn_S_pressure.Text = "Set target pressure in " + (float)trackBar2.Value / 10000;
+            btn_S_pressure.Text = "Set target pressure in " + (float)trackBar2.Value/10000;
 
             switch (lbl_P_unit_top.Text)
             {
@@ -1240,7 +1240,7 @@ namespace MidoriValveTest
                     btn_S_pressure.Text = "Set target pressure in " + (float)trackBar2.Value / 100;
                     break;
                 case "Torr":
-                    btn_S_pressure.Text = "Set target pressure in " + (float)trackBar2.Value;
+                    btn_S_pressure.Text = "Set target pressure in " + (float)trackBar2.Value ;
                     break;
             }
         }
@@ -2262,140 +2262,6 @@ namespace MidoriValveTest
         private void groupBox6_Enter(object sender, EventArgs e)
         {
 
-        }
-
-        private void macTrackBar1_ValueChanged(object sender, decimal value)
-        {
-            int pos = macTrackBar1.Value;
-
-            switch (base_value)
-            {
-                case 0:
-                    if (pos > 9)
-                    {
-                        macTrackBar1.Value = 9;
-
-                    }
-                    break;
-                case 10:
-                    if (pos < 10)
-                    {
-                        macTrackBar1.Value = 10;
-                    }
-                    else if (pos > 19)
-                    {
-                        macTrackBar1.Value = 19;
-                    }
-                    break;
-                case 20:
-                    if (pos < 20)
-                    {
-                        macTrackBar1.Value = 20;
-                    }
-                    else if (pos > 29)
-                    {
-                        macTrackBar1.Value = 29;
-                    }
-                    break;
-                case 30:
-                    if (pos < 30)
-                    {
-                        macTrackBar1.Value = 30;
-                    }
-                    else if (pos > 39)
-                    {
-                        macTrackBar1.Value = 39;
-                    }
-                    break;
-                case 40:
-                    if (pos < 40)
-                    {
-                        macTrackBar1.Value = 40;
-                    }
-                    else if (pos > 49)
-                    {
-                        macTrackBar1.Value = 49;
-                    }
-                    break;
-                case 50:
-                    if (pos < 50)
-                    {
-                        macTrackBar1.Value = 50;
-                    }
-                    else if (pos > 59)
-                    {
-                        macTrackBar1.Value = 59;
-                    }
-                    break;
-                case 60:
-                    if (pos < 60)
-                    {
-                        macTrackBar1.Value = 60;
-                    }
-                    else if (pos > 69)
-                    {
-                        macTrackBar1.Value = 69;
-                    }
-                    break;
-                case 70:
-                    if (pos < 70)
-                    {
-                        macTrackBar1.Value = 70;
-                    }
-                    else if (pos > 79)
-                    {
-                        macTrackBar1.Value = 79;
-                    }
-                    break;
-                case 80:
-                    if (pos < 80)
-                    {
-                        macTrackBar1.Value = 80;
-                    }
-                    else if (pos > 89)
-                    {
-                        macTrackBar1.Value = 89;
-                    }
-                    break;
-                case 90:
-                    if (pos < 90)
-                    {
-                        macTrackBar1.Value = 90;
-                    }
-                    break;
-
-
-            }
-
-
-            //btn_set.Enabled = true;
-            btn_set.Text = "Set Aperture in " + macTrackBar1.Value + "°";
-            //precision_aperture = macTrackBar1.Value;
-
-
-        }
-
-        private void macTrackBar2_ValueChanged(object sender, decimal value)
-        {
-            //btn_S_pressure.Enabled = true;
-            EnableBtn(btn_S_pressure);
-            btn_S_pressure.Text = "Set target pressure in " + (float)macTrackBar2.Value / 10000;
-
-            switch (lbl_P_unit_top.Text)
-            {
-                case "PSI":
-                    btn_S_pressure.Text = "Set target pressure in " + (float)macTrackBar2.Value / 10000;
-                    break;
-                case "ATM":
-                    btn_S_pressure.Text = "Set target pressure in " + (float)macTrackBar2.Value / 1000;
-                    break;
-                case "mbar":
-                    btn_S_pressure.Text = "Set target pressure in " + (float)macTrackBar2.Value / 100;
-                    break;
-                case "Torr":
-                    btn_S_pressure.Text = "Set target pressure in " + (float)macTrackBar2.Value;
-                    break;
-            }
         }
     }
 }
