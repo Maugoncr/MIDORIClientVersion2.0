@@ -98,6 +98,7 @@ namespace MidoriValveTest
             this.button3 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.macTrackBar2 = new XComponent.SliderBar.MACTrackBar();
             this.btn_P_conf = new System.Windows.Forms.Button();
             this.lbl_units_track = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
@@ -191,7 +192,6 @@ namespace MidoriValveTest
             this.label14 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.TimerForData = new System.Windows.Forms.Timer(this.components);
-            this.macTrackBar2 = new XComponent.SliderBar.MACTrackBar();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.red_off)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.yellow_off)).BeginInit();
@@ -1118,6 +1118,7 @@ namespace MidoriValveTest
             // 
             // groupBox11
             // 
+            this.groupBox11.Controls.Add(this.macTrackBar1);
             this.groupBox11.Controls.Add(this.macTrackBar2);
             this.groupBox11.Controls.Add(this.btn_P_conf);
             this.groupBox11.Controls.Add(this.lbl_units_track);
@@ -1143,6 +1144,29 @@ namespace MidoriValveTest
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "Target Pressure";
             this.groupBox11.Enter += new System.EventHandler(this.groupBox11_Enter_1);
+            // 
+            // macTrackBar2
+            // 
+            this.macTrackBar2.BackColor = System.Drawing.Color.Transparent;
+            this.macTrackBar2.BorderColor = System.Drawing.SystemColors.ActiveBorder;
+            this.macTrackBar2.Font = new System.Drawing.Font("Verdana", 2.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.macTrackBar2.ForeColor = System.Drawing.Color.Transparent;
+            this.macTrackBar2.IndentHeight = 6;
+            this.macTrackBar2.Location = new System.Drawing.Point(163, 21);
+            this.macTrackBar2.Maximum = 146959;
+            this.macTrackBar2.Minimum = 0;
+            this.macTrackBar2.Name = "macTrackBar2";
+            this.macTrackBar2.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.macTrackBar2.Size = new System.Drawing.Size(45, 340);
+            this.macTrackBar2.TabIndex = 69;
+            this.macTrackBar2.TickColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(146)))), ((int)(((byte)(148)))));
+            this.macTrackBar2.TickHeight = 2;
+            this.macTrackBar2.TrackerColor = System.Drawing.Color.Red;
+            this.macTrackBar2.TrackerSize = new System.Drawing.Size(16, 16);
+            this.macTrackBar2.TrackLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(93)))), ((int)(((byte)(90)))));
+            this.macTrackBar2.TrackLineHeight = 3;
+            this.macTrackBar2.TrackLineSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(93)))), ((int)(((byte)(90)))));
+            this.macTrackBar2.Value = 0;
             // 
             // btn_P_conf
             // 
@@ -1318,7 +1342,6 @@ namespace MidoriValveTest
             // 
             // groupBox9
             // 
-            this.groupBox9.Controls.Add(this.macTrackBar1);
             this.groupBox9.Controls.Add(this.lbl_P_90);
             this.groupBox9.Controls.Add(this.lbl_P_5);
             this.groupBox9.Controls.Add(this.btn_90);
@@ -1366,7 +1389,7 @@ namespace MidoriValveTest
             this.macTrackBar1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.macTrackBar1.ForeColor = System.Drawing.Color.Transparent;
             this.macTrackBar1.IndentHeight = 6;
-            this.macTrackBar1.Location = new System.Drawing.Point(129, 21);
+            this.macTrackBar1.Location = new System.Drawing.Point(201, 17);
             this.macTrackBar1.Maximum = 90;
             this.macTrackBar1.Minimum = 0;
             this.macTrackBar1.Name = "macTrackBar1";
@@ -2330,29 +2353,6 @@ namespace MidoriValveTest
             // 
             this.TimerForData.Interval = 5000;
             this.TimerForData.Tick += new System.EventHandler(this.TimerForData_Tick);
-            // 
-            // macTrackBar2
-            // 
-            this.macTrackBar2.BackColor = System.Drawing.Color.Transparent;
-            this.macTrackBar2.BorderColor = System.Drawing.SystemColors.ActiveBorder;
-            this.macTrackBar2.Font = new System.Drawing.Font("Verdana", 2.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.macTrackBar2.ForeColor = System.Drawing.Color.Transparent;
-            this.macTrackBar2.IndentHeight = 6;
-            this.macTrackBar2.Location = new System.Drawing.Point(163, 21);
-            this.macTrackBar2.Maximum = 146959;
-            this.macTrackBar2.Minimum = 0;
-            this.macTrackBar2.Name = "macTrackBar2";
-            this.macTrackBar2.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.macTrackBar2.Size = new System.Drawing.Size(45, 340);
-            this.macTrackBar2.TabIndex = 69;
-            this.macTrackBar2.TickColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(146)))), ((int)(((byte)(148)))));
-            this.macTrackBar2.TickHeight = 2;
-            this.macTrackBar2.TrackerColor = System.Drawing.Color.Red;
-            this.macTrackBar2.TrackerSize = new System.Drawing.Size(16, 16);
-            this.macTrackBar2.TrackLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(93)))), ((int)(((byte)(90)))));
-            this.macTrackBar2.TrackLineHeight = 3;
-            this.macTrackBar2.TrackLineSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(93)))), ((int)(((byte)(90)))));
-            this.macTrackBar2.Value = 0;
             // 
             // Midori_PV
             // 
