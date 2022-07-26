@@ -394,9 +394,9 @@ namespace MidoriValveTest
             Current_aperture.Text =  precision_aperture + "°";
 
             picture_frontal.Image.Dispose();
-            picture_frontal.Image = MidoriValveTest.Properties.Resources._90_2;
+            picture_frontal.Image = MidoriValveTest.Properties.Resources.Front90;
             picture_plane.Image.Dispose();
-            picture_plane.Image = MidoriValveTest.Properties.Resources._90_GRADOS2;
+            picture_plane.Image = MidoriValveTest.Properties.Resources._90_GRADOS;
             //precision_aperture = 90;
 
             lbl_estado.ForeColor = Color.SteelBlue;
@@ -450,9 +450,9 @@ namespace MidoriValveTest
             precision_aperture = 0;
             Current_aperture.Text =  precision_aperture + "°";
             picture_frontal.Image.Dispose();
-            picture_frontal.Image = MidoriValveTest.Properties.Resources._0_2;
+            picture_frontal.Image = MidoriValveTest.Properties.Resources.Front0;
             picture_plane.Image.Dispose();
-            picture_plane.Image = MidoriValveTest.Properties.Resources._0_GRADOS2;
+            picture_plane.Image = MidoriValveTest.Properties.Resources._0_GRADOS;
             precision_aperture = 0;
             lbl_estado.ForeColor = Color.SteelBlue;
             lbl_estado.Text = "Close";
@@ -729,7 +729,6 @@ namespace MidoriValveTest
         {
             int pos = trackBar1.Value;
 
-
             switch (base_value)
             {
                 case 0:
@@ -860,25 +859,25 @@ namespace MidoriValveTest
 
             if (lbl_estado.Text == "Open")
             {
-                if (Arduino != null && Arduino.IsOpen)
-                {
-                    string hola = Arduino.ReadLine();
-                    hola = hola.Replace("$", "");
-                    hola = hola.Replace("s", "");
-                    chart1.Series["Aperture value"].Points.AddXY(t.ToString(), precision_aperture.ToString());
-                    chart1.Series["Pressure"].Points.AddXY(t.ToString(), hola.ToString());
-                    lbl_pressure.Text = hola.ToString();
-                    chart1.ChartAreas[0].RecalculateAxesScale();
-                }
-                else
-                {
+                //if (Arduino != null && Arduino.IsOpen)
+                //{
+                    //string hola = Arduino.ReadLine();
+                    //hola = hola.Replace("$", "");
+                    //hola = hola.Replace("s", "");
+                    //chart1.Series["Aperture value"].Points.AddXY(t.ToString(), precision_aperture.ToString());
+                    //chart1.Series["Pressure"].Points.AddXY(t.ToString(), hola.ToString());
+                    //lbl_pressure.Text = hola.ToString();
+                    //chart1.ChartAreas[0].RecalculateAxesScale();
+                //}
+                //else
+               // {
                     chart1.Series["Aperture value"].Points.AddXY(t.ToString(), precision_aperture.ToString());
                     chart1.Series["Pressure"].Points.AddXY(t.ToString(), rd.ToString());
                     decimal rr = Convert.ToDecimal(rd);
                     pressure_get = decimal.Round(rr, 3);
                     lbl_pressure.Text = pressure_get.ToString();
                     chart1.ChartAreas[0].RecalculateAxesScale();
-                }
+                //}
             }
             else
             {
