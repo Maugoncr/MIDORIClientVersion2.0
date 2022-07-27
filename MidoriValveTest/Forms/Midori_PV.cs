@@ -72,6 +72,7 @@ namespace MidoriValveTest
         // Funcion de carga de procedimientos iniciales (inicio automatico). 
         private void Form1_Load(object sender, EventArgs e)
         {
+            
             iconTerminal.Enabled = false;
             iconPID.Enabled = false;
             IconSensor.Enabled = false;
@@ -109,8 +110,8 @@ namespace MidoriValveTest
             DisableBtn(btn_20);
             DisableBtn(btn_10);
             DisableBtn(btn_0);
-            trackBar1.Enabled = false;
-            trackBar2.Enabled = false;
+            trackBar1A.Enabled = false;
+            trackBar2A.Enabled = false;
             DisableBtn(button7);
             DisableBtn(button6);
             DisableBtn(button5);
@@ -209,9 +210,9 @@ namespace MidoriValveTest
             if (lbl_estado.Text == "Open")
             {
 
-                trackBar1.Enabled = false;
-                trackBar2.Enabled = false;
-                trackBar1.Value = 0;
+                trackBar1A.Enabled = false;
+                trackBar2A.Enabled = false;
+                trackBar1A.Value = 0;
                 precision_aperture = 0;
                 Current_aperture.Text =  precision_aperture + "°";
                 picture_frontal.Image.Dispose();
@@ -306,7 +307,7 @@ namespace MidoriValveTest
                     //button3.Enabled = true;
                     //EnableBtn(button3);
                     //apertura
-                    trackBar1.Enabled = true;
+                    trackBar1A.Enabled = true;
                     EnableBtn(btn_90);
                     EnableBtn(btn_80);
                     EnableBtn(btn_70);
@@ -383,8 +384,8 @@ namespace MidoriValveTest
             //    Thread.Sleep(100);
             //}
 
-            trackBar1.Enabled = true;
-            trackBar2.Enabled = true;
+            trackBar1A.Enabled = true;
+            trackBar2A.Enabled = true;
 
             //Maugoncr// Enviamos los grados que deseamos se abra la valvula desde el open gate.
             precision_aperture = trackBar1.Value;
@@ -444,9 +445,9 @@ namespace MidoriValveTest
             //    Thread.Sleep(50);
             //}
             //trackBar1.Enabled = false;
-            trackBar2.Enabled = false;
+            trackBar2A.Enabled = false;
 
-            trackBar1.Value = 0;
+            trackBar1A.Value = 0;
             precision_aperture = 0;
             Current_aperture.Text =  precision_aperture + "°";
             picture_frontal.Image.Dispose();
@@ -503,7 +504,7 @@ namespace MidoriValveTest
             picture_frontal.Image = MidoriValveTest.Properties.Resources.Front0;
             picture_plane.Image = MidoriValveTest.Properties.Resources._0_GRADOS2;
             base_value = 0;
-            trackBar1.Value = 0;
+            trackBar1A.Value = 0;
            // precision_aperture = 0;
             Current_aperture.Text =  trackBar1.Value+"°";
             btn_set.Text = "Set Aperture";
@@ -525,9 +526,9 @@ namespace MidoriValveTest
             picture_frontal.Image = MidoriValveTest.Properties.Resources.Front10;
             picture_plane.Image = MidoriValveTest.Properties.Resources._10_GRADOS;
             base_value = 10;
-            trackBar1.Value = 10;
+            trackBar1A.Value = 10;
            // precision_aperture = 10;
-            Current_aperture.Text =  trackBar1.Value+"°";
+            Current_aperture.Text =  trackBar1A.Value+"°";
             btn_set.Text = "Set Aperture in 10";
             //btn_set.Enabled = true;
             //lbl_estado.ForeColor = Color.Green;
@@ -546,9 +547,9 @@ namespace MidoriValveTest
             picture_frontal.Image = MidoriValveTest.Properties.Resources.Front20;
             picture_plane.Image = MidoriValveTest.Properties.Resources._20_GRADOS;
             base_value = 20;
-            trackBar1.Value = 20;
+            trackBar1A.Value = 20;
            // precision_aperture = 20;
-            Current_aperture.Text =  trackBar1.Value+"°";
+            Current_aperture.Text =  trackBar1A.Value+"°";
             btn_set.Text = "Set Aperture in 20";
             //btn_set.Enabled = true;
             //lbl_estado.ForeColor = Color.Green;
@@ -568,9 +569,9 @@ namespace MidoriValveTest
             picture_frontal.Image = MidoriValveTest.Properties.Resources.Front30;
             picture_plane.Image = MidoriValveTest.Properties.Resources._30_GRADOS;
             base_value = 30;
-            trackBar1.Value = 30;
+            trackBar1A.Value = 30;
             //precision_aperture = 30;
-            Current_aperture.Text =  trackBar1.Value+"°";
+            Current_aperture.Text =  trackBar1A.Value+"°";
             btn_set.Text = "Set Aperture in 30";
             //btn_set.Enabled = true;
             //lbl_estado.ForeColor = Color.Green;
@@ -590,9 +591,9 @@ namespace MidoriValveTest
             picture_frontal.Image = MidoriValveTest.Properties.Resources.Front40;
             picture_plane.Image = MidoriValveTest.Properties.Resources._40_GRADOS;
             base_value = 40;
-            trackBar1.Value = 40;
+            trackBar1A.Value = 40;
             //precision_aperture = 40;
-            Current_aperture.Text =  trackBar1.Value+"°";
+            Current_aperture.Text =  trackBar1A.Value+"°";
             btn_set.Text = "Set Aperture in 40";
             //btn_set.Enabled = true;
             //lbl_estado.ForeColor = Color.Green;
@@ -611,9 +612,9 @@ namespace MidoriValveTest
             picture_frontal.Image = MidoriValveTest.Properties.Resources.Front50;
             picture_plane.Image = MidoriValveTest.Properties.Resources._50_GRADOS;
             base_value = 50;
-            trackBar1.Value = 50;
+            trackBar1A.Value = 50;
             //precision_aperture = 50;
-            Current_aperture.Text =  trackBar1.Value+"°";
+            Current_aperture.Text =  trackBar1A.Value+"°";
             btn_set.Text = "Set Aperture in 50";
             //btn_set.Enabled = true;
             //lbl_estado.ForeColor = Color.Green;
@@ -633,9 +634,9 @@ namespace MidoriValveTest
             picture_frontal.Image = MidoriValveTest.Properties.Resources.Front60;
             picture_plane.Image = MidoriValveTest.Properties.Resources._60_GRADOS;
             base_value = 60;
-            trackBar1.Value = 60;
+            trackBar1A.Value = 60;
             //precision_aperture = 60;
-            Current_aperture.Text =  trackBar1.Value+"°";
+            Current_aperture.Text =  trackBar1A.Value+"°";
             btn_set.Text = "Set Aperture in 60";
             //btn_set.Enabled = true;
             //lbl_estado.ForeColor = Color.Green;
@@ -655,9 +656,9 @@ namespace MidoriValveTest
             picture_frontal.Image = MidoriValveTest.Properties.Resources.Front70;
             picture_plane.Image = MidoriValveTest.Properties.Resources._70_GRADOS;
             base_value = 70;
-            trackBar1.Value = 70;
+            trackBar1A.Value = 70;
             //precision_aperture = 70;
-            Current_aperture.Text =  trackBar1.Value+"°";
+            Current_aperture.Text =  trackBar1A.Value+"°";
             btn_set.Text = "Set Aperture in 70";
             //btn_set.Enabled = true;
             //lbl_estado.ForeColor = Color.Green;
@@ -677,9 +678,9 @@ namespace MidoriValveTest
             picture_frontal.Image = MidoriValveTest.Properties.Resources.Front80;
             picture_plane.Image = MidoriValveTest.Properties.Resources._80_GRADOS;
             base_value = 80;
-            trackBar1.Value = 80;
+            trackBar1A.Value = 80;
             //precision_aperture = 80;
-            Current_aperture.Text =  trackBar1.Value+"°";
+            Current_aperture.Text =  trackBar1A.Value+"°";
             btn_set.Text = "Set Aperture in 80";
             //btn_set.Enabled = true;
             //lbl_estado.ForeColor = Color.Green;
@@ -699,9 +700,9 @@ namespace MidoriValveTest
             picture_frontal.Image = MidoriValveTest.Properties.Resources.Front90;
             picture_plane.Image = MidoriValveTest.Properties.Resources._90_GRADOS;
             base_value = 90;
-            trackBar1.Value = 90;
+            trackBar1A.Value = 90;
             //precision_aperture = 90;
-            Current_aperture.Text =  trackBar1.Value+"°";
+            Current_aperture.Text =  trackBar1A.Value+"°";
             btn_set.Text = "Set Aperture in 90";
 
             //lbl_estado.ForeColor = Color.Green;
@@ -1257,7 +1258,7 @@ namespace MidoriValveTest
         {
             // 
 
-            precision_aperture = trackBar1.Value;
+            precision_aperture = trackBar1A.Value;
             Current_aperture.Text =  precision_aperture + "°";
             btn_set.Text = "Set Aperture";
             //btn_set.Enabled = false;
@@ -1273,7 +1274,7 @@ namespace MidoriValveTest
         //Maugoncr// Set clic de la presión VERDE
         private void btn_S_pressure_Click_1(object sender, EventArgs e)
         {
-            double presion = trackBar2.Value;
+            double presion = trackBar2A.Value;
 
 
             switch (lbl_P_unit_top.Text)
@@ -1824,9 +1825,9 @@ namespace MidoriValveTest
             if (lbl_estado.Text == "Open")
             {
 
-                trackBar1.Enabled = false;
-                trackBar2.Enabled = false;
-                trackBar1.Value = 0;
+                trackBar1A.Enabled = false;
+                trackBar2A.Enabled = false;
+                trackBar1A.Value = 0;
                 precision_aperture = 0;
                 Current_aperture.Text =  precision_aperture + "°";
                 picture_frontal.Image.Dispose();
@@ -2263,5 +2264,140 @@ namespace MidoriValveTest
         {
 
         }
+
+        private void trackBar1A_Scroll(object sender, EventArgs e)
+        {
+            int pos = trackBar1A.Value;
+
+            switch (base_value)
+            {
+                case 0:
+                    if (pos > 9)
+                    {
+                        trackBar1A.Value = 9;
+
+                    }
+                    break;
+                case 10:
+                    if (pos < 10)
+                    {
+                        trackBar1A.Value = 10;
+                    }
+                    else if (pos > 19)
+                    {
+                        trackBar1A.Value = 19;
+                    }
+                    break;
+                case 20:
+                    if (pos < 20)
+                    {
+                        trackBar1A.Value = 20;
+                    }
+                    else if (pos > 29)
+                    {
+                        trackBar1A.Value = 29;
+                    }
+                    break;
+                case 30:
+                    if (pos < 30)
+                    {
+                        trackBar1A.Value = 30;
+                    }
+                    else if (pos > 39)
+                    {
+                        trackBar1A.Value = 39;
+                    }
+                    break;
+                case 40:
+                    if (pos < 40)
+                    {
+                        trackBar1A.Value = 40;
+                    }
+                    else if (pos > 49)
+                    {
+                        trackBar1A.Value = 49;
+                    }
+                    break;
+                case 50:
+                    if (pos < 50)
+                    {
+                        trackBar1A.Value = 50;
+                    }
+                    else if (pos > 59)
+                    {
+                        trackBar1A.Value = 59;
+                    }
+                    break;
+                case 60:
+                    if (pos < 60)
+                    {
+                        trackBar1A.Value = 60;
+                    }
+                    else if (pos > 69)
+                    {
+                        trackBar1A.Value = 69;
+                    }
+                    break;
+                case 70:
+                    if (pos < 70)
+                    {
+                        trackBar1A.Value = 70;
+                    }
+                    else if (pos > 79)
+                    {
+                        trackBar1A.Value = 79;
+                    }
+                    break;
+                case 80:
+                    if (pos < 80)
+                    {
+                        trackBar1A.Value = 80;
+                    }
+                    else if (pos > 89)
+                    {
+                        trackBar1A.Value = 89;
+                    }
+                    break;
+                case 90:
+                    if (pos < 90)
+                    {
+                        trackBar1A.Value = 90;
+                    }
+                    break;
+
+
+            }
+
+
+            //btn_set.Enabled = true;
+            btn_set.Text = "Set Aperture in " + trackBar1A.Value + "°";
+            //precision_aperture = trackBar1.Value;
+        }
+
+
+        private void trackBar2A_Scroll(object sender, EventArgs e)
+        {
+            EnableBtn(btn_S_pressure);
+            decimal nivel = decimal.Round((trackBar2A.Value), 3);
+
+
+            switch (lbl_P_unit_top.Text)
+            {
+                case "PSI":
+                    btn_S_pressure.Text = "Set target pressure in " + nivel / 10000;
+                    break;
+                case "ATM":
+                    btn_S_pressure.Text = "Set target pressure in " + nivel / 1000;
+                    break;
+                case "mbar":
+                    btn_S_pressure.Text = "Set target pressure in " + nivel / 100;
+                    break;
+                case "Torr":
+                    btn_S_pressure.Text = "Set target pressure in " + nivel;
+                    break;
+            }
+        }
+
+        
     }
 }

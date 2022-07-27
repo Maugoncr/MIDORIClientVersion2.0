@@ -31,10 +31,10 @@ namespace MidoriValveTest
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Midori_PV));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.LblEstado = new System.Windows.Forms.Label();
@@ -98,7 +98,8 @@ namespace MidoriValveTest
             this.button3 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
-            this.macTrackBar2 = new XComponent.SliderBar.MACTrackBar();
+            this.trackBar1A = new XComponent.SliderBar.MACTrackBar();
+            this.trackBar2A = new XComponent.SliderBar.MACTrackBar();
             this.btn_P_conf = new System.Windows.Forms.Button();
             this.lbl_units_track = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
@@ -117,7 +118,6 @@ namespace MidoriValveTest
             this.trackBar2 = new System.Windows.Forms.TrackBar();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.macTrackBar1 = new XComponent.SliderBar.MACTrackBar();
             this.lbl_P_90 = new System.Windows.Forms.Label();
             this.lbl_P_5 = new System.Windows.Forms.Label();
             this.btn_90 = new System.Windows.Forms.Button();
@@ -857,47 +857,47 @@ namespace MidoriValveTest
             this.chart1.BorderlineColor = System.Drawing.Color.Transparent;
             this.chart1.BorderSkin.BackColor = System.Drawing.Color.Black;
             this.chart1.BorderSkin.BorderColor = System.Drawing.Color.Empty;
-            chartArea1.AxisX.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.True;
-            chartArea1.AxisX.IntervalOffsetType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Seconds;
-            chartArea1.AxisX.MajorGrid.LineColor = System.Drawing.Color.White;
-            chartArea1.AxisX2.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
-            chartArea1.AxisY.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.True;
-            chartArea1.AxisY.MajorGrid.LineColor = System.Drawing.Color.Silver;
-            chartArea1.AxisY.Minimum = 0D;
-            chartArea1.AxisY.ScaleBreakStyle.LineColor = System.Drawing.Color.White;
-            chartArea1.AxisY.ScaleView.MinSize = 1D;
-            chartArea1.AxisY2.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.True;
-            chartArea1.AxisY2.MajorGrid.LineColor = System.Drawing.Color.White;
-            chartArea1.AxisY2.ScaleBreakStyle.BreakLineStyle = System.Windows.Forms.DataVisualization.Charting.BreakLineStyle.None;
-            chartArea1.AxisY2.ScaleBreakStyle.StartFromZero = System.Windows.Forms.DataVisualization.Charting.StartFromZero.Yes;
-            chartArea1.BackColor = System.Drawing.Color.Transparent;
-            chartArea1.BackSecondaryColor = System.Drawing.Color.White;
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.BackColor = System.Drawing.Color.Gainsboro;
-            legend1.Name = "Legend1";
-            legend1.TitleAlignment = System.Drawing.StringAlignment.Near;
-            this.chart1.Legends.Add(legend1);
+            chartArea5.AxisX.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.True;
+            chartArea5.AxisX.IntervalOffsetType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Seconds;
+            chartArea5.AxisX.MajorGrid.LineColor = System.Drawing.Color.White;
+            chartArea5.AxisX2.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
+            chartArea5.AxisY.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.True;
+            chartArea5.AxisY.MajorGrid.LineColor = System.Drawing.Color.Silver;
+            chartArea5.AxisY.Minimum = 0D;
+            chartArea5.AxisY.ScaleBreakStyle.LineColor = System.Drawing.Color.White;
+            chartArea5.AxisY.ScaleView.MinSize = 1D;
+            chartArea5.AxisY2.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.True;
+            chartArea5.AxisY2.MajorGrid.LineColor = System.Drawing.Color.White;
+            chartArea5.AxisY2.ScaleBreakStyle.BreakLineStyle = System.Windows.Forms.DataVisualization.Charting.BreakLineStyle.None;
+            chartArea5.AxisY2.ScaleBreakStyle.StartFromZero = System.Windows.Forms.DataVisualization.Charting.StartFromZero.Yes;
+            chartArea5.BackColor = System.Drawing.Color.Transparent;
+            chartArea5.BackSecondaryColor = System.Drawing.Color.White;
+            chartArea5.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea5);
+            legend5.BackColor = System.Drawing.Color.Gainsboro;
+            legend5.Name = "Legend1";
+            legend5.TitleAlignment = System.Drawing.StringAlignment.Near;
+            this.chart1.Legends.Add(legend5);
             this.chart1.Location = new System.Drawing.Point(6, 21);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Grayscale;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastLine;
-            series1.Color = System.Drawing.Color.Green;
-            series1.Legend = "Legend1";
-            series1.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Square;
-            series1.Name = "Pressure";
-            series1.YAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
-            series1.YValuesPerPoint = 4;
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastLine;
-            series2.Color = System.Drawing.SystemColors.MenuHighlight;
-            series2.Legend = "Legend1";
-            series2.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Square;
-            series2.Name = "Aperture value";
-            series2.ShadowColor = System.Drawing.Color.Silver;
-            this.chart1.Series.Add(series1);
-            this.chart1.Series.Add(series2);
+            series9.ChartArea = "ChartArea1";
+            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastLine;
+            series9.Color = System.Drawing.Color.Green;
+            series9.Legend = "Legend1";
+            series9.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Square;
+            series9.Name = "Pressure";
+            series9.YAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
+            series9.YValuesPerPoint = 4;
+            series10.ChartArea = "ChartArea1";
+            series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastLine;
+            series10.Color = System.Drawing.SystemColors.MenuHighlight;
+            series10.Legend = "Legend1";
+            series10.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Square;
+            series10.Name = "Aperture value";
+            series10.ShadowColor = System.Drawing.Color.Silver;
+            this.chart1.Series.Add(series9);
+            this.chart1.Series.Add(series10);
             this.chart1.Size = new System.Drawing.Size(1266, 716);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
@@ -1118,8 +1118,8 @@ namespace MidoriValveTest
             // 
             // groupBox11
             // 
-            this.groupBox11.Controls.Add(this.macTrackBar1);
-            this.groupBox11.Controls.Add(this.macTrackBar2);
+            this.groupBox11.Controls.Add(this.trackBar1A);
+            this.groupBox11.Controls.Add(this.trackBar2A);
             this.groupBox11.Controls.Add(this.btn_P_conf);
             this.groupBox11.Controls.Add(this.lbl_units_track);
             this.groupBox11.Controls.Add(this.panel8);
@@ -1145,28 +1145,57 @@ namespace MidoriValveTest
             this.groupBox11.Text = "Target Pressure";
             this.groupBox11.Enter += new System.EventHandler(this.groupBox11_Enter_1);
             // 
-            // macTrackBar2
+            // trackBar1A
             // 
-            this.macTrackBar2.BackColor = System.Drawing.Color.Transparent;
-            this.macTrackBar2.BorderColor = System.Drawing.SystemColors.ActiveBorder;
-            this.macTrackBar2.Font = new System.Drawing.Font("Verdana", 2.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.macTrackBar2.ForeColor = System.Drawing.Color.Transparent;
-            this.macTrackBar2.IndentHeight = 6;
-            this.macTrackBar2.Location = new System.Drawing.Point(163, 21);
-            this.macTrackBar2.Maximum = 146959;
-            this.macTrackBar2.Minimum = 0;
-            this.macTrackBar2.Name = "macTrackBar2";
-            this.macTrackBar2.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.macTrackBar2.Size = new System.Drawing.Size(45, 340);
-            this.macTrackBar2.TabIndex = 69;
-            this.macTrackBar2.TickColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(146)))), ((int)(((byte)(148)))));
-            this.macTrackBar2.TickHeight = 2;
-            this.macTrackBar2.TrackerColor = System.Drawing.Color.Red;
-            this.macTrackBar2.TrackerSize = new System.Drawing.Size(16, 16);
-            this.macTrackBar2.TrackLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(93)))), ((int)(((byte)(90)))));
-            this.macTrackBar2.TrackLineHeight = 3;
-            this.macTrackBar2.TrackLineSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(93)))), ((int)(((byte)(90)))));
-            this.macTrackBar2.Value = 0;
+            this.trackBar1A.BackColor = System.Drawing.Color.Transparent;
+            this.trackBar1A.BorderColor = System.Drawing.Color.Transparent;
+            this.trackBar1A.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.trackBar1A.ForeColor = System.Drawing.Color.Transparent;
+            this.trackBar1A.IndentHeight = 6;
+            this.trackBar1A.Location = new System.Drawing.Point(201, 17);
+            this.trackBar1A.Maximum = 90;
+            this.trackBar1A.Minimum = 0;
+            this.trackBar1A.Name = "trackBar1A";
+            this.trackBar1A.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.trackBar1A.Size = new System.Drawing.Size(32, 344);
+            this.trackBar1A.TabIndex = 66;
+            this.trackBar1A.TextTickStyle = System.Windows.Forms.TickStyle.None;
+            this.trackBar1A.TickColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(146)))), ((int)(((byte)(148)))));
+            this.trackBar1A.TickHeight = 4;
+            this.trackBar1A.TrackerColor = System.Drawing.Color.Red;
+            this.trackBar1A.TrackerSize = new System.Drawing.Size(15, 15);
+            this.trackBar1A.TrackLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(93)))), ((int)(((byte)(90)))));
+            this.trackBar1A.TrackLineHeight = 3;
+            this.trackBar1A.TrackLineSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(93)))), ((int)(((byte)(90)))));
+            this.trackBar1A.Value = 0;
+            this.trackBar1A.Scroll += new System.EventHandler(this.trackBar1A_Scroll);
+            // 
+            // trackBar2A
+            // 
+            this.trackBar2A.BackColor = System.Drawing.Color.Transparent;
+            this.trackBar2A.BorderColor = System.Drawing.SystemColors.ActiveBorder;
+            this.trackBar2A.Font = new System.Drawing.Font("Verdana", 2.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.trackBar2A.ForeColor = System.Drawing.Color.Transparent;
+            this.trackBar2A.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.trackBar2A.IndentHeight = 6;
+            this.trackBar2A.LargeChange = 1;
+            this.trackBar2A.Location = new System.Drawing.Point(163, 21);
+            this.trackBar2A.Maximum = 146959;
+            this.trackBar2A.Minimum = 0;
+            this.trackBar2A.Name = "trackBar2A";
+            this.trackBar2A.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.trackBar2A.Size = new System.Drawing.Size(31, 340);
+            this.trackBar2A.TabIndex = 14;
+            this.trackBar2A.TextTickStyle = System.Windows.Forms.TickStyle.None;
+            this.trackBar2A.TickColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(146)))), ((int)(((byte)(148)))));
+            this.trackBar2A.TickHeight = 2;
+            this.trackBar2A.TrackerColor = System.Drawing.Color.Red;
+            this.trackBar2A.TrackerSize = new System.Drawing.Size(16, 16);
+            this.trackBar2A.TrackLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(93)))), ((int)(((byte)(90)))));
+            this.trackBar2A.TrackLineHeight = 3;
+            this.trackBar2A.TrackLineSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(93)))), ((int)(((byte)(90)))));
+            this.trackBar2A.Value = 0;
+            this.trackBar2A.Scroll += new System.EventHandler(this.trackBar2A_Scroll);
             // 
             // btn_P_conf
             // 
@@ -1321,7 +1350,6 @@ namespace MidoriValveTest
             // 
             // trackBar2
             // 
-            this.trackBar2.Enabled = false;
             this.trackBar2.LargeChange = 1;
             this.trackBar2.Location = new System.Drawing.Point(10, 19);
             this.trackBar2.Maximum = 146959;
@@ -1381,29 +1409,6 @@ namespace MidoriValveTest
             this.groupBox9.TabIndex = 56;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Target Position";
-            // 
-            // macTrackBar1
-            // 
-            this.macTrackBar1.BackColor = System.Drawing.Color.Transparent;
-            this.macTrackBar1.BorderColor = System.Drawing.Color.Transparent;
-            this.macTrackBar1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.macTrackBar1.ForeColor = System.Drawing.Color.Transparent;
-            this.macTrackBar1.IndentHeight = 6;
-            this.macTrackBar1.Location = new System.Drawing.Point(201, 17);
-            this.macTrackBar1.Maximum = 90;
-            this.macTrackBar1.Minimum = 0;
-            this.macTrackBar1.Name = "macTrackBar1";
-            this.macTrackBar1.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.macTrackBar1.Size = new System.Drawing.Size(51, 344);
-            this.macTrackBar1.TabIndex = 66;
-            this.macTrackBar1.TickColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(146)))), ((int)(((byte)(148)))));
-            this.macTrackBar1.TickHeight = 4;
-            this.macTrackBar1.TrackerColor = System.Drawing.Color.Red;
-            this.macTrackBar1.TrackerSize = new System.Drawing.Size(15, 15);
-            this.macTrackBar1.TrackLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(93)))), ((int)(((byte)(90)))));
-            this.macTrackBar1.TrackLineHeight = 3;
-            this.macTrackBar1.TrackLineSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(93)))), ((int)(((byte)(90)))));
-            this.macTrackBar1.Value = 0;
             // 
             // lbl_P_90
             // 
@@ -2586,8 +2591,8 @@ namespace MidoriValveTest
         private System.Windows.Forms.Timer TimerForData;
         private FontAwesome.Sharp.IconButton iconCamera;
         public System.Windows.Forms.TrackBar trackBar1;
-        private XComponent.SliderBar.MACTrackBar macTrackBar1;
-        private XComponent.SliderBar.MACTrackBar macTrackBar2;
+        private XComponent.SliderBar.MACTrackBar trackBar1A;
+        public XComponent.SliderBar.MACTrackBar trackBar2A;
     }
 }
 
