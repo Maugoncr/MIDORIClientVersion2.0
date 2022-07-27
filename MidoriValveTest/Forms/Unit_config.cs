@@ -42,7 +42,7 @@ namespace MidoriValveTest
                 case "PSI":
                     ob.s_inicial =13.5555;
                     ob.s_final =14.6959;
-                    ob.trackBar2A.Maximum = 146959;
+                    ob.trackBar2A.Maximum = 1469;
                     ob.lbl_T_0.Text = "0";
                     ob.lbl_T_1.Text = "1.6328";
                     ob.lbl_T_2.Text = "3.2656";
@@ -72,7 +72,7 @@ namespace MidoriValveTest
                 case "mbar":
                     ob.s_inicial = 998.22;
                     ob.s_final = 1013.25;
-                    ob.trackBar2A.Maximum = 101325;
+                    ob.trackBar2A.Maximum = 1013;
                     ob.lbl_T_0.Text = "0";
                     ob.lbl_T_1.Text = "112.5833";
                     ob.lbl_T_2.Text = "225.1666";

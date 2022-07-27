@@ -1280,47 +1280,47 @@ namespace MidoriValveTest
             switch (lbl_P_unit_top.Text)
             {
                 case "PSI":
-                    if (presion <= 146959 && presion > 130624)
+                    if (presion <= 1469 && presion > 1306)
                     {
                         s_inicial = 130624 / 10000;
                         s_final = 146959 / 10000;
                     }
-                    else if (presion <= 130624 && presion > 114296)
+                    else if (presion <= 1306 && presion > 1142)
                     {
                         s_inicial = 114296 / 10000;
                         s_final = 130624 / 10000;
                     }
-                    else if (presion <= 114296 && presion > 97968)
+                    else if (presion <= 1142 && presion > 979)
                     {
                         s_inicial = 97968 / 10000;
                         s_final = 114296 / 10000;
                     }
-                    else if (presion <= 97968 && presion > 81640)
+                    else if (presion <= 979 && presion > 816)
                     {
                         s_inicial = 81640 / 10000;
                         s_final = 97968 / 10000;
                     }
-                    else if (presion <= 81640 && presion > 65312)
+                    else if (presion <= 816 && presion > 653)
                     {
                         s_inicial = 65312 / 10000;
                         s_final = 81640 / 10000;
                     }
-                    else if (presion <= 65312 && presion > 48984)
+                    else if (presion <= 653 && presion > 489)
                     {
                         s_inicial = 48984 / 10000;
                         s_final = 65312 / 10000;
                     }
-                    else if (presion <= 48984 && presion > 32656)
+                    else if (presion <= 489 && presion > 326)
                     {
                         s_inicial = 32656 / 10000;
                         s_final = 48954 / 10000;
                     }
-                    else if (presion <= 32656 && presion > 16328)
+                    else if (presion <= 326 && presion > 163)
                     {
                         s_inicial = 16328 / 10000;
                         s_final = 32656 / 10000;
                     }
-                    else if (presion <= 16328 && presion > 0)
+                    else if (presion <= 163 && presion > 0)
                     {
                         s_inicial = 0;
                         s_final = 16328 / 10000;
@@ -1384,49 +1384,49 @@ namespace MidoriValveTest
                     break;
                 case "mbar":
 
-                    presion = presion / 100;
+                    
 
-                    if (presion <= 1013.25 && presion > 900.6664)
+                    if (presion <= 1013 && presion > 900)
                     {
                         s_inicial = 900.6664;
                         s_final = 1013.25;
                     }
-                    else if (presion <= 900.6664 && presion > 788.0831)
+                    else if (presion <= 900 && presion > 788)
                     {
                         s_inicial = 788.0831;
                         s_final = 900.6664;
                     }
-                    else if (presion <= 788.0831 && presion > 675.4998)
+                    else if (presion <= 788 && presion > 675)
                     {
                         s_inicial = 675.4998;
                         s_final = 788.0831;
                     }
-                    else if (presion <= 675.4998 && presion > 562.9165)
+                    else if (presion <= 675 && presion > 562)
                     {
                         s_inicial = 562.9165;
                         s_final = 675.4998;
                     }
-                    else if (presion <= 562.9165 && presion > 450.3332)
+                    else if (presion <= 562 && presion > 450)
                     {
                         s_inicial = 450.3332;
                         s_final = 562.9165;
                     }
-                    else if (presion <= 450.3332 && presion > 337.7499)
+                    else if (presion <= 450 && presion > 337)
                     {
                         s_inicial = 337.7499;
                         s_final = 450.3332;
                     }
-                    else if (presion <= 337.7499 && presion > 225.1666)
+                    else if (presion <= 337 && presion > 225)
                     {
                         s_inicial = 225.1666;
                         s_final = 337.7499;
                     }
-                    else if (presion <= 225.1666 && presion > 112.5833)
+                    else if (presion <= 225 && presion > 112)
                     {
                         s_inicial = 112.5833;
                         s_final = 225.1666;
                     }
-                    else if (presion <= 112.5833 && presion > 0)
+                    else if (presion <= 112 && presion > 0)
                     {
                         s_inicial = 0;
                         s_final = 112.5833;
@@ -2378,19 +2378,19 @@ namespace MidoriValveTest
         private void trackBar2A_Scroll(object sender, EventArgs e)
         {
             EnableBtn(btn_S_pressure);
-            decimal nivel = decimal.Round((trackBar2A.Value), 3);
+            float nivel = trackBar2A.Value;
 
 
             switch (lbl_P_unit_top.Text)
             {
                 case "PSI":
-                    btn_S_pressure.Text = "Set target pressure in " + nivel / 10000;
+                    btn_S_pressure.Text = "Set target pressure in " + nivel / 100;
                     break;
                 case "ATM":
                     btn_S_pressure.Text = "Set target pressure in " + nivel / 1000;
                     break;
                 case "mbar":
-                    btn_S_pressure.Text = "Set target pressure in " + nivel / 100;
+                    btn_S_pressure.Text = "Set target pressure in " + nivel;
                     break;
                 case "Torr":
                     btn_S_pressure.Text = "Set target pressure in " + nivel;
