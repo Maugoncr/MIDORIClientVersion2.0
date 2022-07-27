@@ -388,7 +388,15 @@ namespace MidoriValveTest
             trackBar2A.Enabled = true;
 
             //Maugoncr// Enviamos los grados que deseamos se abra la valvula desde el open gate.
-            precision_aperture = trackBar1.Value;
+            if (trackBar1A.Value != 0)
+            {
+                precision_aperture = trackBar1A.Value;
+            }
+            else
+            {
+                precision_aperture = 90;
+            }
+
             Arduino.Write(precision_aperture.ToString());
             Thread.Sleep(50);
 
