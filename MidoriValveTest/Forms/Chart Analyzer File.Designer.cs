@@ -76,7 +76,7 @@ namespace MidoriValveTest
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(160, 22);
             this.label2.TabIndex = 67;
-            this.label2.Text = "Chart Analyser ";
+            this.label2.Text = "Chart Analyzer ";
             // 
             // panel7
             // 
@@ -295,7 +295,7 @@ namespace MidoriValveTest
             this.Name = "Chart_Analyzer_File";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Chart_Analyzer_File";
+            this.Text = "Chart Analyzer File";
             this.Load += new System.EventHandler(this.Chart_Analyzer_File_Load);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();

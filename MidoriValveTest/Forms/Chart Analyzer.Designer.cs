@@ -250,7 +250,7 @@ namespace MidoriValveTest
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(160, 22);
             this.label2.TabIndex = 50;
-            this.label2.Text = "Chart Analyser ";
+            this.label2.Text = "Chart Analyzer ";
             // 
             // lbl_time
             // 
