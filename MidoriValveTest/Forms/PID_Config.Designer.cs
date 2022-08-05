@@ -133,6 +133,7 @@ namespace MidoriValveTest
             this.BtnBackGround2 = new System.Windows.Forms.Button();
             this.BtnBackGround3 = new System.Windows.Forms.Button();
             this.BtnBackGround4 = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.Slope1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Time1)).BeginInit();
@@ -166,6 +167,7 @@ namespace MidoriValveTest
             ((System.ComponentModel.ISupportInitialize)(this.NumD1)).BeginInit();
             this.GroupR1.SuspendLayout();
             this.GroupS1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -308,7 +310,7 @@ namespace MidoriValveTest
             "Controller 2",
             "Controller 3",
             "Controller 4"});
-            this.Cb_ControlSelector.Location = new System.Drawing.Point(204, 60);
+            this.Cb_ControlSelector.Location = new System.Drawing.Point(115, 39);
             this.Cb_ControlSelector.Name = "Cb_ControlSelector";
             this.Cb_ControlSelector.Size = new System.Drawing.Size(149, 21);
             this.Cb_ControlSelector.TabIndex = 11;
@@ -319,7 +321,7 @@ namespace MidoriValveTest
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(218, 63);
+            this.label2.Location = new System.Drawing.Point(134, 42);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(112, 13);
             this.label2.TabIndex = 10;
@@ -329,8 +331,9 @@ namespace MidoriValveTest
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(12, 11);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(122, 20);
@@ -339,7 +342,7 @@ namespace MidoriValveTest
             // 
             // GroupC1
             // 
-            this.GroupC1.BackColor = System.Drawing.Color.SteelBlue;
+            this.GroupC1.BackColor = System.Drawing.Color.DimGray;
             this.GroupC1.Controls.Add(this.CbAlgo1);
             this.GroupC1.Controls.Add(this.label11);
             this.GroupC1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1407,6 +1410,7 @@ namespace MidoriValveTest
             // 
             // GroupS1
             // 
+            this.GroupS1.BackColor = System.Drawing.Color.DimGray;
             this.GroupS1.Controls.Add(this.NumD1);
             this.GroupS1.Controls.Add(this.label12);
             this.GroupS1.Controls.Add(this.NumI1);
@@ -1472,14 +1476,25 @@ namespace MidoriValveTest
             this.BtnBackGround4.Text = "button1";
             this.BtnBackGround4.UseVisualStyleBackColor = false;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.pictureBox2.Location = new System.Drawing.Point(305, 2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(38, 29);
+            this.pictureBox2.TabIndex = 29;
+            this.pictureBox2.TabStop = false;
+            // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::MidoriValveTest.Properties.Resources.MIDORI_OFICIAL3;
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.pictureBox1.Location = new System.Drawing.Point(303, 5);
+            this.pictureBox1.Location = new System.Drawing.Point(340, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(117, 49);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.Size = new System.Drawing.Size(80, 29);
             this.pictureBox1.TabIndex = 28;
             this.pictureBox1.TabStop = false;
             // 
@@ -1488,8 +1503,9 @@ namespace MidoriValveTest
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BackColor = System.Drawing.Color.SteelBlue;
+            this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(422, 422);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.RamEnable1);
             this.Controls.Add(this.GroupR4);
@@ -1502,7 +1518,6 @@ namespace MidoriValveTest
             this.Controls.Add(this.GroupC2);
             this.Controls.Add(this.GroupS1);
             this.Controls.Add(this.GroupC1);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.GroupC3);
             this.Controls.Add(this.GroupC4);
@@ -1510,6 +1525,7 @@ namespace MidoriValveTest
             this.Controls.Add(this.BtnBackGround2);
             this.Controls.Add(this.BtnBackGround3);
             this.Controls.Add(this.BtnBackGround4);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.Cb_ControlSelector);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -1563,6 +1579,7 @@ namespace MidoriValveTest
             this.GroupR1.PerformLayout();
             this.GroupS1.ResumeLayout(false);
             this.GroupS1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1673,6 +1690,7 @@ namespace MidoriValveTest
         private System.Windows.Forms.Button BtnBackGround2;
         private System.Windows.Forms.Button BtnBackGround3;
         private System.Windows.Forms.Button BtnBackGround4;
+        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

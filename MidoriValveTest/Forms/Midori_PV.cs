@@ -96,7 +96,7 @@ namespace MidoriValveTest
                 EnableBtn(button3);
                 //button3.Enabled = true;
             }
-            lbl_estado.ForeColor = Color.SteelBlue;                                   // Establece color rojo al lbl de estado de posicion de valvula. 
+            lbl_estado.ForeColor = Color.Black;                                   // Establece color rojo al lbl de estado de posicion de valvula. 
             ChartArea CA = chart1.ChartAreas[0];                                //
             CA.CursorX.AutoScroll = true;                                       // Activamos autoescala en la grafica.
                                                                                 // 
@@ -127,7 +127,7 @@ namespace MidoriValveTest
             btn.BackgroundImage.Dispose();
             btn.BackgroundImage = MidoriValveTest.Properties.Resources.btnDisa2;
             btn.Enabled = false;
-            btn.ForeColor = Color.White;
+            btn.ForeColor = Color.Black;
 
         }
 
@@ -135,8 +135,9 @@ namespace MidoriValveTest
         {
 
             btn.BackgroundImage.Dispose();
-            btn.BackgroundImage = MidoriValveTest.Properties.Resources.btnNBlue3;
+            btn.BackgroundImage = MidoriValveTest.Properties.Resources.btnDisa2;
             btn.Enabled = true;
+            btn.ForeColor = Color.Black;
 
         }
 
@@ -194,7 +195,7 @@ namespace MidoriValveTest
             timer_Chart.Stop();
             comboBox1.Enabled = true;
             // hEEEEY
-            DisableBtn(btn_set);
+            EnableBtn(btn_set);
             //btn_set.Enabled = false;
             btn_set.Text = "Set Apperture";
 
@@ -220,7 +221,7 @@ namespace MidoriValveTest
                 picture_plane.Image.Dispose();
                 picture_plane.Image = MidoriValveTest.Properties.Resources._0_GRADOS2;
                 precision_aperture = 0;
-                lbl_estado.ForeColor = Color.SteelBlue;
+                lbl_estado.ForeColor = Color.Red;
                 lbl_estado.Text = "Close";
                 DisableBtn(btn_apagar);
                 DisableBtn(btn_90);
@@ -408,7 +409,7 @@ namespace MidoriValveTest
             picture_plane.Image = MidoriValveTest.Properties.Resources._90_GRADOS;
             //precision_aperture = 90;
 
-            lbl_estado.ForeColor = Color.SteelBlue;
+            lbl_estado.ForeColor = Color.Red;
             lbl_estado.Text = "Open";
             //btn_encender.Enabled = false;
             DisableBtn(btn_encender);
@@ -463,7 +464,7 @@ namespace MidoriValveTest
             picture_plane.Image.Dispose();
             picture_plane.Image = MidoriValveTest.Properties.Resources._0_GRADOS;
             precision_aperture = 0;
-            lbl_estado.ForeColor = Color.SteelBlue;
+            lbl_estado.ForeColor = Color.Red;
             lbl_estado.Text = "Close";
 
             //btn_encender.Enabled = true;
@@ -1272,7 +1273,7 @@ namespace MidoriValveTest
             //btn_set.Enabled = false;
             DisableBtn(btn_set);
 
-            lbl_estado.ForeColor = Color.Green;
+            lbl_estado.ForeColor = Color.Red;
             lbl_estado.Text = "Open";
             Arduino.Write(precision_aperture.ToString());
 
@@ -1939,7 +1940,7 @@ namespace MidoriValveTest
             if (btn.Enabled == true)
             {
                 btn.BackgroundImage.Dispose();
-                btn.BackgroundImage = MidoriValveTest.Properties.Resources.btnNBlue2;
+                btn.BackgroundImage = MidoriValveTest.Properties.Resources.btnNblue;
 
             }
 
@@ -1949,7 +1950,7 @@ namespace MidoriValveTest
             if (btn.Enabled == true)
             {
                 btn.BackgroundImage.Dispose();
-                btn.BackgroundImage = MidoriValveTest.Properties.Resources.btnNBlue3;
+                btn.BackgroundImage = MidoriValveTest.Properties.Resources.btnDisa2;
             }
             else
             {
@@ -2406,6 +2407,39 @@ namespace MidoriValveTest
             }
         }
 
-        
+        private void groupBox8_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_BackColorChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_MouseClick(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void lbl_estado_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label19_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

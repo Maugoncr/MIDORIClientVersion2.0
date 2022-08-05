@@ -62,7 +62,7 @@ namespace MidoriValveTest
             // chart1
             // 
             this.chart1.AllowDrop = true;
-            this.chart1.BackColor = System.Drawing.Color.Silver;
+            this.chart1.BackColor = System.Drawing.Color.DarkGray;
             this.chart1.BackImageTransparentColor = System.Drawing.Color.Transparent;
             this.chart1.BorderlineColor = System.Drawing.Color.Transparent;
             this.chart1.BorderSkin.BackColor = System.Drawing.Color.Black;
@@ -117,7 +117,7 @@ namespace MidoriValveTest
             // label33
             // 
             this.label33.AutoSize = true;
-            this.label33.BackColor = System.Drawing.Color.Silver;
+            this.label33.BackColor = System.Drawing.Color.DarkGray;
             this.label33.Location = new System.Drawing.Point(1254, 336);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(30, 13);
@@ -127,7 +127,7 @@ namespace MidoriValveTest
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.BackColor = System.Drawing.Color.Silver;
+            this.label32.BackColor = System.Drawing.Color.DarkGray;
             this.label32.Location = new System.Drawing.Point(26, 333);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(46, 13);
@@ -137,7 +137,7 @@ namespace MidoriValveTest
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.BackColor = System.Drawing.Color.Silver;
+            this.label31.BackColor = System.Drawing.Color.DarkGray;
             this.label31.Location = new System.Drawing.Point(1230, 317);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(77, 13);
@@ -147,7 +147,7 @@ namespace MidoriValveTest
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.BackColor = System.Drawing.Color.Silver;
+            this.label30.BackColor = System.Drawing.Color.DarkGray;
             this.label30.Location = new System.Drawing.Point(24, 317);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(50, 13);
@@ -205,7 +205,7 @@ namespace MidoriValveTest
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.BackColor = System.Drawing.Color.Silver;
+            this.label28.BackColor = System.Drawing.Color.DarkGray;
             this.label28.Location = new System.Drawing.Point(500, 653);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(44, 13);
@@ -264,13 +264,13 @@ namespace MidoriValveTest
             // 
             // btn_save
             // 
-            this.btn_save.BackColor = System.Drawing.Color.Transparent;
-            this.btn_save.BackgroundImage = global::MidoriValveTest.Properties.Resources.btnNBlue3;
+            this.btn_save.BackColor = System.Drawing.Color.DarkGray;
+            this.btn_save.BackgroundImage = global::MidoriValveTest.Properties.Resources.btnDisa2;
             this.btn_save.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_save.FlatAppearance.BorderSize = 0;
             this.btn_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_save.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_save.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btn_save.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_save.Location = new System.Drawing.Point(1294, 621);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(142, 45);
