@@ -71,5 +71,10 @@ namespace MidoriValveTest
         {
 
         }
+
+        private void pictureBox2_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

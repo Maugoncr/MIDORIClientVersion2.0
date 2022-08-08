@@ -2441,5 +2441,10 @@ namespace MidoriValveTest
         {
 
         }
+
+        private void trackBar1A_ValueChanged(object sender, decimal value)
+        {
+
+        }
     }
 }
