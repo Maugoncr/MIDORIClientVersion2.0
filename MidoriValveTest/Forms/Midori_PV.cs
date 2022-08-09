@@ -384,25 +384,19 @@ namespace MidoriValveTest
             else
             {
                 precision_aperture = 90;
+                picture_frontal.Image.Dispose();
+                picture_frontal.Image = MidoriValveTest.Properties.Resources.Front90;
+                picture_plane.Image.Dispose();
+                picture_plane.Image = MidoriValveTest.Properties.Resources.Verti90B;
             }
 
             Arduino.Write(precision_aperture.ToString());
             Thread.Sleep(50);
 
             Current_aperture.Text =  precision_aperture + "°";
-
-            picture_frontal.Image.Dispose();
-            picture_frontal.Image = MidoriValveTest.Properties.Resources.Front90;
-            picture_plane.Image.Dispose();
-            picture_plane.Image = MidoriValveTest.Properties.Resources.Verti90B;
-            //precision_aperture = 90;
-
             lbl_estado.ForeColor = Color.Red;
             lbl_estado.Text = "Open";
-            //btn_encender.Enabled = false;
             DisableBtn(btn_encender);
-
-           // btn_apagar.Enabled = true;
             EnableBtn(btn_apagar);
 
             EnableBtn(btn_90);
