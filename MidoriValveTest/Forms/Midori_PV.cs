@@ -208,18 +208,17 @@ namespace MidoriValveTest
                 Thread.Sleep(2000);
             }
 
-            if (lbl_estado.Text == "Open")
-            {
-
+                btn_S_pressure.Text = "Set Target Pressure";
                 trackBar1A.Enabled = false;
                 trackBar2A.Enabled = false;
                 trackBar1A.Value = 0;
+                trackBar2A.Value = 0;
                 precision_aperture = 0;
                 Current_aperture.Text =  precision_aperture + "°";
                 picture_frontal.Image.Dispose();
-                picture_frontal.Image = MidoriValveTest.Properties.Resources._0_2;
+                picture_frontal.Image = MidoriValveTest.Properties.Resources.Front0;
                 picture_plane.Image.Dispose();
-                picture_plane.Image = MidoriValveTest.Properties.Resources._0_GRADOS2;
+                picture_plane.Image = MidoriValveTest.Properties.Resources.Verti0B;
                 precision_aperture = 0;
                 lbl_estado.ForeColor = Color.Red;
                 lbl_estado.Text = "Close";
@@ -234,9 +233,8 @@ namespace MidoriValveTest
                 DisableBtn(btn_20);
                 DisableBtn(btn_10);
                 DisableBtn(btn_0);
-                
-               
-            }
+                    
+            
 
             if (DateStartedTest.Text != "-/-/-")
             {
@@ -256,16 +254,6 @@ namespace MidoriValveTest
 
             }
 
-            DisableBtn(btn_90);
-            DisableBtn(btn_80);
-            DisableBtn(btn_70);
-            DisableBtn(btn_60);
-            DisableBtn(btn_50);
-            DisableBtn(btn_40);
-            DisableBtn(btn_30);
-            DisableBtn(btn_20);
-            DisableBtn(btn_10);
-            DisableBtn(btn_0);
             //Maugoncr// Turn off the led and the same for labels, disable the button of Open Gate
             com_led.Image.Dispose();
             com_led.Image = MidoriValveTest.Properties.Resources.led_off;
@@ -406,7 +394,7 @@ namespace MidoriValveTest
             picture_frontal.Image.Dispose();
             picture_frontal.Image = MidoriValveTest.Properties.Resources.Front90;
             picture_plane.Image.Dispose();
-            picture_plane.Image = MidoriValveTest.Properties.Resources._90_GRADOS;
+            picture_plane.Image = MidoriValveTest.Properties.Resources.Verti90B;
             //precision_aperture = 90;
 
             lbl_estado.ForeColor = Color.Red;
@@ -455,36 +443,21 @@ namespace MidoriValveTest
             //}
             //trackBar1.Enabled = false;
             trackBar2A.Enabled = false;
-
+            trackBar2A.Value = 0;
             trackBar1A.Value = 0;
             precision_aperture = 0;
             Current_aperture.Text =  precision_aperture + "°";
             picture_frontal.Image.Dispose();
             picture_frontal.Image = MidoriValveTest.Properties.Resources.Front0;
             picture_plane.Image.Dispose();
-            picture_plane.Image = MidoriValveTest.Properties.Resources._0_GRADOS;
+            picture_plane.Image = MidoriValveTest.Properties.Resources.Verti0B;
             precision_aperture = 0;
             lbl_estado.ForeColor = Color.Red;
             lbl_estado.Text = "Close";
-
-            //btn_encender.Enabled = true;
+            btn_S_pressure.Text = "Set Target Pressure";
+            btn_set.Text = "Set Apperture";
             EnableBtn(btn_encender);
-            
-            //btn_apagar.Enabled = false;
             DisableBtn(btn_apagar);   
-
-            //btn_90.Enabled = false;
-            //btn_80.Enabled = false;
-            //btn_70.Enabled = false;
-            //btn_60.Enabled = false;
-            //btn_50.Enabled = false;
-            //btn_40.Enabled = false;
-            //btn_30.Enabled = false;
-            //btn_20.Enabled = false;
-            //btn_10.Enabled = false;
-            //btn_0.Enabled = false;
-
-            //btn_set.Enabled=false;
             DisableBtn(btn_set);
 
         }
@@ -511,7 +484,7 @@ namespace MidoriValveTest
             picture_frontal.Image.Dispose();
             picture_plane.Image.Dispose();
             picture_frontal.Image = MidoriValveTest.Properties.Resources.Front0;
-            picture_plane.Image = MidoriValveTest.Properties.Resources._0_GRADOS2;
+            picture_plane.Image = MidoriValveTest.Properties.Resources.Verti0B;
             base_value = 0;
             trackBar1A.Value = 0;
            // precision_aperture = 0;
@@ -533,7 +506,7 @@ namespace MidoriValveTest
             picture_frontal.Image.Dispose();
             picture_plane.Image.Dispose();
             picture_frontal.Image = MidoriValveTest.Properties.Resources.Front10;
-            picture_plane.Image = MidoriValveTest.Properties.Resources._10_GRADOS;
+            picture_plane.Image = MidoriValveTest.Properties.Resources.Verti10B;
             base_value = 10;
             trackBar1A.Value = 10;
            // precision_aperture = 10;
@@ -554,7 +527,7 @@ namespace MidoriValveTest
             picture_frontal.Image.Dispose();
             picture_plane.Image.Dispose();
             picture_frontal.Image = MidoriValveTest.Properties.Resources.Front20;
-            picture_plane.Image = MidoriValveTest.Properties.Resources._20_GRADOS;
+            picture_plane.Image = MidoriValveTest.Properties.Resources.Verti20B;
             base_value = 20;
             trackBar1A.Value = 20;
            // precision_aperture = 20;
@@ -576,7 +549,7 @@ namespace MidoriValveTest
             picture_frontal.Image.Dispose();
             picture_plane.Image.Dispose();
             picture_frontal.Image = MidoriValveTest.Properties.Resources.Front30;
-            picture_plane.Image = MidoriValveTest.Properties.Resources._30_GRADOS;
+            picture_plane.Image = MidoriValveTest.Properties.Resources.Verti30B;
             base_value = 30;
             trackBar1A.Value = 30;
             //precision_aperture = 30;
@@ -598,7 +571,7 @@ namespace MidoriValveTest
             picture_frontal.Image.Dispose();
             picture_plane.Image.Dispose();
             picture_frontal.Image = MidoriValveTest.Properties.Resources.Front40;
-            picture_plane.Image = MidoriValveTest.Properties.Resources._40_GRADOS;
+            picture_plane.Image = MidoriValveTest.Properties.Resources.Verti40B;
             base_value = 40;
             trackBar1A.Value = 40;
             //precision_aperture = 40;
@@ -619,7 +592,7 @@ namespace MidoriValveTest
             picture_frontal.Image.Dispose();
             picture_plane.Image.Dispose();
             picture_frontal.Image = MidoriValveTest.Properties.Resources.Front50;
-            picture_plane.Image = MidoriValveTest.Properties.Resources._50_GRADOS;
+            picture_plane.Image = MidoriValveTest.Properties.Resources.Verti50B;
             base_value = 50;
             trackBar1A.Value = 50;
             //precision_aperture = 50;
@@ -641,7 +614,7 @@ namespace MidoriValveTest
             picture_frontal.Image.Dispose();
             picture_plane.Image.Dispose();
             picture_frontal.Image = MidoriValveTest.Properties.Resources.Front60;
-            picture_plane.Image = MidoriValveTest.Properties.Resources._60_GRADOS;
+            picture_plane.Image = MidoriValveTest.Properties.Resources.Verti60B;
             base_value = 60;
             trackBar1A.Value = 60;
             //precision_aperture = 60;
@@ -663,7 +636,7 @@ namespace MidoriValveTest
             picture_frontal.Image.Dispose();
             picture_plane.Image.Dispose();
             picture_frontal.Image = MidoriValveTest.Properties.Resources.Front70;
-            picture_plane.Image = MidoriValveTest.Properties.Resources._70_GRADOS;
+            picture_plane.Image = MidoriValveTest.Properties.Resources.Verti70B;
             base_value = 70;
             trackBar1A.Value = 70;
             //precision_aperture = 70;
@@ -685,7 +658,7 @@ namespace MidoriValveTest
             picture_frontal.Image.Dispose();
             picture_plane.Image.Dispose();
             picture_frontal.Image = MidoriValveTest.Properties.Resources.Front80;
-            picture_plane.Image = MidoriValveTest.Properties.Resources._80_GRADOS;
+            picture_plane.Image = MidoriValveTest.Properties.Resources.Verti80B;
             base_value = 80;
             trackBar1A.Value = 80;
             //precision_aperture = 80;
@@ -707,7 +680,7 @@ namespace MidoriValveTest
             picture_frontal.Image.Dispose();
             picture_plane.Image.Dispose();
             picture_frontal.Image = MidoriValveTest.Properties.Resources.Front90;
-            picture_plane.Image = MidoriValveTest.Properties.Resources._90_GRADOS;
+            picture_plane.Image = MidoriValveTest.Properties.Resources.Verti90B;
             base_value = 90;
             trackBar1A.Value = 90;
             //precision_aperture = 90;
@@ -1831,22 +1804,21 @@ namespace MidoriValveTest
                 Thread.Sleep(2000);
             }
 
-            if (lbl_estado.Text == "Open")
-            {
-
+          
+                btn_S_pressure.Text = "Set Target Pressure";
                 trackBar1A.Enabled = false;
                 trackBar2A.Enabled = false;
                 trackBar1A.Value = 0;
+                trackBar2A.Value = 0;
                 precision_aperture = 0;
-                Current_aperture.Text =  precision_aperture + "°";
+                Current_aperture.Text = precision_aperture + "°";
                 picture_frontal.Image.Dispose();
-                picture_frontal.Image = MidoriValveTest.Properties.Resources._0_2;
+                picture_frontal.Image = MidoriValveTest.Properties.Resources.Front0;
                 picture_plane.Image.Dispose();
-                picture_plane.Image = MidoriValveTest.Properties.Resources._0_GRADOS2;
+                picture_plane.Image = MidoriValveTest.Properties.Resources.Verti0B;
                 precision_aperture = 0;
                 lbl_estado.ForeColor = Color.Red;
                 lbl_estado.Text = "Close";
-
                 DisableBtn(btn_apagar);
                 DisableBtn(btn_90);
                 DisableBtn(btn_80);
@@ -1860,7 +1832,7 @@ namespace MidoriValveTest
                 DisableBtn(btn_0);
 
 
-            }
+            
 
             if (DateStartedTest.Text != "-/-/-")
             {
@@ -1877,26 +1849,13 @@ namespace MidoriValveTest
                 lb_CounterTest.Text = "0";
             }
 
-            DisableBtn(btn_90);
-            DisableBtn(btn_80);
-            DisableBtn(btn_70);
-            DisableBtn(btn_60);
-            DisableBtn(btn_50);
-            DisableBtn(btn_40);
-            DisableBtn(btn_30);
-            DisableBtn(btn_20);
-            DisableBtn(btn_10);
-            DisableBtn(btn_0);
-
             //Maugoncr// Turn off the led and the same for labels, disable the button of Open Gate
             com_led.Image.Dispose();
             com_led.Image = MidoriValveTest.Properties.Resources.led_on_red;
             LblEstado.Text = "Disconnected *";
             lblPuerto.Text = "Disconnected *";
-            //btn_encender.Enabled = false;
             DisableBtn(btn_encender);
             lbl_pressure.Text = " 0 ";
-            //btn_valveTest.Enabled = false;
             DisableBtn(btn_valveTest);
 
         }
@@ -1941,7 +1900,7 @@ namespace MidoriValveTest
             {
                 btn.BackgroundImage.Dispose();
                 btn.BackgroundImage = MidoriValveTest.Properties.Resources.btnNblue;
-
+                btn.ForeColor = Color.White;
             }
 
         }
@@ -1951,11 +1910,13 @@ namespace MidoriValveTest
             {
                 btn.BackgroundImage.Dispose();
                 btn.BackgroundImage = MidoriValveTest.Properties.Resources.btnDisa2;
+                btn.ForeColor = Color.Black;
             }
             else
             {
                 btn.BackgroundImage.Dispose();
                 btn.BackgroundImage = MidoriValveTest.Properties.Resources.btnDisa2;
+                btn.ForeColor = Color.Black;
             }
         }
 

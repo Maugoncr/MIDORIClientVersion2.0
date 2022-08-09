@@ -139,6 +139,12 @@
   <data name="menu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\menu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Verti10" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Verti10.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Verti60" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Verti60.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="led_on_red" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\led_on_red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -163,6 +169,9 @@
   <data name="0 GRADOS" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\0 GRADOS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="btnNblue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnNblue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="btnDisa" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnDisa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -171,6 +180,9 @@
   </data>
   <data name="btnPress" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnPress.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Verti90" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Verti90.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="40 GRADOS1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\40 GRADOS1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -190,8 +202,8 @@
   <data name="10_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\10_21.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="40_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\40_21.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Verti30" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Verti30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="led_off_yellow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\led_off_yellow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -199,14 +211,17 @@
   <data name="signal4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\signal4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Verti80" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Verti80.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="70 GRADOS2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\70 GRADOS2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="MIDORI OFICIAL3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MIDORI OFICIAL3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="50" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Front20" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Front20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="60" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\60.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -241,9 +256,6 @@
   <data name="90 GRADOS1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\90 GRADOS1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="20" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="image" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -256,8 +268,8 @@
   <data name="30 GRADOS2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\30 GRADOS2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="E401" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\E401.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Verti20" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Verti20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="60 GRADOS" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\60 GRADOS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -274,8 +286,8 @@
   <data name="50 GRADOS" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\50 GRADOS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Front20" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Front20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="40_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\40_21.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="E402" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\E402.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -298,6 +310,9 @@
   <data name="led_on" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\led_on.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Verti50" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Verti50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Front30" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Front30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -310,6 +325,9 @@
   <data name="10 GRADOS1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\10 GRADOS1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="50" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="MIDORI OFICIAL2 ORANGE" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MIDORI OFICIAL2 ORANGE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -319,17 +337,23 @@
   <data name="90" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\90.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Verti0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Verti0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="40 GRADOS2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\40 GRADOS2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="led_on_yellow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\led_on_yellow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Verti40" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Verti40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="10" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\10.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="led_off_green" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\led_off_green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="20" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Front80" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Front80.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -346,11 +370,17 @@
   <data name="60 GRADOS2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\60 GRADOS2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="btnNBlue3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnNBlue3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="signal3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\signal3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="60 GRADOS1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\60 GRADOS1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="E401" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\E401.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Front90" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Front90.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -391,6 +421,9 @@
   <data name="30 GRADOS1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\30 GRADOS1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Verti70" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Verti70.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="btnNor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnNor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -403,8 +436,8 @@
   <data name="50 GRADOS1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\50 GRADOS1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="btnNblue" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnNblue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="led_off_green" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\led_off_green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="90 GRADOS" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\90 GRADOS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -415,7 +448,34 @@
   <data name="80 GRADOS" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\80 GRADOS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="btnNBlue3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnNBlue3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Verti0B" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Verti0B.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Verti10B" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Verti10B.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Verti20B" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Verti20B.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Verti30B" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Verti30B.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Verti40B" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Verti40B.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Verti50B" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Verti50B.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Verti60B" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Verti60B.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Verti70B" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Verti70B.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Verti80B" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Verti80B.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Verti90B" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Verti90B.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -422,6 +422,26 @@
     <None Include="Resources\90 GRADOS.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Verti90B.png" />
+    <None Include="Resources\Verti80B.png" />
+    <None Include="Resources\Verti70B.png" />
+    <None Include="Resources\Verti60B.png" />
+    <None Include="Resources\Verti50B.png" />
+    <None Include="Resources\Verti40B.png" />
+    <None Include="Resources\Verti30B.png" />
+    <None Include="Resources\Verti20B.png" />
+    <None Include="Resources\Verti10B.png" />
+    <None Include="Resources\Verti0B.png" />
+    <None Include="Resources\Verti90.png" />
+    <None Include="Resources\Verti80.png" />
+    <None Include="Resources\Verti70.png" />
+    <None Include="Resources\Verti60.png" />
+    <None Include="Resources\Verti50.png" />
+    <None Include="Resources\Verti40.png" />
+    <None Include="Resources\Verti30.png" />
+    <None Include="Resources\Verti20.png" />
+    <None Include="Resources\Verti10.png" />
+    <None Include="Resources\Verti0.png" />
     <None Include="Resources\MIDORI OFICIAL3.png" />
     <None Include="Resources\MIDORI OFICIAL2 ORANGE.png" />
     <None Include="Resources\signal5.png" />
