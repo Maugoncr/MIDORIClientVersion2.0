@@ -332,10 +332,10 @@ namespace MidoriValveTest
 
 
                 Arduino.PortName = COMM;
-                Arduino.BaudRate = 9600;  //se estima para test existen distintas datos 115 200  POSIBLE INCOMPATIBILIDAD POR ESTE DATO
+                Arduino.BaudRate = 115200;  //se estima para test existen distintas datos 115 200  POSIBLE INCOMPATIBILIDAD POR ESTE DATO
                 Arduino.DtrEnable = true;
                 Arduino.RtsEnable = true;
-                Arduino.ReadTimeout = 500;
+                //Arduino.ReadTimeout = 500;
                 Arduino.Parity = System.IO.Ports.Parity.None;
                 Arduino.DataBits = 8;
                 Arduino.StopBits = System.IO.Ports.StopBits.One;
@@ -822,7 +822,53 @@ namespace MidoriValveTest
 
         public double s_inicial =13.5555;
         public double s_final =14.6959;
+        private string ObtenerData(string full, int opcion)
+        {
 
+            string test = full;
+            test.Trim();
+            bool firtIn = false;
+            bool secondIn = false;
+            string Temp = "";
+            string Pressure = "";
+            for (int i = 0; i < test.Length; i++)
+            {
+                if (test.Substring(i, 1).Equals("$"))
+                {
+                    break;
+                }
+                if (secondIn == true)
+                {
+                    Pressure += test.Substring(i, 1);
+                }
+                if (test.Substring(i, 1).Equals(","))
+                {
+                    firtIn = false;
+                    secondIn = true;
+                }
+                if (firtIn == true)
+                {
+                    Temp += test.Substring(i, 1);
+                }
+                if (test.Substring(i, 1).Equals("S"))
+                {
+                    firtIn = true;
+                }
+            }
+            Temp.Replace("S", "");
+            Pressure.Replace("$", "");
+
+            if (opcion == 1)
+            {
+                return Temp;
+            }
+            else
+            {
+                return Pressure;
+            }
+
+
+        }
         //Maugoncr// Aqui es donde se algoritman las lineas de manera random 
         private void timer_Chart_Tick(object sender, EventArgs e)
         {
@@ -834,37 +880,40 @@ namespace MidoriValveTest
             double rd = _random.NextDouble() * (s_final - s_inicial) + s_inicial;
             n = DateTime.Now;
 
-            if (lbl_estado.Text == "Open")
+            //if (lbl_estado.Text == "Open")
+            //{
+
+            try
             {
-                //if (Arduino != null && Arduino.IsOpen)
-                //{
-                    //string hola = Arduino.ReadLine();
-                    //hola = hola.Replace("$", "");
-                    //hola = hola.Replace("s", "");
-                    //chart1.Series["Aperture value"].Points.AddXY(t.ToString(), precision_aperture.ToString());
-                    //chart1.Series["Pressure"].Points.AddXY(t.ToString(), hola.ToString());
-                    //lbl_pressure.Text = hola.ToString();
-                    //chart1.ChartAreas[0].RecalculateAxesScale();
-                //}
-                //else
-               // {
+                if (Arduino != null && Arduino.IsOpen)
+                {
+                   
+                    string test = Arduino.ReadLine();
+
                     chart1.Series["Aperture value"].Points.AddXY(t.ToString(), precision_aperture.ToString());
-                    chart1.Series["Pressure"].Points.AddXY(t.ToString(), rd.ToString());
-                    decimal rr = Convert.ToDecimal(rd);
-                    pressure_get = decimal.Round(rr, 3);
-                    lbl_pressure.Text = pressure_get.ToString();
+                    chart1.Series["Pressure"].Points.AddXY(t.ToString(), ObtenerData(test, 2).ToString());
+                    lbl_pressure.Text = ObtenerData(test, 2);
+                    lb_Temperature.Text = ObtenerData(test, 1);
                     chart1.ChartAreas[0].RecalculateAxesScale();
-                //}
+                }
+                
+                else
+                {
+                    chart1.Series["Aperture value"].Points.AddXY(t.ToString(), precision_aperture.ToString());
+                    chart1.Series["Pressure"].Points.AddXY(t.ToString(), 8.ToString());
+                    lbl_pressure.Text = "8";
+                    chart1.ChartAreas[0].RecalculateAxesScale();
+
+                }
             }
-            else
+            catch (Exception)
             {
 
-                chart1.Series["Aperture value"].Points.AddXY(t.ToString(), precision_aperture.ToString());
-                chart1.Series["Pressure"].Points.AddXY(t.ToString(), 8.ToString());
-                lbl_pressure.Text = "8";
-                chart1.ChartAreas[0].RecalculateAxesScale();
-
+                throw;
             }
+           
+
+           
 
             if (chart1.Series["Aperture value"].Points.Count == 349)
             {
