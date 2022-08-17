@@ -19,6 +19,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
 
+
 namespace MidoriValveTest
 {
 
@@ -87,10 +88,14 @@ namespace MidoriValveTest
             string[] ports = SerialPort.GetPortNames();                         // En este arreglo se almacena todos los puertos seriales "COM" registados por la computadora.
             comboBox1.Items.AddRange(ports);                                    // Volcamos el contenido de este arreglo dentro del COMBOBOX de seleccion de puerto
 
-            timer1.Enabled = true;
+           timer1.Enabled = true;
+            
+            string fecha = DateTime.Now.ToString("dddd, MM/dd/yyyy");
+            lblhora.Text = DateTime.Now.ToString("hh:mm tt");
+            lblfecha.Text = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(fecha);
             //TimerForData.Enabled = true;
 
-            if(ports.Length>0)                                                  // Determina existencia de puertos, y seleccionamos el primero de ellos.
+            if (ports.Length>0)                                                  // Determina existencia de puertos, y seleccionamos el primero de ellos.
             {
                 comboBox1.SelectedIndex = 0;
                 EnableBtn(button3);
@@ -266,6 +271,39 @@ namespace MidoriValveTest
             DisableBtn(btn_valveTest);
 
         }
+        // Hilo que ayudara con la lectura rapida
+
+        private Thread hiloSecundario;
+
+        //Bandera
+        static public bool flagR = true;
+
+        // metodo de lectura rapida
+
+        private void RefrescarLectura() {
+            try
+            {
+                if (Arduino.IsOpen)
+                {
+                    while (flagR)
+                    {
+                        //Task.Delay(10);
+
+                        Arduino.ReadLine();
+                    }
+
+                }
+            }
+            catch (Exception)
+            {
+
+                
+            }
+           
+        }
+
+
+
 
         // Accion en boton "CONNECT" en la seccion "COM SELECT" 
         private void button3_Click(object sender, EventArgs e)
@@ -274,6 +312,11 @@ namespace MidoriValveTest
             {
                 if (reconocer_arduino(comboBox1.SelectedItem.ToString()))// Funcion para establecer conexion COM con la valvula. 
                 {
+
+                    //Iniciamos el hilo secundario infinito...
+
+                    
+
                     timer_Chart.Start();
                     com_led.Image.Dispose();
                     com_led.Image = MidoriValveTest.Properties.Resources.led_on_green;
@@ -307,8 +350,10 @@ namespace MidoriValveTest
                     EnableBtn(btn_20);
                     EnableBtn(btn_10);
                     EnableBtn(btn_0);
-                    
 
+                    ThreadStart delegadoPS = new ThreadStart(RefrescarLectura);
+                    hiloSecundario = new Thread(delegadoPS);
+                    hiloSecundario.Start();
 
                 }              
                 
@@ -341,7 +386,7 @@ namespace MidoriValveTest
                 Arduino.StopBits = System.IO.Ports.StopBits.One;
 
                 Arduino.Open();
-                Thread.Sleep(4000);
+               // Thread.Sleep(4000);
 
                 LblEstado.Text = "Connected";
                 lblPuerto.Text = COMM;
@@ -864,6 +909,48 @@ namespace MidoriValveTest
             }
             else
             {
+                // Siempre me llega en TOR so
+                if (lbl_P_unit_top.Text == "PSI")
+                {
+                    if (Pressure != "")
+                    {
+                        double presionPSI =Math.Round( Convert.ToDouble(Pressure) / 51.715, 4);
+                     
+
+                        return presionPSI.ToString();
+                    }
+                    return "0";
+                }
+                else if (lbl_P_unit_top.Text == "ATM")
+                {
+                    if (Pressure != "")
+                    {
+                        double presionATM = Math.Round(Convert.ToDouble(Pressure) / 760, 4);
+
+
+                        return presionATM.ToString();
+                    }
+                    return "0";
+                }
+                else if (lbl_P_unit_top.Text == "mbar")
+                {
+                    if (Pressure != "")
+                    {
+                        double presionMBAR = Math.Round(Convert.ToDouble(Pressure) * 1.33322, 4);
+
+
+                        return presionMBAR.ToString();
+                    }
+                    return "0";
+                }
+                else if (lbl_P_unit_top.Text == "Torr")
+                {
+                    return Pressure;
+                }
+
+                /// creado un hilo --> metodo crea hilo secundario parametro (texto) hay delegados 
+
+
                 return Pressure;
             }
 
@@ -872,7 +959,10 @@ namespace MidoriValveTest
         //Maugoncr// Aqui es donde se algoritman las lineas de manera random 
         private void timer_Chart_Tick(object sender, EventArgs e)
         {
-            tiempo = tiempo + 40;
+            string fecha = DateTime.Now.ToString("dddd, MM/dd/yyyy");
+            lblhora.Text = DateTime.Now.ToString("hh:mm:ss tt");
+            lblfecha.Text = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(fecha);
+            tiempo = tiempo + 100;
             double t = tiempo / 1000;
             final = t;
             //MAUGONCR// En esta variable double se define la presion de manera ramdon con parametros maximos dentro de s_final y s_inicial
@@ -890,11 +980,22 @@ namespace MidoriValveTest
                    
                     string test = Arduino.ReadLine();
 
-                    chart1.Series["Aperture value"].Points.AddXY(t.ToString(), precision_aperture.ToString());
-                    chart1.Series["Pressure"].Points.AddXY(t.ToString(), ObtenerData(test, 2).ToString());
-                    lbl_pressure.Text = ObtenerData(test, 2);
-                    lb_Temperature.Text = ObtenerData(test, 1);
-                    chart1.ChartAreas[0].RecalculateAxesScale();
+                    if (!test.Equals(null))
+                    {
+                        chart1.Series["Aperture value"].Points.AddXY(t.ToString(), precision_aperture.ToString());
+                        chart1.Series["Pressure"].Points.AddXY(t.ToString(), ObtenerData(test, 2).ToString());
+                        lbl_pressure.Text = ObtenerData(test, 2);
+                        lb_Temperature.Text = ObtenerData(test, 1) + " °C";
+                        chart1.ChartAreas[0].RecalculateAxesScale();
+                    }
+                    else {
+
+                        MessageBox.Show("No se recibe datos");
+                    
+                    
+                    }
+
+                    
                 }
                 
                 else
@@ -909,7 +1010,7 @@ namespace MidoriValveTest
             catch (Exception)
             {
 
-                throw;
+                //throw;
             }
            
 
@@ -1531,7 +1632,7 @@ namespace MidoriValveTest
         private void timer1_Tick(object sender, EventArgs e)
         {
             string fecha = DateTime.Now.ToString("dddd, MM/dd/yyyy");
-            lblhora.Text = DateTime.Now.ToString("hh:mm:ss tt");
+            lblhora.Text = DateTime.Now.ToString("hh:mm tt");
             lblfecha.Text = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(fecha);
         }
 

@@ -519,7 +519,7 @@ namespace MidoriValveTest
             this.lb_Temperature.Name = "lb_Temperature";
             this.lb_Temperature.Size = new System.Drawing.Size(85, 33);
             this.lb_Temperature.TabIndex = 57;
-            this.lb_Temperature.Text = " 0° C";
+            this.lb_Temperature.Text = " 0 °C";
             // 
             // pictureBox6
             // 
@@ -1264,7 +1264,6 @@ namespace MidoriValveTest
             this.btn_P_conf.BackColor = System.Drawing.Color.Gainsboro;
             this.btn_P_conf.BackgroundImage = global::MidoriValveTest.Properties.Resources._568239;
             this.btn_P_conf.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_P_conf.Enabled = false;
             this.btn_P_conf.FlatAppearance.BorderSize = 0;
             this.btn_P_conf.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_P_conf.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -1901,7 +1900,6 @@ namespace MidoriValveTest
             // 
             // timer_Chart
             // 
-            this.timer_Chart.Interval = 40;
             this.timer_Chart.Tick += new System.EventHandler(this.timer_Chart_Tick);
             // 
             // LateralNav
@@ -1985,6 +1983,7 @@ namespace MidoriValveTest
             // 
             // timer1
             // 
+            this.timer1.Interval = 60000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // lblfecha
@@ -2318,7 +2317,7 @@ namespace MidoriValveTest
             // 
             // TimerForData
             // 
-            this.TimerForData.Interval = 5000;
+            this.TimerForData.Interval = 1;
             this.TimerForData.Tick += new System.EventHandler(this.TimerForData_Tick);
             // 
             // groupBox5
