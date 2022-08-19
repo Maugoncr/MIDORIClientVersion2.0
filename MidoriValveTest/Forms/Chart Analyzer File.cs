@@ -42,7 +42,7 @@ namespace MidoriValveTest
                    // MessageBox.Show(i.ToString() + "   " + times[i] + "    " + apertures[i] + "   " + pressures[i]);
                 }
             }
-            catch (Exception ex)
+            catch (Exception )
             {
 
             }

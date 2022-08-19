@@ -184,10 +184,12 @@ namespace MidoriValveTest
             this.iconTerminal = new FontAwesome.Sharp.IconButton();
             this.panel9 = new System.Windows.Forms.Panel();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.TimerForData = new System.Windows.Forms.Timer(this.components);
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.picture_frontal = new System.Windows.Forms.PictureBox();
             this.picture_plane = new System.Windows.Forms.PictureBox();
+            this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
+            this.timerForData = new System.Windows.Forms.Timer(this.components);
+            this.lbl_Test = new System.Windows.Forms.Label();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -1006,7 +1008,6 @@ namespace MidoriValveTest
             this.pictureBox7.Size = new System.Drawing.Size(222, 112);
             this.pictureBox7.TabIndex = 62;
             this.pictureBox7.TabStop = false;
-            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
             // 
             // label7
             // 
@@ -1029,7 +1030,6 @@ namespace MidoriValveTest
             this.lbl_estado.Size = new System.Drawing.Size(54, 25);
             this.lbl_estado.TabIndex = 20;
             this.lbl_estado.Text = "OFF";
-            this.lbl_estado.Click += new System.EventHandler(this.lbl_estado_Click);
             // 
             // groupBox1
             // 
@@ -1182,9 +1182,7 @@ namespace MidoriValveTest
             this.button3.TabIndex = 18;
             this.button3.Text = "Connect";
             this.button3.UseVisualStyleBackColor = false;
-            this.button3.BackColorChanged += new System.EventHandler(this.button3_BackColorChanged);
             this.button3.Click += new System.EventHandler(this.button3_Click);
-            this.button3.MouseClick += new System.Windows.Forms.MouseEventHandler(this.button3_MouseClick);
             this.button3.MouseEnter += new System.EventHandler(this.button3_MouseEnter);
             this.button3.MouseLeave += new System.EventHandler(this.button3_MouseLeave);
             // 
@@ -1489,7 +1487,6 @@ namespace MidoriValveTest
             this.trackBar1A.TrackLineHeight = 3;
             this.trackBar1A.TrackLineSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(93)))), ((int)(((byte)(90)))));
             this.trackBar1A.Value = 0;
-            this.trackBar1A.ValueChanged += new XComponent.SliderBar.ValueChangedHandler(this.trackBar1A_ValueChanged);
             this.trackBar1A.Scroll += new System.EventHandler(this.trackBar1A_Scroll);
             // 
             // lbl_P_90
@@ -1877,7 +1874,6 @@ namespace MidoriValveTest
             this.label19.Size = new System.Drawing.Size(25, 16);
             this.label19.TabIndex = 54;
             this.label19.Text = "90°";
-            this.label19.Click += new System.EventHandler(this.label19_Click);
             // 
             // lbl_P_70
             // 
@@ -1983,7 +1979,6 @@ namespace MidoriValveTest
             // 
             // timer1
             // 
-            this.timer1.Interval = 60000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // lblfecha
@@ -2315,11 +2310,6 @@ namespace MidoriValveTest
             // 
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
-            // TimerForData
-            // 
-            this.TimerForData.Interval = 1;
-            this.TimerForData.Tick += new System.EventHandler(this.TimerForData_Tick);
-            // 
             // groupBox5
             // 
             this.groupBox5.BackColor = System.Drawing.Color.Gray;
@@ -2355,12 +2345,31 @@ namespace MidoriValveTest
             this.picture_plane.TabIndex = 39;
             this.picture_plane.TabStop = false;
             // 
+            // serialPort1
+            // 
+            this.serialPort1.DiscardNull = true;
+            this.serialPort1.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.serialPort1_DataReceived);
+            // 
+            // timerForData
+            // 
+            this.timerForData.Tick += new System.EventHandler(this.timerForData_Tick);
+            // 
+            // lbl_Test
+            // 
+            this.lbl_Test.AutoSize = true;
+            this.lbl_Test.Location = new System.Drawing.Point(630, 64);
+            this.lbl_Test.Name = "lbl_Test";
+            this.lbl_Test.Size = new System.Drawing.Size(139, 29);
+            this.lbl_Test.TabIndex = 67;
+            this.lbl_Test.Text = "Testing dbz";
+            // 
             // Midori_PV
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(1918, 1038);
+            this.Controls.Add(this.lbl_Test);
             this.Controls.Add(this.PanelSideNav);
             this.Controls.Add(this.lblfecha);
             this.Controls.Add(this.groupBox5);
@@ -2561,7 +2570,6 @@ namespace MidoriValveTest
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Button btnInfo;
         private FontAwesome.Sharp.IconButton IconInfo;
-        private System.Windows.Forms.Timer TimerForData;
         private FontAwesome.Sharp.IconButton iconCamera;
         public System.Windows.Forms.TrackBar trackBar1;
         private XComponent.SliderBar.MACTrackBar trackBar1A;
@@ -2576,6 +2584,9 @@ namespace MidoriValveTest
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.GroupBox groupBox5;
+        private System.IO.Ports.SerialPort serialPort1;
+        private System.Windows.Forms.Timer timerForData;
+        private System.Windows.Forms.Label lbl_Test;
     }
 }
 

@@ -67,7 +67,7 @@ namespace MidoriValveTest
 
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 toolTip1.SetToolTip(chart1, "Time: -" + "\nPosition: -" + "\nPressure: -")  ;
 

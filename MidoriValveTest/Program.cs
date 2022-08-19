@@ -34,8 +34,11 @@ namespace MidoriValveTest
             //si no lo consigue notificar al usuario y pedir nueva configuracion de valores para PID y unidades
 
 
-
-            Application.Run(new Midori_PV());
+            
+                Application.Run(new Midori_PV());
+            
+            
+           
         }
     }
 }
