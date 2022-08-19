@@ -501,7 +501,7 @@ namespace MidoriValveTest
             trackBar1A.Value = 10;
            // precision_aperture = 10;
             Current_aperture.Text =  trackBar1A.Value+"°";
-            btn_set.Text = "Set Aperture in 10";
+          
             //btn_set.Enabled = true;
             //lbl_estado.ForeColor = Color.Green;
             //lbl_estado.Text = "Open";
@@ -509,6 +509,7 @@ namespace MidoriValveTest
             {
                 //btn_set.Enabled = true;
                 EnableBtn(btn_set);
+                btn_set.Text = "Set Aperture in 10";
             }
         }
 
@@ -522,7 +523,7 @@ namespace MidoriValveTest
             trackBar1A.Value = 20;
            // precision_aperture = 20;
             Current_aperture.Text =  trackBar1A.Value+"°";
-            btn_set.Text = "Set Aperture in 20";
+          
             //btn_set.Enabled = true;
             //lbl_estado.ForeColor = Color.Green;
             //lbl_estado.Text = "Open";
@@ -531,6 +532,7 @@ namespace MidoriValveTest
             {
                 //btn_set.Enabled = true;
                 EnableBtn(btn_set);
+                btn_set.Text = "Set Aperture in 20";
             }
         }
 
@@ -544,7 +546,7 @@ namespace MidoriValveTest
             trackBar1A.Value = 30;
             //precision_aperture = 30;
             Current_aperture.Text =  trackBar1A.Value+"°";
-            btn_set.Text = "Set Aperture in 30";
+           
             //btn_set.Enabled = true;
             //lbl_estado.ForeColor = Color.Green;
             //lbl_estado.Text = "Open";
@@ -552,6 +554,7 @@ namespace MidoriValveTest
             {
                 //btn_set.Enabled = true;
                 EnableBtn(btn_set);
+                btn_set.Text = "Set Aperture in 30";
 
             }
         }
@@ -566,7 +569,7 @@ namespace MidoriValveTest
             trackBar1A.Value = 40;
             //precision_aperture = 40;
             Current_aperture.Text =  trackBar1A.Value+"°";
-            btn_set.Text = "Set Aperture in 40";
+           
             //btn_set.Enabled = true;
             //lbl_estado.ForeColor = Color.Green;
             //lbl_estado.Text = "Open";
@@ -574,6 +577,7 @@ namespace MidoriValveTest
             {
                 //btn_set.Enabled = true;
                 EnableBtn(btn_set);
+                btn_set.Text = "Set Aperture in 40";
             }
         }
 
@@ -587,7 +591,7 @@ namespace MidoriValveTest
             trackBar1A.Value = 50;
             //precision_aperture = 50;
             Current_aperture.Text =  trackBar1A.Value+"°";
-            btn_set.Text = "Set Aperture in 50";
+          
             //btn_set.Enabled = true;
             //lbl_estado.ForeColor = Color.Green;
             //lbl_estado.Text = "Open";
@@ -595,6 +599,7 @@ namespace MidoriValveTest
             {
                 //btn_set.Enabled = true;
                 EnableBtn(btn_set);
+                btn_set.Text = "Set Aperture in 50";
             }
 
         }
@@ -609,7 +614,7 @@ namespace MidoriValveTest
             trackBar1A.Value = 60;
             //precision_aperture = 60;
             Current_aperture.Text =  trackBar1A.Value+"°";
-            btn_set.Text = "Set Aperture in 60";
+           
             //btn_set.Enabled = true;
             //lbl_estado.ForeColor = Color.Green;
             //lbl_estado.Text = "Open";
@@ -618,6 +623,7 @@ namespace MidoriValveTest
             {
                 //btn_set.Enabled = true;
                 EnableBtn(btn_set);
+                btn_set.Text = "Set Aperture in 60";
             }
         }
 
@@ -631,7 +637,7 @@ namespace MidoriValveTest
             trackBar1A.Value = 70;
             //precision_aperture = 70;
             Current_aperture.Text =  trackBar1A.Value+"°";
-            btn_set.Text = "Set Aperture in 70";
+            
             //btn_set.Enabled = true;
             //lbl_estado.ForeColor = Color.Green;
             //lbl_estado.Text = "Open";
@@ -640,6 +646,7 @@ namespace MidoriValveTest
             {
                 //btn_set.Enabled = true;
                 EnableBtn(btn_set);
+                btn_set.Text = "Set Aperture in 70";
             }
         }
 
@@ -653,14 +660,14 @@ namespace MidoriValveTest
             trackBar1A.Value = 80;
             //precision_aperture = 80;
             Current_aperture.Text =  trackBar1A.Value+"°";
-            btn_set.Text = "Set Aperture in 80";
-            //btn_set.Enabled = true;
-            //lbl_estado.ForeColor = Color.Green;
+          
+      
             //lbl_estado.Text = "Open";
             if (lbl_estado.Text == "Open")
             {
-                //btn_set.Enabled = true;
+               
                 EnableBtn(btn_set);
+                btn_set.Text = "Set Aperture in 80";
             }
 
         }
@@ -675,7 +682,7 @@ namespace MidoriValveTest
             trackBar1A.Value = 90;
             //precision_aperture = 90;
             Current_aperture.Text =  trackBar1A.Value+"°";
-            btn_set.Text = "Set Aperture in 90";
+           
 
             //lbl_estado.ForeColor = Color.Green;
             //lbl_estado.Text = "Open";
@@ -684,6 +691,7 @@ namespace MidoriValveTest
             if (lbl_estado.Text == "Open")
             {
                 btn_set.Enabled = true;
+                btn_set.Text = "Set Aperture in 90";
             }
 
         }
