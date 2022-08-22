@@ -2478,7 +2478,7 @@ namespace MidoriValveTest
                     temperaturaLabel = ObtenerData(capturadatos, 1);
 
                     // Only for test
-                    lbl_Test.Text = serialPort1.ReadLine();
+                   lbl_Test.Text = serialPort1.ReadLine();
                 }
             }
             catch (Exception)
@@ -2526,6 +2526,11 @@ namespace MidoriValveTest
                 lbl_record.Text = "Recording. " + "[" + temp.ToString() + "]";
             }
 
+
+        }
+
+        private void lbl_Test_Click(object sender, EventArgs e)
+        {
 
         }
     }
