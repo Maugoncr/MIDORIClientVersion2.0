@@ -1166,6 +1166,7 @@ namespace MidoriValveTest
             this.com_led.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.com_led.TabIndex = 29;
             this.com_led.TabStop = false;
+            this.com_led.Click += new System.EventHandler(this.com_led_Click);
             // 
             // button3
             // 

@@ -18,7 +18,7 @@ using System.Management;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
-
+using CustomMessageBox;
 
 namespace MidoriValveTest
 {
@@ -350,12 +350,27 @@ namespace MidoriValveTest
                     return false;
                 }
                 // Recordar configurar el BAUDRATE 9600 or 115200
-               
                 serialPort1.PortName = COMM;
                 serialPort1.Open();
                 LblEstado.Text = "Connected";
                 lblPuerto.Text = COMM;
                 connect = true;
+
+                string validarData = serialPort1.ReadExisting();
+
+                if (validarData == null || validarData == "") {
+                    LblEstado.Text = "Disconnected *";
+                    lblPuerto.Text = "Disconnected *";
+                    serialPort1.Close();
+
+                    MessageBoxMaugoncr.Show("Data is not being received correctly. The program will not start until this is fixed.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+
+                    return false;
+                }
+
+
+
                 return true;
             }
             catch (Exception)
@@ -2501,12 +2516,16 @@ namespace MidoriValveTest
             temp = rt / 1000;
 
 
-            chart1.Series["Aperture value"].Points.AddXY(temp.ToString(), precision_aperture.ToString());
-            chart1.Series["Pressure"].Points.AddXY(temp.ToString(), presionChart.ToString());
+            if (serialPort1.IsOpen)
+            {
+                chart1.Series["Aperture value"].Points.AddXY(temp.ToString(), precision_aperture.ToString());
+                chart1.Series["Pressure"].Points.AddXY(temp.ToString(), presionChart.ToString());
 
-            lbl_pressure.Text = (presionChart);
-            lb_Temperature.Text = temperaturaLabel + " °C";
-            chart1.ChartAreas[0].RecalculateAxesScale();
+                lbl_pressure.Text = (presionChart);
+                lb_Temperature.Text = temperaturaLabel + " °C";
+                chart1.ChartAreas[0].RecalculateAxesScale();
+
+            }
 
 
 
@@ -2530,6 +2549,11 @@ namespace MidoriValveTest
         }
 
         private void lbl_Test_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void com_led_Click(object sender, EventArgs e)
         {
 
         }
