@@ -2488,12 +2488,13 @@ namespace MidoriValveTest
             {
                 if (serialPort1.ReadLine().Contains("$"))
                 {
+                    lbl_Test.Text = serialPort1.ReadLine();
                     capturadatos = serialPort1.ReadLine();
                     presionChart = ObtenerData(capturadatos, 2);
                     temperaturaLabel = ObtenerData(capturadatos, 1);
 
                     // Only for test
-                   lbl_Test.Text = serialPort1.ReadLine();
+                   
                 }
             }
             catch (Exception)
@@ -2516,7 +2517,7 @@ namespace MidoriValveTest
             temp = rt / 1000;
 
 
-            if (serialPort1.IsOpen)
+            if (serialPort1.IsOpen && i == true && presionChart != null && temperaturaLabel != null)
             {
                 chart1.Series["Aperture value"].Points.AddXY(temp.ToString(), precision_aperture.ToString());
                 chart1.Series["Pressure"].Points.AddXY(temp.ToString(), presionChart.ToString());
