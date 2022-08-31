@@ -13,7 +13,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\Users\Ralvarez\Desktop\MVT deploy\</PublishUrl>
+    <PublishUrl>C:\Users\Mauricio\Desktop\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -23,7 +23,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationRevision>2</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -62,6 +62,9 @@
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>LOGO-ICO-negro.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
@@ -118,75 +121,6 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="Vanara.Core, Version=3.4.5.0, Culture=neutral, PublicKeyToken=c37e4080322237fa, processorArchitecture=MSIL">
-      <HintPath>..\packages\Vanara.Core.3.4.5\lib\net45\Vanara.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Vanara.PInvoke.AclUI, Version=3.4.5.0, Culture=neutral, PublicKeyToken=c37e4080322237fa, processorArchitecture=MSIL">
-      <HintPath>..\packages\Vanara.PInvoke.AclUI.3.4.5\lib\net45\Vanara.PInvoke.AclUI.dll</HintPath>
-    </Reference>
-    <Reference Include="Vanara.PInvoke.ComCtl32, Version=3.4.5.0, Culture=neutral, PublicKeyToken=c37e4080322237fa, processorArchitecture=MSIL">
-      <HintPath>..\packages\Vanara.PInvoke.ComCtl32.3.4.5\lib\net45\Vanara.PInvoke.ComCtl32.dll</HintPath>
-    </Reference>
-    <Reference Include="Vanara.PInvoke.CredUI, Version=3.4.5.0, Culture=neutral, PublicKeyToken=c37e4080322237fa, processorArchitecture=MSIL">
-      <HintPath>..\packages\Vanara.PInvoke.CredUI.3.4.5\lib\net45\Vanara.PInvoke.CredUI.dll</HintPath>
-    </Reference>
-    <Reference Include="Vanara.PInvoke.Cryptography, Version=3.4.5.0, Culture=neutral, PublicKeyToken=c37e4080322237fa, processorArchitecture=MSIL">
-      <HintPath>..\packages\Vanara.PInvoke.Cryptography.3.4.5\lib\net45\Vanara.PInvoke.Cryptography.dll</HintPath>
-    </Reference>
-    <Reference Include="Vanara.PInvoke.DwmApi, Version=3.4.5.0, Culture=neutral, PublicKeyToken=c37e4080322237fa, processorArchitecture=MSIL">
-      <HintPath>..\packages\Vanara.PInvoke.DwmApi.3.4.5\lib\net45\Vanara.PInvoke.DwmApi.dll</HintPath>
-    </Reference>
-    <Reference Include="Vanara.PInvoke.Gdi32, Version=3.4.5.0, Culture=neutral, PublicKeyToken=c37e4080322237fa, processorArchitecture=MSIL">
-      <HintPath>..\packages\Vanara.PInvoke.Gdi32.3.4.5\lib\net45\Vanara.PInvoke.Gdi32.dll</HintPath>
-    </Reference>
-    <Reference Include="Vanara.PInvoke.Kernel32, Version=3.4.5.0, Culture=neutral, PublicKeyToken=c37e4080322237fa, processorArchitecture=MSIL">
-      <HintPath>..\packages\Vanara.PInvoke.Kernel32.3.4.5\lib\net45\Vanara.PInvoke.Kernel32.dll</HintPath>
-    </Reference>
-    <Reference Include="Vanara.PInvoke.Mpr, Version=3.4.5.0, Culture=neutral, PublicKeyToken=c37e4080322237fa, processorArchitecture=MSIL">
-      <HintPath>..\packages\Vanara.PInvoke.Mpr.3.4.5\lib\net45\Vanara.PInvoke.Mpr.dll</HintPath>
-    </Reference>
-    <Reference Include="Vanara.PInvoke.NTDSApi, Version=3.4.5.0, Culture=neutral, PublicKeyToken=c37e4080322237fa, processorArchitecture=MSIL">
-      <HintPath>..\packages\Vanara.PInvoke.NTDSApi.3.4.5\lib\net45\Vanara.PInvoke.NTDSApi.dll</HintPath>
-    </Reference>
-    <Reference Include="Vanara.PInvoke.Ole, Version=3.4.5.0, Culture=neutral, PublicKeyToken=c37e4080322237fa, processorArchitecture=MSIL">
-      <HintPath>..\packages\Vanara.PInvoke.Ole.3.4.5\lib\net45\Vanara.PInvoke.Ole.dll</HintPath>
-    </Reference>
-    <Reference Include="Vanara.PInvoke.Rpc, Version=3.4.5.0, Culture=neutral, PublicKeyToken=c37e4080322237fa, processorArchitecture=MSIL">
-      <HintPath>..\packages\Vanara.PInvoke.Rpc.3.4.5\lib\net45\Vanara.PInvoke.Rpc.dll</HintPath>
-    </Reference>
-    <Reference Include="Vanara.PInvoke.SearchApi, Version=3.4.5.0, Culture=neutral, PublicKeyToken=c37e4080322237fa, processorArchitecture=MSIL">
-      <HintPath>..\packages\Vanara.PInvoke.SearchApi.3.4.5\lib\net45\Vanara.PInvoke.SearchApi.dll</HintPath>
-    </Reference>
-    <Reference Include="Vanara.PInvoke.Security, Version=3.4.5.0, Culture=neutral, PublicKeyToken=c37e4080322237fa, processorArchitecture=MSIL">
-      <HintPath>..\packages\Vanara.PInvoke.Security.3.4.5\lib\net45\Vanara.PInvoke.Security.dll</HintPath>
-    </Reference>
-    <Reference Include="Vanara.PInvoke.Shared, Version=3.4.5.0, Culture=neutral, PublicKeyToken=c37e4080322237fa, processorArchitecture=MSIL">
-      <HintPath>..\packages\Vanara.PInvoke.Shared.3.4.5\lib\net45\Vanara.PInvoke.Shared.dll</HintPath>
-    </Reference>
-    <Reference Include="Vanara.PInvoke.Shell32, Version=3.4.5.0, Culture=neutral, PublicKeyToken=c37e4080322237fa, processorArchitecture=MSIL">
-      <HintPath>..\packages\Vanara.PInvoke.Shell32.3.4.5\lib\net45\Vanara.PInvoke.Shell32.dll</HintPath>
-    </Reference>
-    <Reference Include="Vanara.PInvoke.ShlwApi, Version=3.4.5.0, Culture=neutral, PublicKeyToken=c37e4080322237fa, processorArchitecture=MSIL">
-      <HintPath>..\packages\Vanara.PInvoke.ShlwApi.3.4.5\lib\net45\Vanara.PInvoke.ShlwApi.dll</HintPath>
-    </Reference>
-    <Reference Include="Vanara.PInvoke.User32, Version=3.4.5.0, Culture=neutral, PublicKeyToken=c37e4080322237fa, processorArchitecture=MSIL">
-      <HintPath>..\packages\Vanara.PInvoke.User32.3.4.5\lib\net45\Vanara.PInvoke.User32.dll</HintPath>
-    </Reference>
-    <Reference Include="Vanara.PInvoke.UxTheme, Version=3.4.5.0, Culture=neutral, PublicKeyToken=c37e4080322237fa, processorArchitecture=MSIL">
-      <HintPath>..\packages\Vanara.PInvoke.UxTheme.3.4.5\lib\net45\Vanara.PInvoke.UxTheme.dll</HintPath>
-    </Reference>
-    <Reference Include="Vanara.Security, Version=3.4.5.0, Culture=neutral, PublicKeyToken=c37e4080322237fa, processorArchitecture=MSIL">
-      <HintPath>..\packages\Vanara.Security.3.4.5\lib\net45\Vanara.Security.dll</HintPath>
-    </Reference>
-    <Reference Include="Vanara.Windows.Extensions, Version=3.4.5.0, Culture=neutral, PublicKeyToken=c37e4080322237fa, processorArchitecture=MSIL">
-      <HintPath>..\packages\Vanara.Windows.Extensions.3.4.5\lib\net45\Vanara.Windows.Extensions.dll</HintPath>
-    </Reference>
-    <Reference Include="Vanara.Windows.Shell, Version=3.4.5.0, Culture=neutral, PublicKeyToken=c37e4080322237fa, processorArchitecture=MSIL">
-      <HintPath>..\packages\Vanara.Windows.Shell.3.4.5\lib\net45\Vanara.Windows.Shell.dll</HintPath>
-    </Reference>
-    <Reference Include="Vanara.Windows.Shell.Common, Version=3.4.5.0, Culture=neutral, PublicKeyToken=c37e4080322237fa, processorArchitecture=MSIL">
-      <HintPath>..\packages\Vanara.Windows.Shell.Common.3.4.5\lib\net45\Vanara.Windows.Shell.Common.dll</HintPath>
-    </Reference>
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
@@ -491,6 +425,7 @@
     <None Include="Resources\error.png" />
     <None Include="Resources\exclamation.png" />
     <None Include="Resources\information.png" />
+    <Content Include="LOGO-ICO-negro.ico" />
     <Content Include="Resources\led_off_green.png" />
     <Content Include="Resources\led_off_red.png" />
     <Content Include="Resources\led_off_yellow.png" />
