@@ -1080,7 +1080,7 @@ namespace MidoriValveTest
                         for (int i = 0; i < times.Count; i++)
                         {
 
-                            file.WriteLine(times[i] + " | " + apertures[i] + " | " + pressures[i] + " | " + datetimes[i] );
+                            file.WriteLine(times[i] + " , " + apertures[i] + " , " + pressures[i] + " , " + datetimes[i] );
 
                         }
                         file.WriteLine("#------------------------------------------------------------------");
