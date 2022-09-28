@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CustomMessageBox;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -29,26 +30,24 @@ namespace MidoriValveTest
 
         private void PID_Config_Load(object sender, EventArgs e)
         {
+            Comprabar();
+            //Cb_ControlSelector.SelectedIndex = 0;
 
-            Cb_ControlSelector.SelectedIndex = 0;
-
-            GroupC2.Enabled = false;
-            GroupC3.Enabled = false;
-            GroupC4.Enabled = false;
-            GroupS2.Enabled = false;
-            GroupS3.Enabled = false;
-            GroupS4.Enabled = false;
-            GroupR2.Enabled = false;
-            GroupR3.Enabled = false;
-            GroupR4.Enabled = false;
-            BtnBackGround2.Visible = false;
-            BtnBackGround3.Visible = false;
-            BtnBackGround4.Visible = false;
-            NumD1.Enabled = false;
-            NumD2.Enabled = false;
-            NumD3.Enabled = false;
-            NumD4.Enabled = false;
-
+            //GroupC2.Enabled = false;
+            //GroupC3.Enabled = false;
+            //GroupC4.Enabled = false;
+            //GroupS2.Enabled = false;
+            //GroupS3.Enabled = false;
+            //GroupS4.Enabled = false;
+            //GroupR2.Enabled = false;
+            //GroupR3.Enabled = false;
+            //GroupR4.Enabled = false;
+            //BtnBackGround2.Visible = false;
+            //BtnBackGround3.Visible = false;
+            //BtnBackGround4.Visible = false;
+            //txtP.Enabled = false;
+            //txtI.Enabled = false;
+            //txtD.Enabled = false;
 
         }
 
@@ -147,13 +146,13 @@ namespace MidoriValveTest
         private void CbAlgo1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            if (CbAlgo1.SelectedIndex == 1)
-            {
-                NumD1.Enabled = true;
-            }
-            else {
-                NumD1.Enabled = false;
-            }
+            //if (CbAlgo1.SelectedIndex == 1)
+            //{
+            //    NumD1.Enabled = true;
+            //}
+            //else {
+            //    NumD1.Enabled = false;
+            //}
         }
 
         private void CbAlgo2_SelectedIndexChanged(object sender, EventArgs e)
@@ -192,7 +191,113 @@ namespace MidoriValveTest
             }
         }
 
+        
+        private void checkPID_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkPID.Checked)
+            {
+                ObjetosGlobales.flagPID = true;
+            }
+            else
+            {
+                ObjetosGlobales.flagPID = false;
+                txtP.Clear();
+                txtI.Clear();
+                txtD.Clear();
+                ObjetosGlobales.P = "x";
+                ObjetosGlobales.I = "x";
+                ObjetosGlobales.D = "x";
+            }
+        }
+        private void Comprabar() 
+        {
+            if (ObjetosGlobales.flagPID)
+            {
+                txtP.Text = ObjetosGlobales.P;
+                txtI.Text = ObjetosGlobales.I;
+                txtD.Text = ObjetosGlobales.D;
+            }
+        
+        }
+        private void txtP_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 45) || (e.KeyChar >= 58 && e.KeyChar <= 255) || e.KeyChar == 47)
+            {
+                MessageBoxMaugoncr.Show("Solo se pueden ingresar números", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
 
+        private void txtI_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 45) || (e.KeyChar >= 58 && e.KeyChar <= 255) || e.KeyChar == 47)
+            {
+                MessageBoxMaugoncr.Show("Solo se pueden ingresar números", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
 
+        private void txtD_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 45) || (e.KeyChar >= 58 && e.KeyChar <= 255) || e.KeyChar == 47)
+            {
+                MessageBoxMaugoncr.Show("Only numbers are allowed", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtP_Leave(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtP.Text.Trim()))
+            {
+                ObjetosGlobales.P = txtP.Text.Trim();
+            }
+            else
+            {
+                ObjetosGlobales.P = "x";
+            }
+        }
+
+        private void txtI_Leave(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtI.Text.Trim()))
+            {
+                ObjetosGlobales.I = txtI.Text.Trim();
+            }
+            else
+            {
+                ObjetosGlobales.I = "x";
+            }
+        }
+
+        private void txtD_Leave(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtD.Text.Trim()))
+            {
+                ObjetosGlobales.D = txtD.Text.Trim();
+            }
+            else
+            {
+                ObjetosGlobales.D = "x";
+            }
+        }
+
+        private void checkPID_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtP.Text.Trim()) || string.IsNullOrEmpty(txtI.Text.Trim())
+                || string.IsNullOrEmpty(txtD.Text.Trim()))
+            {
+                checkPID.Checked = false;
+                MessageBoxMaugoncr.Show("Set the PID first", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
+        private void PID_Config_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+        }
     }
 }

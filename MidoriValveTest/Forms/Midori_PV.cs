@@ -1542,7 +1542,21 @@ namespace MidoriValveTest
 
 
                 case "Torr":
+
+                    //Send to arduino
+                    // THIS FORMAT S120,0.123,0.456,1.789
+                    // S120,x,x,x
                    
+
+                    if (ObjetosGlobales.flagPID)
+                    {
+                        string envioConFormato = "S" + presion.ToString() + "," + ObjetosGlobales.P + ","
+                            +ObjetosGlobales.I + "," + ObjetosGlobales.D;
+
+                        lbSendPID.Text = envioConFormato;
+
+                    }
+
 
                     if (presion <= 760 && presion > 675.52)
                     {

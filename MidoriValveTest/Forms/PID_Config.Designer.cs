@@ -30,7 +30,7 @@ namespace MidoriValveTest
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PID_Config));
-            this.RamEnable1 = new System.Windows.Forms.CheckBox();
+            this.checkPID = new System.Windows.Forms.CheckBox();
             this.label10 = new System.Windows.Forms.Label();
             this.Type1 = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -45,6 +45,13 @@ namespace MidoriValveTest
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.GroupC1 = new System.Windows.Forms.GroupBox();
+            this.GroupS1 = new System.Windows.Forms.GroupBox();
+            this.txtD = new System.Windows.Forms.TextBox();
+            this.txtI = new System.Windows.Forms.TextBox();
+            this.txtP = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.CbAlgo1 = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.GroupC2 = new System.Windows.Forms.GroupBox();
@@ -121,14 +128,7 @@ namespace MidoriValveTest
             this.GroupC4 = new System.Windows.Forms.GroupBox();
             this.CbDirec1 = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.NumP1 = new System.Windows.Forms.NumericUpDown();
-            this.NumI1 = new System.Windows.Forms.NumericUpDown();
-            this.label12 = new System.Windows.Forms.Label();
-            this.NumD1 = new System.Windows.Forms.NumericUpDown();
             this.GroupR1 = new System.Windows.Forms.GroupBox();
-            this.GroupS1 = new System.Windows.Forms.GroupBox();
             this.btnBackGround1 = new System.Windows.Forms.Button();
             this.BtnBackGround2 = new System.Windows.Forms.Button();
             this.BtnBackGround3 = new System.Windows.Forms.Button();
@@ -138,6 +138,7 @@ namespace MidoriValveTest
             ((System.ComponentModel.ISupportInitialize)(this.Slope1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Time1)).BeginInit();
             this.GroupC1.SuspendLayout();
+            this.GroupS1.SuspendLayout();
             this.GroupC2.SuspendLayout();
             this.GroupR2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Slope2)).BeginInit();
@@ -162,26 +163,24 @@ namespace MidoriValveTest
             ((System.ComponentModel.ISupportInitialize)(this.NumI4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumP4)).BeginInit();
             this.GroupC4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NumP1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NumI1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NumD1)).BeginInit();
             this.GroupR1.SuspendLayout();
-            this.GroupS1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // RamEnable1
+            // checkPID
             // 
-            this.RamEnable1.AutoSize = true;
-            this.RamEnable1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RamEnable1.ForeColor = System.Drawing.Color.White;
-            this.RamEnable1.Location = new System.Drawing.Point(27, 54);
-            this.RamEnable1.Name = "RamEnable1";
-            this.RamEnable1.Size = new System.Drawing.Size(72, 22);
-            this.RamEnable1.TabIndex = 13;
-            this.RamEnable1.Text = "Enable";
-            this.RamEnable1.UseVisualStyleBackColor = true;
+            this.checkPID.AutoSize = true;
+            this.checkPID.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkPID.ForeColor = System.Drawing.Color.White;
+            this.checkPID.Location = new System.Drawing.Point(300, 18);
+            this.checkPID.Name = "checkPID";
+            this.checkPID.Size = new System.Drawing.Size(72, 22);
+            this.checkPID.TabIndex = 13;
+            this.checkPID.Text = "Enable";
+            this.checkPID.UseVisualStyleBackColor = true;
+            this.checkPID.CheckedChanged += new System.EventHandler(this.checkPID_CheckedChanged);
+            this.checkPID.Click += new System.EventHandler(this.checkPID_Click);
             // 
             // label10
             // 
@@ -310,7 +309,7 @@ namespace MidoriValveTest
             "Controller 2",
             "Controller 3",
             "Controller 4"});
-            this.Cb_ControlSelector.Location = new System.Drawing.Point(115, 39);
+            this.Cb_ControlSelector.Location = new System.Drawing.Point(137, 58);
             this.Cb_ControlSelector.Name = "Cb_ControlSelector";
             this.Cb_ControlSelector.Size = new System.Drawing.Size(149, 21);
             this.Cb_ControlSelector.TabIndex = 11;
@@ -343,16 +342,88 @@ namespace MidoriValveTest
             // GroupC1
             // 
             this.GroupC1.BackColor = System.Drawing.Color.DimGray;
-            this.GroupC1.Controls.Add(this.CbAlgo1);
-            this.GroupC1.Controls.Add(this.label11);
+            this.GroupC1.Controls.Add(this.GroupS1);
+            this.GroupC1.Controls.Add(this.checkPID);
             this.GroupC1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GroupC1.ForeColor = System.Drawing.Color.White;
-            this.GroupC1.Location = new System.Drawing.Point(16, 111);
+            this.GroupC1.Location = new System.Drawing.Point(12, 58);
             this.GroupC1.Name = "GroupC1";
-            this.GroupC1.Size = new System.Drawing.Size(389, 293);
+            this.GroupC1.Size = new System.Drawing.Size(393, 227);
             this.GroupC1.TabIndex = 14;
             this.GroupC1.TabStop = false;
             this.GroupC1.Text = "Controller 1";
+            // 
+            // GroupS1
+            // 
+            this.GroupS1.BackColor = System.Drawing.Color.DimGray;
+            this.GroupS1.Controls.Add(this.txtD);
+            this.GroupS1.Controls.Add(this.txtI);
+            this.GroupS1.Controls.Add(this.txtP);
+            this.GroupS1.Controls.Add(this.label12);
+            this.GroupS1.Controls.Add(this.label6);
+            this.GroupS1.Controls.Add(this.label5);
+            this.GroupS1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GroupS1.ForeColor = System.Drawing.Color.White;
+            this.GroupS1.Location = new System.Drawing.Point(11, 38);
+            this.GroupS1.Name = "GroupS1";
+            this.GroupS1.Size = new System.Drawing.Size(361, 171);
+            this.GroupS1.TabIndex = 12;
+            this.GroupS1.TabStop = false;
+            this.GroupS1.Text = "Controller Settings";
+            // 
+            // txtD
+            // 
+            this.txtD.Location = new System.Drawing.Point(154, 114);
+            this.txtD.Name = "txtD";
+            this.txtD.Size = new System.Drawing.Size(182, 24);
+            this.txtD.TabIndex = 12;
+            this.txtD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtD_KeyPress);
+            this.txtD.Leave += new System.EventHandler(this.txtD_Leave);
+            // 
+            // txtI
+            // 
+            this.txtI.Location = new System.Drawing.Point(154, 79);
+            this.txtI.Name = "txtI";
+            this.txtI.Size = new System.Drawing.Size(182, 24);
+            this.txtI.TabIndex = 11;
+            this.txtI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtI_KeyPress);
+            this.txtI.Leave += new System.EventHandler(this.txtI_Leave);
+            // 
+            // txtP
+            // 
+            this.txtP.Location = new System.Drawing.Point(154, 44);
+            this.txtP.Name = "txtP";
+            this.txtP.Size = new System.Drawing.Size(182, 24);
+            this.txtP.TabIndex = 10;
+            this.txtP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtP_KeyPress);
+            this.txtP.Leave += new System.EventHandler(this.txtP_Leave);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(24, 114);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(55, 18);
+            this.label12.TabIndex = 8;
+            this.label12.Text = "D-Gain";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(24, 47);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(54, 18);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "P-Gain";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(24, 82);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(51, 18);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "I- Gain";
             // 
             // CbAlgo1
             // 
@@ -363,10 +434,11 @@ namespace MidoriValveTest
             "PID",
             "Soft Pump",
             "P"});
-            this.CbAlgo1.Location = new System.Drawing.Point(165, 43);
+            this.CbAlgo1.Location = new System.Drawing.Point(775, 29);
             this.CbAlgo1.Name = "CbAlgo1";
-            this.CbAlgo1.Size = new System.Drawing.Size(182, 26);
+            this.CbAlgo1.Size = new System.Drawing.Size(182, 21);
             this.CbAlgo1.TabIndex = 1;
+            this.CbAlgo1.Visible = false;
             this.CbAlgo1.SelectedIndexChanged += new System.EventHandler(this.CbAlgo1_SelectedIndexChanged);
             // 
             // label11
@@ -374,11 +446,12 @@ namespace MidoriValveTest
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(19, 46);
+            this.label11.Location = new System.Drawing.Point(642, 32);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(127, 18);
             this.label11.TabIndex = 0;
             this.label11.Text = "Control Algorithm:";
+            this.label11.Visible = false;
             this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // GroupC2
@@ -1288,106 +1361,21 @@ namespace MidoriValveTest
             this.CbDirec1.Items.AddRange(new object[] {
             "Downstream",
             "Upstream"});
-            this.CbDirec1.Location = new System.Drawing.Point(154, 127);
+            this.CbDirec1.Location = new System.Drawing.Point(473, 34);
             this.CbDirec1.Name = "CbDirec1";
-            this.CbDirec1.Size = new System.Drawing.Size(149, 26);
+            this.CbDirec1.Size = new System.Drawing.Size(149, 21);
             this.CbDirec1.TabIndex = 4;
             this.CbDirec1.Visible = false;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(24, 127);
+            this.label4.Location = new System.Drawing.Point(485, 11);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(120, 18);
+            this.label4.Size = new System.Drawing.Size(85, 13);
             this.label4.TabIndex = 4;
             this.label4.Text = "Control Direction";
             this.label4.Visible = false;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(24, 82);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(51, 18);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "I- Gain";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(24, 47);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(54, 18);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "P-Gain";
-            // 
-            // NumP1
-            // 
-            this.NumP1.DecimalPlaces = 2;
-            this.NumP1.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
-            this.NumP1.Location = new System.Drawing.Point(154, 45);
-            this.NumP1.Name = "NumP1";
-            this.NumP1.Size = new System.Drawing.Size(182, 24);
-            this.NumP1.TabIndex = 4;
-            this.NumP1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.NumP1.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
-            // 
-            // NumI1
-            // 
-            this.NumI1.DecimalPlaces = 2;
-            this.NumI1.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
-            this.NumI1.Location = new System.Drawing.Point(154, 80);
-            this.NumI1.Name = "NumI1";
-            this.NumI1.Size = new System.Drawing.Size(182, 24);
-            this.NumI1.TabIndex = 7;
-            this.NumI1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.NumI1.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
-            this.NumI1.ValueChanged += new System.EventHandler(this.numericUpDown2_ValueChanged);
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(24, 114);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(55, 18);
-            this.label12.TabIndex = 8;
-            this.label12.Text = "D-Gain";
-            // 
-            // NumD1
-            // 
-            this.NumD1.DecimalPlaces = 2;
-            this.NumD1.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
-            this.NumD1.Location = new System.Drawing.Point(154, 112);
-            this.NumD1.Name = "NumD1";
-            this.NumD1.Size = new System.Drawing.Size(182, 24);
-            this.NumD1.TabIndex = 9;
-            this.NumD1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.NumD1.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
             // 
             // GroupR1
             // 
@@ -1408,26 +1396,6 @@ namespace MidoriValveTest
             this.GroupR1.TabStop = false;
             this.GroupR1.Text = "Ramp";
             // 
-            // GroupS1
-            // 
-            this.GroupS1.BackColor = System.Drawing.Color.DimGray;
-            this.GroupS1.Controls.Add(this.NumD1);
-            this.GroupS1.Controls.Add(this.label12);
-            this.GroupS1.Controls.Add(this.NumI1);
-            this.GroupS1.Controls.Add(this.NumP1);
-            this.GroupS1.Controls.Add(this.label6);
-            this.GroupS1.Controls.Add(this.label5);
-            this.GroupS1.Controls.Add(this.label4);
-            this.GroupS1.Controls.Add(this.CbDirec1);
-            this.GroupS1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GroupS1.ForeColor = System.Drawing.Color.White;
-            this.GroupS1.Location = new System.Drawing.Point(27, 214);
-            this.GroupS1.Name = "GroupS1";
-            this.GroupS1.Size = new System.Drawing.Size(361, 171);
-            this.GroupS1.TabIndex = 12;
-            this.GroupS1.TabStop = false;
-            this.GroupS1.Text = "Controller Settings";
-            // 
             // btnBackGround1
             // 
             this.btnBackGround1.BackColor = System.Drawing.Color.SteelBlue;
@@ -1435,10 +1403,11 @@ namespace MidoriValveTest
             this.btnBackGround1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBackGround1.Location = new System.Drawing.Point(27, 128);
             this.btnBackGround1.Name = "btnBackGround1";
-            this.btnBackGround1.Size = new System.Drawing.Size(336, 246);
+            this.btnBackGround1.Size = new System.Drawing.Size(336, 204);
             this.btnBackGround1.TabIndex = 24;
             this.btnBackGround1.Text = "button1";
             this.btnBackGround1.UseVisualStyleBackColor = false;
+            this.btnBackGround1.Visible = false;
             // 
             // BtnBackGround2
             // 
@@ -1504,19 +1473,21 @@ namespace MidoriValveTest
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Gray;
-            this.ClientSize = new System.Drawing.Size(422, 422);
+            this.ClientSize = new System.Drawing.Size(422, 298);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.CbAlgo1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.RamEnable1);
+            this.Controls.Add(this.CbDirec1);
             this.Controls.Add(this.GroupR4);
             this.Controls.Add(this.GroupR1);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.GroupS4);
             this.Controls.Add(this.GroupR3);
             this.Controls.Add(this.GroupS3);
             this.Controls.Add(this.GroupR2);
             this.Controls.Add(this.GroupS2);
             this.Controls.Add(this.GroupC2);
-            this.Controls.Add(this.GroupS1);
             this.Controls.Add(this.GroupC1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.GroupC3);
@@ -1534,11 +1505,14 @@ namespace MidoriValveTest
             this.Name = "PID_Config";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PID_Config";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PID_Config_FormClosing);
             this.Load += new System.EventHandler(this.PID_Config_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Slope1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Time1)).EndInit();
             this.GroupC1.ResumeLayout(false);
             this.GroupC1.PerformLayout();
+            this.GroupS1.ResumeLayout(false);
+            this.GroupS1.PerformLayout();
             this.GroupC2.ResumeLayout(false);
             this.GroupC2.PerformLayout();
             this.GroupR2.ResumeLayout(false);
@@ -1572,13 +1546,8 @@ namespace MidoriValveTest
             ((System.ComponentModel.ISupportInitialize)(this.NumP4)).EndInit();
             this.GroupC4.ResumeLayout(false);
             this.GroupC4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NumP1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NumI1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NumD1)).EndInit();
             this.GroupR1.ResumeLayout(false);
             this.GroupR1.PerformLayout();
-            this.GroupS1.ResumeLayout(false);
-            this.GroupS1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -1600,7 +1569,7 @@ namespace MidoriValveTest
         private System.Windows.Forms.ComboBox Cb_ControlSelector;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.CheckBox RamEnable1;
+        private System.Windows.Forms.CheckBox checkPID;
         private System.Windows.Forms.GroupBox GroupC1;
         private System.Windows.Forms.ComboBox CbAlgo1;
         private System.Windows.Forms.Label label11;
@@ -1680,10 +1649,7 @@ namespace MidoriValveTest
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.NumericUpDown NumP1;
-        private System.Windows.Forms.NumericUpDown NumI1;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.NumericUpDown NumD1;
         private System.Windows.Forms.GroupBox GroupR1;
         private System.Windows.Forms.GroupBox GroupS1;
         private System.Windows.Forms.Button btnBackGround1;
@@ -1692,5 +1658,8 @@ namespace MidoriValveTest
         private System.Windows.Forms.Button BtnBackGround4;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox txtD;
+        private System.Windows.Forms.TextBox txtI;
+        private System.Windows.Forms.TextBox txtP;
     }
 }
