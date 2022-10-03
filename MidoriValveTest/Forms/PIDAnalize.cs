@@ -35,13 +35,23 @@ namespace MidoriValveTest.Forms
             InitializeComponent();
         }
 
+        public static double Ymax;
+        public static double Ymin;
+        public static double x1Maxm;
+        public static double y1Maxm;
+        public static double MaxM;
+        public static double InicioX;
+
         private void ObtenerPendienteMaxList()
         {
             List<double> tiempoX = times.ConvertAll(double.Parse);
             List<double> presionY = pressures.ConvertAll(double.Parse);
             List<double> Pendientes = new List<double>();
-            // Ambas tienen el mismo lenght
+            // Tengo las y maximas y minimas gracias a que obtengo el valor y 0 y el ultimo valor de y
+            Ymin = presionY[0];
+            Ymax = presionY[presionY.Count() - 1];
 
+            // Ambas tienen el mismo lenght
             for (int i = 0; i < presionY.Count; i++)
             {
                 if (i < presionY.Count-1)
@@ -49,26 +59,53 @@ namespace MidoriValveTest.Forms
                     double m = ObtenerMpendiente(tiempoX[i], tiempoX[i + 1],
                                             presionY[i], presionY[i + 1]);
                     Pendientes.Add(m);
+
+                    if (i < presionY.Count - 3)
+                    {
+                        if (presionY[i] < presionY[i + 1] && presionY[i + 1] < presionY[i + 2])
+                        {
+                            InicioX = tiempoX[i];
+                        }
+                    }
+                    
+
                 }
             }
 
-            txtM.Text = ObtenerMaxPendiente(Pendientes,1).ToString();
-            txtMSinRound.Text = ObtenerMaxPendiente(Pendientes).ToString();
+             MaxM = ObtenerMaxPendiente(Pendientes);
+
+            for (int i = 0; i < presionY.Count; i++)
+            {
+                if (i < presionY.Count - 1)
+                {
+                    double m = ObtenerMpendiente(tiempoX[i], tiempoX[i + 1],
+                                            presionY[i], presionY[i + 1]);
+                    if (m == MaxM)
+                    {
+                        x1Maxm = tiempoX[i];
+                        y1Maxm = presionY[i];
+                    }
+                }
+            }
+
+            double Xt1 = ((Ymin - y1Maxm) / MaxM) + x1Maxm;
+            double Xt2 = ((Ymax - y1Maxm) / MaxM) + x1Maxm;
+
+            double T2 = Xt2 - Xt1;
+            double T1 = Xt1 - InicioX;
+
+            txtRich.Text = "Pendiente Maxima (m) = " + decimal.Round((decimal)MaxM,2) +
+                "\nY1 de la pendiente = " + y1Maxm + "\nX1 de la pendiente = " + x1Maxm +
+                "\nT1 = " + decimal.Round((decimal)T1, 2) + "\nT2 = " + decimal.Round((decimal)T2, 2);
+
 
         }
-
-        public static List<string> RegistroPendientes = new List<string>();
+       
 
         private double ObtenerMpendiente(double x1, double x2, double y1, double y2)
         {
             double m = 0;
-
             m = (y2 - y1) / (x2 - x1);
-
-            string Registro = m + "," + x1 + "," + x2 + "," + y1 + "," + y2;
-
-            RegistroPendientes.Add(Registro);
-
             return m;
         }
 

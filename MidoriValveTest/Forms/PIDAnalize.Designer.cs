@@ -35,10 +35,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PIDAnalize));
             this.panelTop = new System.Windows.Forms.Panel();
             this.btnClose = new FontAwesome.Sharp.IconButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.txtMSinRound = new System.Windows.Forms.TextBox();
-            this.txtM = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.lbTime = new System.Windows.Forms.Label();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -53,7 +49,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.txtRich = new System.Windows.Forms.RichTextBox();
             this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
@@ -85,38 +81,6 @@
             this.btnClose.TabIndex = 0;
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(245, 539);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(127, 24);
-            this.textBox1.TabIndex = 60;
-            // 
-            // txtMSinRound
-            // 
-            this.txtMSinRound.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMSinRound.Location = new System.Drawing.Point(245, 506);
-            this.txtMSinRound.Name = "txtMSinRound";
-            this.txtMSinRound.Size = new System.Drawing.Size(127, 24);
-            this.txtMSinRound.TabIndex = 61;
-            // 
-            // txtM
-            // 
-            this.txtM.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtM.Location = new System.Drawing.Point(93, 506);
-            this.txtM.Name = "txtM";
-            this.txtM.Size = new System.Drawing.Size(127, 24);
-            this.txtM.TabIndex = 62;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(93, 539);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(127, 24);
-            this.textBox4.TabIndex = 63;
             // 
             // lbTime
             // 
@@ -226,7 +190,7 @@
             this.btnCalcular.IconColor = System.Drawing.Color.Gray;
             this.btnCalcular.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCalcular.IconSize = 35;
-            this.btnCalcular.Location = new System.Drawing.Point(387, 516);
+            this.btnCalcular.Location = new System.Drawing.Point(375, 512);
             this.btnCalcular.Name = "btnCalcular";
             this.btnCalcular.Size = new System.Drawing.Size(30, 33);
             this.btnCalcular.TabIndex = 68;
@@ -297,22 +261,21 @@
             this.label5.TabIndex = 75;
             this.label5.Text = "D";
             // 
-            // label6
+            // txtRich
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(89, 482);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(128, 21);
-            this.label6.TabIndex = 76;
-            this.label6.Text = "Pendiente Max";
+            this.txtRich.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRich.Location = new System.Drawing.Point(92, 482);
+            this.txtRich.Name = "txtRich";
+            this.txtRich.Size = new System.Drawing.Size(277, 108);
+            this.txtRich.TabIndex = 78;
+            this.txtRich.Text = "";
             // 
             // PIDAnalize
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1270, 618);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.txtRich);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -325,13 +288,9 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.textBox4);
             this.Controls.Add(this.lbTime);
-            this.Controls.Add(this.txtM);
             this.Controls.Add(this.chart1);
-            this.Controls.Add(this.txtMSinRound);
             this.Controls.Add(this.panelTop);
-            this.Controls.Add(this.textBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PIDAnalize";
@@ -349,10 +308,6 @@
         #endregion
         private System.Windows.Forms.Panel panelTop;
         private FontAwesome.Sharp.IconButton btnClose;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox txtM;
-        private System.Windows.Forms.TextBox txtMSinRound;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label lbTime;
         public System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.Panel panel1;
@@ -367,6 +322,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.RichTextBox txtRich;
     }
 }
