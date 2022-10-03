@@ -35,8 +35,71 @@ namespace MidoriValveTest.Forms
             InitializeComponent();
         }
 
+        private void ObtenerPendienteMaxList()
+        {
+            List<double> tiempoX = times.ConvertAll(double.Parse);
+            List<double> presionY = pressures.ConvertAll(double.Parse);
+            List<double> Pendientes = new List<double>();
+            // Ambas tienen el mismo lenght
+
+            for (int i = 0; i < presionY.Count; i++)
+            {
+                if (i < presionY.Count-1)
+                {
+                    double m = ObtenerMpendiente(tiempoX[i], tiempoX[i + 1],
+                                            presionY[i], presionY[i + 1]);
+                    Pendientes.Add(m);
+                }
+            }
+
+            txtM.Text = ObtenerMaxPendiente(Pendientes,1).ToString();
+            txtMSinRound.Text = ObtenerMaxPendiente(Pendientes).ToString();
+
+        }
+
+        public static List<string> RegistroPendientes = new List<string>();
+
+        private double ObtenerMpendiente(double x1, double x2, double y1, double y2)
+        {
+            double m = 0;
+
+            m = (y2 - y1) / (x2 - x1);
+
+            string Registro = m + "," + x1 + "," + x2 + "," + y1 + "," + y2;
+
+            RegistroPendientes.Add(Registro);
+
+            return m;
+        }
+
+        private double ObtenerMaxPendiente(List<double> M, int opcion = 0)
+        {
+            double mayorPendiente = 0;
+            for (int i = 0; i < M.Count; i++)
+            {
+                if (mayorPendiente < M[i])
+                {
+                    mayorPendiente = M[i];
+                }
+            }
+            //Conversion
+            if (opcion == 1)
+            {
+                decimal R = Convert.ToDecimal(mayorPendiente);
+                R = decimal.Round(R, 2);
+                mayorPendiente = Convert.ToDouble(R);
+            }
+            
+
+            return mayorPendiente;
+        }
+        
+        
+
+
         private void PIDAnalize_Load(object sender, EventArgs e)
         {
+
             lbTime.Text = "Analysis captured at: " + end_range;
             //lbl_archive.Text = archivo;
 
@@ -74,6 +137,11 @@ namespace MidoriValveTest.Forms
         private void panelTop_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnCalcular_Click(object sender, EventArgs e)
+        {
+            ObtenerPendienteMaxList();
         }
     }
 }
