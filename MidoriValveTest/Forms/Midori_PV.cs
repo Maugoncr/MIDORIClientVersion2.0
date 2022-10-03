@@ -19,6 +19,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
 using CustomMessageBox;
+using MidoriValveTest.Forms;
 
 namespace MidoriValveTest
 {
@@ -1214,7 +1215,7 @@ namespace MidoriValveTest
                             }
                             for (int y = initial_line; y < lines.Length - 1;y++)
                             {
-                                line_in_depure = lines[y].Split('|');
+                                line_in_depure = lines[y].Split(',');
                                 times_1.Add( line_in_depure[0]);
                                 apertures_1.Add(line_in_depure[1]);
                                 pressures_1.Add(line_in_depure[2]);
@@ -2571,6 +2572,124 @@ namespace MidoriValveTest
         private void com_led_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnPIDAnalisis_Click(object sender, EventArgs e)
+        {
+            PIDAnalize MiPidAnalisis = new PIDAnalize();
+            string[] line_in_depure;
+            List<string> times_1 = new List<string>();
+            List<string> apertures_1 = new List<string>();
+            List<string> pressures_1 = new List<string>();
+            List<string> datetimes_1 = new List<string>();
+
+            OpenFileDialog OpenFile = new OpenFileDialog();
+            OpenFile.Filter = "Texto | *.txt";
+
+            int initial_line = 0;
+            string range = "";
+            string[] times;
+            if (OpenFile.ShowDialog() == DialogResult.OK)
+            {
+                string FileToRead = OpenFile.FileName;
+                MiPidAnalisis.archivo = FileToRead;
+                using (StreamReader sr = new StreamReader(FileToRead))
+                {
+                    if (Path.GetExtension(FileToRead).ToLower() == ".txt")
+                    {
+                        //Dado el caso, verifico que exista el archivo..
+                        if (File.Exists(FileToRead))
+                        {
+                            //Lo ejecuto.
+                            //System.Diagnostics.Process.Start(FileToRead);
+                            // Creating string array  
+                            string[] lines = File.ReadAllLines(FileToRead);
+                            for (int i = 0; i < lines.Length; i++)
+                            {
+
+                                // Creo no lo voy a necesitar
+                                //using (StreamReader tr = new StreamReader(FileToRead))
+                                //{
+                                //    cd.richTextBox1.Text = tr.ReadToEnd();
+                                //}
+
+                                if (lines[i].Contains("#Data Time range: ["))
+                                {
+                                    //MessageBox.Show(lines[i]);
+
+                                    range = lines[i].Replace("#Data Time range: [", string.Empty);
+                                    //MessageBox.Show(range);
+                                    //MessageBox.Show(lines[i].Replace("#Data Time range:", string.Empty));
+                                    range = range.Remove(range.Length - 1);
+                                    //MessageBox.Show(range);
+                                    // range = range.Remove(0);
+                                    // MessageBox.Show(range);
+                                    times = range.Split('-');
+                                    //MessageBox.Show(times[0]);
+
+                                    //MessageBox.Show(times[1]);
+                                    MiPidAnalisis.ini_range = times[0];
+                                    MiPidAnalisis.end_range = times[1];
+
+
+                                }
+
+                                if (lines[i] == "-|-  Time  -|-  Apperture  -|-  Pressure  -|-  DateTime  -|-" && lines[i + 1] == "#------------------------------------------------------------------")
+                                {
+                                    initial_line = i + 2;
+
+                                    // MessageBox.Show((initial_line).ToString());
+                                    //break;
+                                }
+
+
+                            }
+                            for (int y = initial_line; y < lines.Length - 1; y++)
+                            {
+                                line_in_depure = lines[y].Split(',');
+                                times_1.Add(line_in_depure[0]);
+                                apertures_1.Add(line_in_depure[1]);
+                                pressures_1.Add(line_in_depure[2]);
+                                datetimes_1.Add(line_in_depure[3]);
+                                Console.WriteLine(String.Join(Environment.NewLine, line_in_depure[0] + " " + line_in_depure[1] + " " + line_in_depure[2] + " " + line_in_depure[3]));
+
+                            }
+
+
+                            MiPidAnalisis.times = times_1;
+                            MiPidAnalisis.apertures = apertures_1;
+                            MiPidAnalisis.pressures = pressures_1;
+                            MiPidAnalisis.datetimes = datetimes_1;
+                            MiPidAnalisis.Show();
+
+
+
+
+                        }
+                        else
+                        {
+                            //Caso que la ruta tenga la extensión correcta, pero el archivo
+                            //no exista en el disco
+                            MessageBoxMaugoncr.Show("File doesn't exist.", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    else
+                    {
+                        //Caso de que la extensión sea incorrecta.
+                        MessageBoxMaugoncr.Show("Invalid Format.", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+
+        private void btnPIDAnalisis_MouseEnter(object sender, EventArgs e)
+        {
+            EnterBtn(btnPIDAnalisis);
+        }
+
+        private void btnPIDAnalisis_MouseLeave(object sender, EventArgs e)
+        {
+            LeftBtn(btnPIDAnalisis);
         }
     }
 }
