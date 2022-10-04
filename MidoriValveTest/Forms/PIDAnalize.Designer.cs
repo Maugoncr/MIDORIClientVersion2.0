@@ -42,9 +42,9 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnCalcular = new FontAwesome.Sharp.IconButton();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txtP = new System.Windows.Forms.TextBox();
+            this.txtI = new System.Windows.Forms.TextBox();
+            this.txtD = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -151,7 +151,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 38);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(10, 580);
+            this.panel1.Size = new System.Drawing.Size(10, 617);
             this.panel1.TabIndex = 64;
             // 
             // panel2
@@ -160,14 +160,14 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(1260, 38);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(10, 580);
+            this.panel2.Size = new System.Drawing.Size(10, 617);
             this.panel2.TabIndex = 65;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Gray;
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(10, 608);
+            this.panel3.Location = new System.Drawing.Point(10, 645);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1250, 10);
             this.panel3.TabIndex = 66;
@@ -190,36 +190,39 @@
             this.btnCalcular.IconColor = System.Drawing.Color.Gray;
             this.btnCalcular.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCalcular.IconSize = 35;
-            this.btnCalcular.Location = new System.Drawing.Point(375, 512);
+            this.btnCalcular.Location = new System.Drawing.Point(375, 521);
             this.btnCalcular.Name = "btnCalcular";
             this.btnCalcular.Size = new System.Drawing.Size(30, 33);
             this.btnCalcular.TabIndex = 68;
             this.btnCalcular.UseVisualStyleBackColor = true;
             this.btnCalcular.Click += new System.EventHandler(this.btnCalcular_Click);
             // 
-            // textBox5
+            // txtP
             // 
-            this.textBox5.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(743, 521);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(127, 24);
-            this.textBox5.TabIndex = 69;
+            this.txtP.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtP.Location = new System.Drawing.Point(743, 521);
+            this.txtP.Name = "txtP";
+            this.txtP.ReadOnly = true;
+            this.txtP.Size = new System.Drawing.Size(127, 24);
+            this.txtP.TabIndex = 69;
             // 
-            // textBox6
+            // txtI
             // 
-            this.textBox6.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(905, 521);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(127, 24);
-            this.textBox6.TabIndex = 70;
+            this.txtI.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtI.Location = new System.Drawing.Point(905, 521);
+            this.txtI.Name = "txtI";
+            this.txtI.ReadOnly = true;
+            this.txtI.Size = new System.Drawing.Size(127, 24);
+            this.txtI.TabIndex = 70;
             // 
-            // textBox7
+            // txtD
             // 
-            this.textBox7.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(1063, 521);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(127, 24);
-            this.textBox7.TabIndex = 71;
+            this.txtD.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtD.Location = new System.Drawing.Point(1063, 521);
+            this.txtD.Name = "txtD";
+            this.txtD.ReadOnly = true;
+            this.txtD.Size = new System.Drawing.Size(127, 24);
+            this.txtD.TabIndex = 71;
             // 
             // label2
             // 
@@ -266,7 +269,7 @@
             this.txtRich.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRich.Location = new System.Drawing.Point(92, 482);
             this.txtRich.Name = "txtRich";
-            this.txtRich.Size = new System.Drawing.Size(277, 108);
+            this.txtRich.Size = new System.Drawing.Size(277, 128);
             this.txtRich.TabIndex = 78;
             this.txtRich.Text = "";
             // 
@@ -274,15 +277,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1270, 618);
+            this.ClientSize = new System.Drawing.Size(1270, 655);
             this.Controls.Add(this.txtRich);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.txtD);
+            this.Controls.Add(this.txtI);
+            this.Controls.Add(this.txtP);
             this.Controls.Add(this.btnCalcular);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel3);
@@ -315,9 +318,9 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label1;
         private FontAwesome.Sharp.IconButton btnCalcular;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtP;
+        private System.Windows.Forms.TextBox txtI;
+        private System.Windows.Forms.TextBox txtD;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;

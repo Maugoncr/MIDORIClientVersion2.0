@@ -38,18 +38,28 @@ namespace MidoriValveTest.Forms
         public static double Ymax;
         public static double Ymin;
         public static double x1Maxm;
+        public static double x2Maxm;
         public static double y1Maxm;
+        public static double y2Maxm;
         public static double MaxM;
         public static double InicioX;
+        public static double Ko;
+        public static double dX;
+        public static double dY;
+        public static double P;
+        public static double I;
+        public static double D;
 
         private void ObtenerPendienteMaxList()
         {
             List<double> tiempoX = times.ConvertAll(double.Parse);
             List<double> presionY = pressures.ConvertAll(double.Parse);
+            List<double> Apertura = apertures.ConvertAll(double.Parse);
             List<double> Pendientes = new List<double>();
             // Tengo las y maximas y minimas gracias a que obtengo el valor y 0 y el ultimo valor de y
             Ymin = presionY[0];
             Ymax = presionY[presionY.Count() - 1];
+            bool latengo = false;
 
             // Ambas tienen el mismo lenght
             for (int i = 0; i < presionY.Count; i++)
@@ -60,12 +70,11 @@ namespace MidoriValveTest.Forms
                                             presionY[i], presionY[i + 1]);
                     Pendientes.Add(m);
 
-                    if (i < presionY.Count - 3)
+                    
+                    if (Apertura[i] > 0 && latengo == false)
                     {
-                        if (presionY[i] < presionY[i + 1] && presionY[i + 1] < presionY[i + 2])
-                        {
                             InicioX = tiempoX[i];
-                        }
+                            latengo = true;
                     }
                     
 
@@ -83,7 +92,9 @@ namespace MidoriValveTest.Forms
                     if (m == MaxM)
                     {
                         x1Maxm = tiempoX[i];
+                        x2Maxm = tiempoX[i+1];
                         y1Maxm = presionY[i];
+                        y2Maxm = presionY[i+1];
                     }
                 }
             }
@@ -94,9 +105,23 @@ namespace MidoriValveTest.Forms
             double T2 = Xt2 - Xt1;
             double T1 = Xt1 - InicioX;
 
-            txtRich.Text = "Pendiente Maxima (m) = " + decimal.Round((decimal)MaxM,2) +
+            dX = 90;
+            dY = Ymax- Ymin;
+            Ko = (dX * T2) / (dY * T1);
+
+            P = 1.2 * Ko;
+            I = 0.60 * (Ko / T1);
+            D = 0.60 * Ko * T1;
+
+            txtP.Text = decimal.Round((decimal)P,3).ToString();
+            txtI.Text = decimal.Round((decimal)I,3).ToString();
+            txtD.Text = decimal.Round((decimal)D,3).ToString();
+
+            txtRich.Text = "Ko = "+ decimal.Round((decimal)Ko,2)+ "\n"+
+                "Pendiente Maxima (m) = " + decimal.Round((decimal)MaxM,2) +
                 "\nY1 de la pendiente = " + y1Maxm + "\nX1 de la pendiente = " + x1Maxm +
-                "\nT1 = " + decimal.Round((decimal)T1, 2) + "\nT2 = " + decimal.Round((decimal)T2, 2);
+                "\nT1 = " + decimal.Round((decimal)T1, 2) + "\nT2 = " + decimal.Round((decimal)T2, 2)
+                +"\nY2 de la pendiente = " +y2Maxm + "\nX2 de la pendiente = " + x2Maxm;
 
 
         }
