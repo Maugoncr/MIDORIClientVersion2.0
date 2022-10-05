@@ -269,6 +269,7 @@
             this.txtRich.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRich.Location = new System.Drawing.Point(92, 482);
             this.txtRich.Name = "txtRich";
+            this.txtRich.ReadOnly = true;
             this.txtRich.Size = new System.Drawing.Size(277, 128);
             this.txtRich.TabIndex = 78;
             this.txtRich.Text = "";

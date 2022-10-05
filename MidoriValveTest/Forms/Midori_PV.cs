@@ -86,6 +86,8 @@ namespace MidoriValveTest
             DisableBtn(btn_S_pressure);
             DisableBtn(btn_encender);
             DisableBtn(btn_apagar);
+            DisableBtn(btnAutoCalibrate);
+            DisableBtn(btnPIDAnalisis);
             string[] ports = SerialPort.GetPortNames();          // En este arreglo se almacena todos los puertos seriales "COM" registados por la computadora.
             comboBox1.Items.AddRange(ports);                     // Volcamos el contenido de este arreglo dentro del COMBOBOX de seleccion de puerto
 
@@ -183,6 +185,10 @@ namespace MidoriValveTest
             IconSensor.Enabled = false;
             IconTrace.Enabled = false;
             IconReport.Enabled = false;
+
+            // CAMBIOS
+            btnAutoCalibrate.Enabled = false;
+            btnPIDAnalisis.Enabled = false;
             DisableBtn(button3);
 
             // En este arreglo se almacena todos los puertos seriales "COM" registados por la computadora.
@@ -296,6 +302,9 @@ namespace MidoriValveTest
                     IconReport.Enabled = true;
 
                     trackBar1A.Enabled = true;
+
+                    btnAutoCalibrate.Enabled = true;
+                    btnPIDAnalisis.Enabled = true;
 
                     EnableBtn(btn_90);
                     EnableBtn(btn_80);
@@ -864,12 +873,12 @@ namespace MidoriValveTest
                 {
                     Temp += test.Substring(i, 1);
                 }
-                if (test.Substring(i, 1).Equals("S"))
+                if (test.Substring(i, 1).Equals("A"))
                 {
                     firtIn = true;
                 }
             }
-            Temp.Replace("S", "");
+            Temp.Replace("A", "");
             Pressure.Replace("$", "");
 
             if (opcion == 1)
@@ -1547,16 +1556,12 @@ namespace MidoriValveTest
                     //Send to arduino
                     // THIS FORMAT S120,0.123,0.456,1.789
                     // S120,x,x,x
-                   
+                    //string envioConFormato = "S" + presion.ToString() + "," + ObjetosGlobales.P + ","
+                    //    +ObjetosGlobales.I + "," + ObjetosGlobales.D;
 
-                    if (ObjetosGlobales.flagPID)
-                    {
-                        string envioConFormato = "S" + presion.ToString() + "," + ObjetosGlobales.P + ","
-                            +ObjetosGlobales.I + "," + ObjetosGlobales.D;
-
-                        lbSendPID.Text = envioConFormato;
-
-                    }
+                    string envioConFormato = "S" + presion.ToString() + ",x,x,x";
+                    lbSendPID.Text = envioConFormato;
+                    serialPort1.Write(envioConFormato);
 
 
                     if (presion <= 760 && presion > 675.52)
@@ -1620,13 +1625,24 @@ namespace MidoriValveTest
 
 
         }
-
+        public static bool EnviarPID = false;
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             string fecha = DateTime.Now.ToString("dddd, MM/dd/yyyy");
             lblhora.Text = DateTime.Now.ToString("hh:mm:ss tt");
             lblfecha.Text = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(fecha);
+
+            if (EnviarPID)
+            {
+                EnviarPID = false;
+                string PIDFormat = "Sx," + ObjetosGlobales.P + "," + ObjetosGlobales.I + "," + ObjetosGlobales.D;
+                lbPIDSent.Text = PIDFormat;
+                //ENVIAR
+                serialPort1.Write(PIDFormat);
+
+            }
+
         }
 
         private void lblfecha_Click(object sender, EventArgs e)
@@ -1909,6 +1925,9 @@ namespace MidoriValveTest
             IconSensor.Enabled = false;
             IconTrace.Enabled = false;
             IconReport.Enabled = false;
+            //CAMBIOS
+            btnAutoCalibrate.Enabled = false;
+            btnPIDAnalisis.Enabled = false;
             //button3.Enabled = false;
             DisableBtn(button3);
             // En este arreglo se almacena todos los puertos seriales "COM" registados por la computadora.
@@ -2517,9 +2536,6 @@ namespace MidoriValveTest
 
                 
             }
-                
-
-
             
             
         }
@@ -2554,13 +2570,23 @@ namespace MidoriValveTest
 
             if (record == true)
             {
-                times.Add(temp.ToString());
-                apertures.Add(precision_aperture.ToString());
-                pressures.Add(presionChart.ToString());
-                datetimes.Add(DateTime.Now.ToString("hh:mm:ss:ff tt"));
-                lbl_record.Text = "Recording. " + "[" + temp.ToString() + "]";
+                if (AutocalibracionPrendida == true)
+                {
+                    times.Add(temp.ToString());
+                    apertures.Add(precision_aperture.ToString());
+                    pressures.Add(presionChart.ToString());
+                    datetimes.Add(DateTime.Now.ToString("hh:mm:ss:ff tt"));
+                    lbl_record.Text = "Calibrating. " + "[" + temp.ToString() + "]";
+                }
+                else
+                {
+                    times.Add(temp.ToString());
+                    apertures.Add(precision_aperture.ToString());
+                    pressures.Add(presionChart.ToString());
+                    datetimes.Add(DateTime.Now.ToString("hh:mm:ss:ff tt"));
+                    lbl_record.Text = "Recording. " + "[" + temp.ToString() + "]";
+                }
             }
-
 
         }
 
@@ -2690,6 +2716,179 @@ namespace MidoriValveTest
         private void btnPIDAnalisis_MouseLeave(object sender, EventArgs e)
         {
             LeftBtn(btnPIDAnalisis);
+        }
+
+        public void AutoCalibrarANDRecord()
+        {
+            if (AutocalibracionPrendida == false)
+            {
+                if (MessageBoxMaugoncr.Show("Do you want to start autocalibration?, The real time graph will be reset to start.", "!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+
+                    chart1.Series["Aperture value"].Points.Clear();
+                    chart1.Series["Pressure"].Points.Clear();
+                    record = true;
+                    rt = 0;
+                    star_record = DateTime.Now;
+
+                    precision_aperture = 0;
+                    serialPort1.Write(precision_aperture.ToString());
+                    base_value = 0;
+                    trackBar1A.Value = 0;
+                    Current_aperture.Text = trackBar1A.Value + "°";
+                    lbl_record.Text = "Calibrating...";
+                    AutocalibracionPrendida = true;
+                    btnAutoCalibrate.Text = "Stop";
+                    //ENVIA AL ARDUINO ORDEN DE ABRIR VALVULA
+                    lbl_estado.ForeColor = Color.Red;
+                    lbl_estado.Text = "Open";
+                    //TEMAS ESTETICOS DEL SISTEMA
+                    picture_frontal.Image.Dispose();
+                    picture_plane.Image.Dispose();
+                    picture_frontal.Image = Properties.Resources.Front0;
+                    picture_plane.Image = Properties.Resources.Verti0B;
+
+                    if (MessageBoxMaugoncr.Show("PRESS OK TO START", "!", MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
+                    {
+                        precision_aperture = 90;
+                        //ENVIA AL ARDUINO ORDEN DE ABRIR VALVULA
+                        serialPort1.Write(precision_aperture.ToString());
+                        base_value = 90;
+                        trackBar1A.Value = 90;
+                        Current_aperture.Text = trackBar1A.Value + "°";
+                        lbl_estado.ForeColor = Color.Red;
+                        lbl_estado.Text = "Open";
+                        //TEMAS ESTETICOS DEL SISTEMA
+                        picture_frontal.Image.Dispose();
+                        picture_plane.Image.Dispose();
+                        picture_frontal.Image = Properties.Resources.Front90;
+                        picture_plane.Image = Properties.Resources.Verti90B;
+                    }
+
+
+                }
+            }
+            else
+            {
+                precision_aperture = 0;
+                Current_aperture.Text = precision_aperture + "°";
+                serialPort1.Write("0");
+                trackBar2A.Enabled = false;
+                trackBar2A.Value = 0;
+                trackBar1A.Value = 0;
+                picture_frontal.Image.Dispose();
+                picture_frontal.Image = Properties.Resources.Front0;
+                picture_plane.Image.Dispose();
+                picture_plane.Image = Properties.Resources.Verti0B;
+                lbl_estado.ForeColor = Color.Red;
+                lbl_estado.Text = "Close";
+                btn_S_pressure.Text = "Set Target Pressure";
+                btn_set.Text = "Set Apperture";
+                EnableBtn(btn_encender);
+                DisableBtn(btn_apagar);
+                DisableBtn(btn_set);
+
+                if (record == true)
+                {
+                    record = false;
+                    end_record = DateTime.Now;
+                    saveFileDialog1.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+                    saveFileDialog1.FilterIndex = 2;
+                    saveFileDialog1.RestoreDirectory = true;
+                    saveFileDialog1.InitialDirectory = @"C:\";
+                    saveFileDialog1.FileName = "VALVE_CALIBRATION_" + end_record.AddMilliseconds(-40).ToString("yyyy_MM_dd-hh_mm_ss");
+                    saveFileDialog1.ShowDialog();
+
+                    if (saveFileDialog1.FileName != "")
+                    {
+                        // Saves the Image via a FileStream created by the OpenFile method.
+
+                        using (StreamWriter file = new StreamWriter(@"" + saveFileDialog1.FileName + ".txt"))
+                        {
+                            file.WriteLine("** MIDORI VALVE **");
+                            file.WriteLine("#------------------------------------------------------------------");
+                            file.WriteLine("#Datetime: " + star_record.ToString("yyyy/MM/dd - hh:mm:ss:ff tt"));
+                            file.WriteLine("#Data Time range: [" + star_record.ToString(" hh:mm:ss:ff tt") + " - " + end_record.ToString(" hh:mm:ss:ff tt") + "]");
+                            file.WriteLine("#Data |Time,seconds,[s],ChartAxisX ");
+                            file.WriteLine("#Data |Apperture,grades,[°],ChartAxisY1 ");
+                            file.WriteLine("#Data |Pressure,pounds per square inch,[psi],ChartAxisY2 ");
+                            file.WriteLine("#------------------------------------------------------------------");
+                            file.WriteLine("#PARAMETER    |Chart Type = valve record");
+                            file.WriteLine("#PARAMETER    |Valve serie =");
+                            file.WriteLine("#PARAMETER    |Valve Software Version =");
+                            file.WriteLine("#PARAMETER    |Valve Firmware Version =");
+                            file.WriteLine("#PARAMETER    |Position Unit = 0 - 90 =");
+
+                            file.WriteLine("#------------------------------------------------------------------");
+                            file.WriteLine("-|-  Time  -|-  Apperture  -|-  Pressure  -|-  DateTime  -|-");
+
+                            file.WriteLine("#------------------------------------------------------------------");
+                            for (int i = 0; i < times.Count; i++)
+                            {
+
+                                file.WriteLine(times[i] + " , " + apertures[i] + " , " + pressures[i] + " , " + datetimes[i]);
+
+                            }
+                            file.WriteLine("#------------------------------------------------------------------");
+                        }
+                    }
+
+                    lbl_record.Text = "OFF";
+                    AutocalibracionPrendida = false;
+                    btnAutoCalibrate.Text = "Autocalibration";
+                    MessageBoxMaugoncr.Show("Autocalibration data successfully saved", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+            }
+        }
+
+        public static bool AutocalibracionPrendida = false;
+        private void btnAutoCalibrate_Click(object sender, EventArgs e)
+        {
+            AutoCalibrarANDRecord();
+        }
+
+        private void btnAutoCalibrate_MouseEnter(object sender, EventArgs e)
+        {
+            EnterBtn(btnAutoCalibrate);
+        }
+
+        private void btnAutoCalibrate_MouseLeave(object sender, EventArgs e)
+        {
+            LeftBtn(btnAutoCalibrate);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
+        bool Inicio = true;
+        private void btnStartPID_Click(object sender, EventArgs e)
+        {
+            if (Inicio)
+            {
+                serialPort1.Write("P");
+                btnStartPID.Text = "Stop PID";
+                Inicio = false;
+            }
+            else
+            {
+                serialPort1.Write("T");
+                btnStartPID.Text = "Start PID";
+                Inicio = true;
+            }
+
+
+        }
+
+        private void btnStartPID_MouseEnter(object sender, EventArgs e)
+        {
+            EnterBtn(btnStartPID);
+        }
+
+        private void btnStartPID_MouseLeave(object sender, EventArgs e)
+        {
+            LeftBtn(btnStartPID);
         }
     }
 }

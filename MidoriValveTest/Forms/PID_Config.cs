@@ -31,24 +31,7 @@ namespace MidoriValveTest
         private void PID_Config_Load(object sender, EventArgs e)
         {
             Comprabar();
-            //Cb_ControlSelector.SelectedIndex = 0;
-
-            //GroupC2.Enabled = false;
-            //GroupC3.Enabled = false;
-            //GroupC4.Enabled = false;
-            //GroupS2.Enabled = false;
-            //GroupS3.Enabled = false;
-            //GroupS4.Enabled = false;
-            //GroupR2.Enabled = false;
-            //GroupR3.Enabled = false;
-            //GroupR4.Enabled = false;
-            //BtnBackGround2.Visible = false;
-            //BtnBackGround3.Visible = false;
-            //BtnBackGround4.Visible = false;
-            //txtP.Enabled = false;
-            //txtI.Enabled = false;
-            //txtD.Enabled = false;
-
+           
         }
 
         private void Cb_ControlSelector_SelectedIndexChanged(object sender, EventArgs e)
@@ -68,7 +51,7 @@ namespace MidoriValveTest
                 GroupR3.Enabled = false;
                 GroupR4.Enabled = false;
 
-                btnBackGround1.Visible = true;
+                
                 BtnBackGround2.Visible = false;
                 BtnBackGround3.Visible = false;
                 BtnBackGround4.Visible = false;
@@ -89,7 +72,7 @@ namespace MidoriValveTest
                 GroupR3.Enabled = false;
                 GroupR4.Enabled = false;
 
-                btnBackGround1.Visible = false;
+               
                 BtnBackGround2.Visible = true;
                 BtnBackGround3.Visible = false;
                 BtnBackGround4.Visible = false;
@@ -110,7 +93,7 @@ namespace MidoriValveTest
                 GroupR3.Enabled = true;
                 GroupR4.Enabled = false;
 
-                btnBackGround1.Visible = false;
+                
                 BtnBackGround2.Visible = false;
                 BtnBackGround3.Visible = true;
                 BtnBackGround4.Visible = false;
@@ -132,7 +115,7 @@ namespace MidoriValveTest
                 GroupR3.Enabled = false;
                 GroupR4.Enabled = true;
 
-                btnBackGround1.Visible = false;
+               
                 BtnBackGround2.Visible = false;
                 BtnBackGround3.Visible = false;
                 BtnBackGround4.Visible = true;
@@ -197,6 +180,7 @@ namespace MidoriValveTest
             if (checkPID.Checked)
             {
                 ObjetosGlobales.flagPID = true;
+              
             }
             else
             {
@@ -207,6 +191,7 @@ namespace MidoriValveTest
                 ObjetosGlobales.P = "x";
                 ObjetosGlobales.I = "x";
                 ObjetosGlobales.D = "x";
+                
             }
         }
         private void Comprabar() 
@@ -216,8 +201,9 @@ namespace MidoriValveTest
                 txtP.Text = ObjetosGlobales.P;
                 txtI.Text = ObjetosGlobales.I;
                 txtD.Text = ObjetosGlobales.D;
+                checkPID.Checked = true;
             }
-        
+                    
         }
         private void txtP_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -298,6 +284,30 @@ namespace MidoriValveTest
         private void PID_Config_FormClosing(object sender, FormClosingEventArgs e)
         {
 
+        }
+
+        private void IconClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnSentPID_Click(object sender, EventArgs e)
+        {
+            if (checkPID.Checked)
+            {
+                if (!string.IsNullOrEmpty(txtP.Text.Trim()) && !string.IsNullOrEmpty(txtI.Text.Trim()) && !string.IsNullOrEmpty(txtD.Text.Trim()))
+                {
+                    Midori_PV.EnviarPID = true;
+                }
+                else
+                {
+                    MessageBoxMaugoncr.Show("PID aren't complete", "!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+            else
+            {
+                MessageBoxMaugoncr.Show("PID Disable", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
     }
 }

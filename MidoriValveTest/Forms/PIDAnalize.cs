@@ -117,6 +117,11 @@ namespace MidoriValveTest.Forms
             txtI.Text = decimal.Round((decimal)I,3).ToString();
             txtD.Text = decimal.Round((decimal)D,3).ToString();
 
+            ObjetosGlobales.P = decimal.Round((decimal)P, 3).ToString();
+            ObjetosGlobales.I = decimal.Round((decimal)I, 3).ToString();
+            ObjetosGlobales.D = decimal.Round((decimal)D, 3).ToString();
+            ObjetosGlobales.flagPID = true;
+
             txtRich.Text = "Ko = "+ decimal.Round((decimal)Ko,2)+ "\n"+
                 "Pendiente Maxima (m) = " + decimal.Round((decimal)MaxM,2) +
                 "\nY1 de la pendiente = " + y1Maxm + "\nX1 de la pendiente = " + x1Maxm +
