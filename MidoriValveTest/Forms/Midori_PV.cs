@@ -190,6 +190,7 @@ namespace MidoriValveTest
             btnAutoCalibrate.Enabled = false;
             btnPIDAnalisis.Enabled = false;
             DisableBtn(button3);
+            DisableBtn(btnStartPID);
 
             // En este arreglo se almacena todos los puertos seriales "COM" registados por la computadora.
             string[] ports = SerialPort.GetPortNames();
@@ -292,6 +293,7 @@ namespace MidoriValveTest
                     EnableBtn(btn_valveTest);
                     comboBox1.Enabled = false;
                     DisableBtn(button3);
+                    EnableBtn(btnStartPID);
 
                     // Menu settings
                     btn_menu.Enabled = true;
@@ -1928,8 +1930,10 @@ namespace MidoriValveTest
             //CAMBIOS
             btnAutoCalibrate.Enabled = false;
             btnPIDAnalisis.Enabled = false;
+            DisableBtn(btnStartPID);
             //button3.Enabled = false;
             DisableBtn(button3);
+           
             // En este arreglo se almacena todos los puertos seriales "COM" registados por la computadora.
             //Boton 3 es el boton de Connect
             //button3.Enabled = false;
