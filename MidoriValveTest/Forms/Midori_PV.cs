@@ -83,7 +83,7 @@ namespace MidoriValveTest
             DisableBtn(button3);
             DisableBtn(btn_valveTest);
             DisableBtn(btn_set);
-            DisableBtn(btn_S_pressure);
+           // DisableBtn(btn_S_pressure);
             DisableBtn(btn_encender);
             DisableBtn(btn_apagar);
             DisableBtn(btnAutoCalibrate);
@@ -114,7 +114,7 @@ namespace MidoriValveTest
             DisableBtn(btn_10);
             DisableBtn(btn_0);
             trackBar1A.Enabled = false;
-            trackBar2A.Enabled = false;
+           // trackBar2A.Enabled = false;
             DisableBtn(button7);
             DisableBtn(button6);
             DisableBtn(button5);
@@ -1620,7 +1620,8 @@ namespace MidoriValveTest
             //lbl_pressure.Text = "Current Pressure:" + pressure_get + "°";
             //btn_S_pressure.Text = "Set Pressure";
             //btn_S_pressure.Enabled = false;
-            DisableBtn(btn_S_pressure);
+            //CAMBIOS!!!
+            //DisableBtn(btn_S_pressure);
             //// lbl_estado.ForeColor = Color.Green;
             //// lbl_estado.Text = "Open";
             //Arduino.Write(pressure_get.ToString());
