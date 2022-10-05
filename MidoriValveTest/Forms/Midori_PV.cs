@@ -114,12 +114,20 @@ namespace MidoriValveTest
             DisableBtn(btn_10);
             DisableBtn(btn_0);
             trackBar1A.Enabled = false;
-           // trackBar2A.Enabled = false;
+            trackBar2A.Enabled = false;
+            
+      
+
+           // Boton Chart Analyzer
             DisableBtn(button7);
+
             DisableBtn(button6);
+            // Boton Analyze
             DisableBtn(button5);
             DisableBtn(button4);
             DisableBtn(button2);
+
+            //Boton de grabar
             DisableBtn(button1);
         }
 
@@ -304,6 +312,7 @@ namespace MidoriValveTest
                     IconReport.Enabled = true;
 
                     trackBar1A.Enabled = true;
+                    trackBar2A.Enabled = true;
 
                     btnAutoCalibrate.Enabled = true;
                     btnPIDAnalisis.Enabled = true;
@@ -318,6 +327,11 @@ namespace MidoriValveTest
                     EnableBtn(btn_20);
                     EnableBtn(btn_10);
                     EnableBtn(btn_0);
+
+                    EnableBtn(button1);
+                    EnableBtn(button7);
+                    EnableBtn(button5);
+                    
 
                    
                 }              
