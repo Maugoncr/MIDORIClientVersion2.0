@@ -1114,9 +1114,12 @@ namespace MidoriValveTest
                 }
                 //button2.Enabled = false;
                 DisableBtn(button2);
-
                 //button1.Enabled = true;
                 EnableBtn(button1);
+                times.Clear();
+                apertures.Clear();
+                pressures.Clear();
+                datetimes.Clear();
 
                 lbl_record.Text = "OFF";
             }
