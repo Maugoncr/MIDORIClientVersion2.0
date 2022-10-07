@@ -2099,7 +2099,6 @@ namespace MidoriValveTest
             this.lbl_Test.Size = new System.Drawing.Size(139, 29);
             this.lbl_Test.TabIndex = 67;
             this.lbl_Test.Text = "Testing dbz";
-            this.lbl_Test.Visible = false;
             this.lbl_Test.Click += new System.EventHandler(this.lbl_Test_Click);
             // 
             // IconMaxin

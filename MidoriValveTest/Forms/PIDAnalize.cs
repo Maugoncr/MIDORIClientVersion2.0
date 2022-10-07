@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CustomMessageBox;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -98,7 +99,8 @@ namespace MidoriValveTest.Forms
                     }
                 }
             }
-
+            if (MaxM != 0)
+            {
             double Xt1 = ((Ymin - y1Maxm) / MaxM) + x1Maxm;
             double Xt2 = ((Ymax - y1Maxm) / MaxM) + x1Maxm;
 
@@ -113,21 +115,27 @@ namespace MidoriValveTest.Forms
             I = 0.60 * (Ko / T1);
             D = 0.60 * Ko * T1;
 
-            txtP.Text = decimal.Round((decimal)P,3).ToString();
-            txtI.Text = decimal.Round((decimal)I,3).ToString();
-            txtD.Text = decimal.Round((decimal)D,3).ToString();
+            
+                txtP.Text = decimal.Round((decimal)P, 3).ToString();
+                txtI.Text = decimal.Round((decimal)I, 3).ToString();
+                txtD.Text = decimal.Round((decimal)D, 3).ToString();
+                ObjetosGlobales.P = decimal.Round((decimal)P, 3).ToString();
+                ObjetosGlobales.I = decimal.Round((decimal)I, 3).ToString();
+                ObjetosGlobales.D = decimal.Round((decimal)D, 3).ToString();
+                ObjetosGlobales.flagPID = true;
 
-            ObjetosGlobales.P = decimal.Round((decimal)P, 3).ToString();
-            ObjetosGlobales.I = decimal.Round((decimal)I, 3).ToString();
-            ObjetosGlobales.D = decimal.Round((decimal)D, 3).ToString();
-            ObjetosGlobales.flagPID = true;
+                txtRich.Text = "Ko = " + decimal.Round((decimal)Ko, 2) + "\n" +
+               "Pendiente Maxima (m) = " + decimal.Round((decimal)MaxM, 2) +
+               "\nY1 de la pendiente = " + y1Maxm + "\nX1 de la pendiente = " + x1Maxm +
+               "\nT1 = " + decimal.Round((decimal)T1, 2) + "\nT2 = " + decimal.Round((decimal)T2, 2)
+               + "\nY2 de la pendiente = " + y2Maxm + "\nX2 de la pendiente = " + x2Maxm;
 
-            txtRich.Text = "Ko = "+ decimal.Round((decimal)Ko,2)+ "\n"+
-                "Pendiente Maxima (m) = " + decimal.Round((decimal)MaxM,2) +
-                "\nY1 de la pendiente = " + y1Maxm + "\nX1 de la pendiente = " + x1Maxm +
-                "\nT1 = " + decimal.Round((decimal)T1, 2) + "\nT2 = " + decimal.Round((decimal)T2, 2)
-                +"\nY2 de la pendiente = " +y2Maxm + "\nX2 de la pendiente = " + x2Maxm;
-
+            }
+            else
+            {
+                MessageBoxMaugoncr.Show("The graph shows uncontrolled anomalies, try again with another one.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtRich.Text = "Maximum slope is equal to 0, not allowed.";
+            }
 
         }
        

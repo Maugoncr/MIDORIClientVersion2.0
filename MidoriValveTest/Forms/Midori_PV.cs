@@ -889,12 +889,12 @@ namespace MidoriValveTest
                 {
                     Temp += test.Substring(i, 1);
                 }
-                if (test.Substring(i, 1).Equals("A"))
+                if (test.Substring(i, 1).Equals("S"))
                 {
                     firtIn = true;
                 }
             }
-            Temp.Replace("A", "");
+            Temp.Replace("S", "");
             Pressure.Replace("$", "");
 
             if (opcion == 1)
@@ -2541,7 +2541,7 @@ namespace MidoriValveTest
             {
                 if (serialPort1.ReadLine().Contains("$"))
                 {
-                    lbl_Test.Text = serialPort1.ReadLine();
+                    lbl_Test.Invoke(new Action(() => lbl_Test.Text = serialPort1.ReadLine().ToString()));
                     capturadatos = serialPort1.ReadLine();
                     presionChart = ObtenerData(capturadatos, 2);
                     temperaturaLabel = ObtenerData(capturadatos, 1);
@@ -2855,6 +2855,10 @@ namespace MidoriValveTest
                     lbl_record.Text = "OFF";
                     AutocalibracionPrendida = false;
                     btnAutoCalibrate.Text = "Autocalibration";
+                    times.Clear();
+                    apertures.Clear();
+                    pressures.Clear();
+                    datetimes.Clear();
                     MessageBoxMaugoncr.Show("Autocalibration data successfully saved", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }
