@@ -2544,13 +2544,14 @@ namespace MidoriValveTest
             {
                 if (serialPort1.ReadLine().Contains("$"))
                 {
-                    lbl_Test.Invoke(new Action(() => lbl_Test.Text = serialPort1.ReadLine().ToString()));
+                  //  lbl_Test.Invoke(new Action(() => lbl_Test.Text = serialPort1.ReadLine().ToString()));
+                    lbl_Test.Text = serialPort1.ReadLine();
                     capturadatos = serialPort1.ReadLine();
                     presionChart = ObtenerData(capturadatos, 2);
                     temperaturaLabel = ObtenerData(capturadatos, 1);
-
+                    serialPort1.DiscardInBuffer();
                     // Only for test
-                   
+
                 }
             }
             catch (Exception)
