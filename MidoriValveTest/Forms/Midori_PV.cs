@@ -889,12 +889,12 @@ namespace MidoriValveTest
                 {
                     Temp += test.Substring(i, 1);
                 }
-                if (test.Substring(i, 1).Equals("S"))
+                if (test.Substring(i, 1).Equals("A"))
                 {
                     firtIn = true;
                 }
             }
-            Temp.Replace("S", "");
+            Temp.Replace("A", "");
             Pressure.Replace("$", "");
 
             if (opcion == 1)
