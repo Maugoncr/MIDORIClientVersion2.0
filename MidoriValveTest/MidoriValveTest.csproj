@@ -167,6 +167,12 @@
     <Compile Include="Forms\FormMessageBox.Designer.cs">
       <DependentUpon>FormMessageBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FrmAnalizarReadExist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmAnalizarReadExist.Designer.cs">
+      <DependentUpon>FrmAnalizarReadExist.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Information.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -251,6 +257,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormMessageBox.resx">
       <DependentUpon>FormMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmAnalizarReadExist.resx">
+      <DependentUpon>FrmAnalizarReadExist.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Information.aa.resx">
       <DependentUpon>Information.cs</DependentUpon>

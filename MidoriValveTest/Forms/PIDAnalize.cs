@@ -107,7 +107,7 @@ namespace MidoriValveTest.Forms
             double T2 = Xt2 - Xt1;
             double T1 = Xt1 - InicioX;
 
-            dX = 90;
+            dX = ObjetosGlobales.ApperCali;
             dY = Ymax- Ymin;
             Ko = (dX * T2) / (dY * T1);
 

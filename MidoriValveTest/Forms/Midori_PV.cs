@@ -2542,16 +2542,19 @@ namespace MidoriValveTest
 
             try
             {
-                if (serialPort1.ReadLine().Contains("$"))
+                if (!serialPort1.ReadLine().Contains("-"))
                 {
-                  //  lbl_Test.Invoke(new Action(() => lbl_Test.Text = serialPort1.ReadLine().ToString()));
-                    lbl_Test.Text = serialPort1.ReadLine();
-                    capturadatos = serialPort1.ReadLine();
-                    presionChart = ObtenerData(capturadatos, 2);
-                    temperaturaLabel = ObtenerData(capturadatos, 1);
-                    serialPort1.DiscardInBuffer();
-                    // Only for test
+                    if (serialPort1.ReadLine().Contains("$"))
+                    {
+                        //  lbl_Test.Invoke(new Action(() => lbl_Test.Text = serialPort1.ReadLine().ToString()));
+                        lbl_Test.Text = serialPort1.ReadLine();
+                        capturadatos = serialPort1.ReadLine();
+                        presionChart = ObtenerData(capturadatos, 2);
+                        temperaturaLabel = ObtenerData(capturadatos, 1);
+                        //serialPort1.DiscardInBuffer();
+                        // Only for test
 
+                    }
                 }
             }
             catch (Exception)
@@ -2773,19 +2776,19 @@ namespace MidoriValveTest
 
                     if (MessageBoxMaugoncr.Show("PRESS OK TO START", "!", MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
                     {
-                        precision_aperture = 90;
+                        precision_aperture = ObjetosGlobales.ApperCali;
                         //ENVIA AL ARDUINO ORDEN DE ABRIR VALVULA
-                        serialPort1.Write(precision_aperture.ToString());
-                        base_value = 90;
-                        trackBar1A.Value = 90;
+                        serialPort1.Write(ObjetosGlobales.ApperCali.ToString());
+                        base_value = ObjetosGlobales.ApperCali;
+                        trackBar1A.Value = ObjetosGlobales.ApperCali;
                         Current_aperture.Text = trackBar1A.Value + "°";
                         lbl_estado.ForeColor = Color.Red;
                         lbl_estado.Text = "Open";
                         //TEMAS ESTETICOS DEL SISTEMA
-                        picture_frontal.Image.Dispose();
-                        picture_plane.Image.Dispose();
-                        picture_frontal.Image = Properties.Resources.Front90;
-                        picture_plane.Image = Properties.Resources.Verti90B;
+                        //picture_frontal.Image.Dispose();
+                        //picture_plane.Image.Dispose();
+                        //picture_frontal.Image = Properties.Resources.Front90;
+                        //picture_plane.Image = Properties.Resources.Verti90B;
                     }
 
 
@@ -2872,7 +2875,17 @@ namespace MidoriValveTest
         public static bool AutocalibracionPrendida = false;
         private void btnAutoCalibrate_Click(object sender, EventArgs e)
         {
-            AutoCalibrarANDRecord();
+            if (trackBar1A.Value != 0)
+            {
+                ObjetosGlobales.ApperCali = trackBar1A.Value;
+                AutoCalibrarANDRecord();
+
+            }
+            else
+            {
+                AutoCalibrarANDRecord();
+            }
+            
         }
 
         private void btnAutoCalibrate_MouseEnter(object sender, EventArgs e)
@@ -2916,6 +2929,60 @@ namespace MidoriValveTest
         private void btnStartPID_MouseLeave(object sender, EventArgs e)
         {
             LeftBtn(btnStartPID);
+        }
+
+        public bool ja = true;
+        private void btnReadExist_Click(object sender, EventArgs e)
+        {
+            if (ja)
+            {
+                ReadExistTimer.Start();
+                ja = false;
+            }
+            else
+            {
+                ReadExistTimer.Stop();
+                ja = true;
+            }
+           
+          
+
+        }
+        public bool ina = false;
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            if (ina)
+            {
+                txtRead.Visible = false;
+                ina = false;
+            }
+            else
+            {
+                txtRead.Visible = true;
+                ina = true;
+            }
+            
+        }
+
+       
+        private void ReadExistTimer_Tick(object sender, EventArgs e)
+        {
+            txtRead.Text += serialPort1.ReadExisting();
+            txtRead.Select(txtRead.TextLength + 1, 0);
+            txtRead.ScrollToCaret();
+        }
+
+        private void txtRead_TextChanged(object sender, EventArgs e)
+        {
+            if (txtRead.TextLength == 1999999998)
+            {
+                ReadExistTimer.Stop();
+            }
+        }
+
+        private void iconButton2_Click(object sender, EventArgs e)
+        {
+            txtRead.Clear();
         }
     }
 }

@@ -14,5 +14,9 @@ namespace MidoriValveTest
         public static string D = "x";
         public static bool flagPID = false;
 
+        public static List<string> ReadExist = new List<string>();
+
+        public static int ApperCali = 90;
+
     }
 }
