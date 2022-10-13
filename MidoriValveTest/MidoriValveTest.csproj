@@ -167,6 +167,12 @@
     <Compile Include="Forms\FormMessageBox.Designer.cs">
       <DependentUpon>FormMessageBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Form_Alert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_Alert.Designer.cs">
+      <DependentUpon>Form_Alert.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmAnalizarReadExist.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -257,6 +263,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormMessageBox.resx">
       <DependentUpon>FormMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_Alert.resx">
+      <DependentUpon>Form_Alert.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmAnalizarReadExist.resx">
       <DependentUpon>FrmAnalizarReadExist.cs</DependentUpon>
@@ -385,6 +394,8 @@
     <None Include="Resources\90 GRADOS.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\warning.png" />
+    <None Include="Resources\success.png" />
     <None Include="Resources\question.png" />
     <None Include="Resources\Verti90B.png" />
     <None Include="Resources\Verti80B.png" />
@@ -445,6 +456,11 @@
     <None Include="Resources\exclamation.png" />
     <None Include="Resources\information.png" />
     <Content Include="LOGO-ICO-negro.ico" />
+    <None Include="Resources\error1.png" />
+    <None Include="Resources\icons8_cancel_25px.png" />
+    <None Include="Resources\info.png" />
+    <None Include="Resources\btnOff.png" />
+    <None Include="Resources\btnOn.png" />
     <Content Include="Resources\led_off_green.png" />
     <Content Include="Resources\led_off_red.png" />
     <Content Include="Resources\led_off_yellow.png" />

@@ -302,6 +302,9 @@ namespace MidoriValveTest
                     comboBox1.Enabled = false;
                     DisableBtn(button3);
                     EnableBtn(btnStartPID);
+                    EnableBtn(btnOnMANValve);
+                  
+
 
                     // Menu settings
                     btn_menu.Enabled = true;
@@ -2096,6 +2099,14 @@ namespace MidoriValveTest
                 btn.BackgroundImage.Dispose();
                 btn.BackgroundImage = MidoriValveTest.Properties.Resources.btnDisa2;
                 btn.ForeColor = Color.Black;
+                if (btn.Name == "btnOnMANValve")
+                {
+                    btnOnMANValve.IconColor = Color.Black;
+                }
+                if (btn.Name == "btnOffMANValve")
+                {
+                    btnOffMANValve.IconColor = Color.Black;
+                }
             }
             else
             {
@@ -2983,6 +2994,76 @@ namespace MidoriValveTest
         private void iconButton2_Click(object sender, EventArgs e)
         {
             txtRead.Clear();
+        }
+        public void Alert(string msg, Form_Alert.enmType type)
+        {
+            Form_Alert frm = new Form_Alert();
+            frm.showAlert(msg, type);
+        }
+
+        private void btnOnMANValve_Click(object sender, EventArgs e)
+        {
+            if (btnOnMANValve.Enabled == true)
+            {
+                lbStatusMANValve.Text = "ON";
+                this.Alert("Successfully opened", Form_Alert.enmType.Success);
+                EnableBtn(btnOffMANValve);
+                btnOnMANValve.Enabled = false;
+            }
+            
+        }
+
+        private void btnOffMANValve_Click(object sender, EventArgs e)
+        {
+            if (btnOffMANValve.Enabled == true)
+            {
+                lbStatusMANValve.Text = "OFF";
+                this.Alert("Successfully closed", Form_Alert.enmType.Success);
+                EnableBtn(btnOnMANValve);
+                btnOffMANValve.Enabled = false;
+            }
+          
+        }
+
+        private void btnOffMANValve_MouseLeave(object sender, EventArgs e)
+        {
+            LeftBtn(btnOffMANValve);
+        }
+
+        private void btnOnMANValve_MouseLeave(object sender, EventArgs e)
+        {
+            LeftBtn(btnOnMANValve);
+        }
+
+        private void btnOnMANValve_MouseEnter(object sender, EventArgs e)
+        {
+            EncenderBTN(btnOnMANValve);
+        }
+
+        private void EncenderBTN(Button btn)
+        {
+            if (btn.Enabled == true)
+            {
+                if (btn.Name == "btnOnMANValve")
+                {
+                    btn.ForeColor = Color.White;
+                    btnOnMANValve.IconColor = Color.White;
+                    btn.BackgroundImage.Dispose();
+                    btn.BackgroundImage = Properties.Resources.btnOn;
+                }
+                else
+                {
+                    btn.ForeColor = Color.White;
+                    btnOffMANValve.IconColor = Color.White;
+                    btn.BackgroundImage.Dispose();
+                    btn.BackgroundImage = Properties.Resources.btnOff;
+                }
+            }
+        }
+
+        private void btnOffMANValve_MouseEnter(object sender, EventArgs e)
+        {
+            EncenderBTN(btnOffMANValve);
         }
     }
 }
