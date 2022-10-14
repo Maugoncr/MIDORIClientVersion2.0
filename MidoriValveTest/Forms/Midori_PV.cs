@@ -3065,5 +3065,107 @@ namespace MidoriValveTest
         {
             EncenderBTN(btnOffMANValve);
         }
+
+        public void Apagar()
+        {
+            if (serialPort1.IsOpen)
+            {
+                serialPort1.Close();
+
+            }
+
+            
+            EnableBtn(btn_set);
+
+            //Disable SideMenu since you connect again
+            iconTerminal.Enabled = false;
+            iconPID.Enabled = false;
+            IconSensor.Enabled = false;
+            IconTrace.Enabled = false;
+            IconReport.Enabled = false;
+            btnAutoCalibrate.Enabled = false;
+            btnPIDAnalisis.Enabled = false;
+            DisableBtn(button3);
+            DisableBtn(btnStartPID);
+
+            // En este arreglo se almacena todos los puertos seriales "COM" registados por la computadora.
+            string[] ports = SerialPort.GetPortNames();
+            //Maugoncr//Validar que no metamos el mismo Puerto COM repetido
+            //Limpia el combobox y añade el array de los nombres de los puertos
+            comboBox1.Items.Clear();
+            comboBox1.Items.AddRange(ports);
+
+            // SECTION ABOUT CHART
+
+            chart1.Series["Aperture value"].Points.Clear();
+            chart1.Series["Pressure"].Points.Clear();
+            ChartArea CA = chart1.ChartAreas[0];
+            CA.CursorX.AutoScroll = true;
+            //Restart the chart timer
+            i = false;
+            timerForData.Stop();
+            comboBox1.Enabled = true;
+            btn_set.Text = "Set Apperture";
+            btn_S_pressure.Text = "Set Target Pressure";
+            trackBar1A.Enabled = false;
+            trackBar2A.Enabled = false;
+            trackBar1A.Value = 0;
+            trackBar2A.Value = 0;
+            precision_aperture = 0;
+            Current_aperture.Text = precision_aperture + "°";
+            picture_frontal.Image.Dispose();
+            picture_frontal.Image = MidoriValveTest.Properties.Resources.Front0;
+            picture_plane.Image.Dispose();
+            picture_plane.Image = MidoriValveTest.Properties.Resources.Verti0B;
+            precision_aperture = 0;
+            lbl_estado.ForeColor = Color.Red;
+            lbl_estado.Text = "Close";
+            DisableBtn(btn_apagar);
+            DisableBtn(btn_90);
+            DisableBtn(btn_80);
+            DisableBtn(btn_70);
+            DisableBtn(btn_60);
+            DisableBtn(btn_50);
+            DisableBtn(btn_40);
+            DisableBtn(btn_30);
+            DisableBtn(btn_20);
+            DisableBtn(btn_10);
+            DisableBtn(btn_0);
+
+
+
+            if (DateStartedTest.Text != "-/-/-")
+            {
+                TestCicles.greenlight = false;
+                TestCicles.counter = 0;
+                DateStartedTest.Text = "-/-/-";
+                DateEndedTest.Text = "-/-/-";
+                green_off.Image.Dispose();
+                green_off.Image = MidoriValveTest.Properties.Resources.led_off_green;
+                yellow_off.Image.Dispose();
+                yellow_off.Image = MidoriValveTest.Properties.Resources.led_off_yellow;
+                red_off.Image.Dispose();
+                red_off.Image = MidoriValveTest.Properties.Resources.led_off_red;
+                lb_CounterTest.Text = "0";
+
+
+
+            }
+
+            //Maugoncr// Turn off the led and the same for labels, disable the button of Open Gate
+            com_led.Image.Dispose();
+            com_led.Image = MidoriValveTest.Properties.Resources.led_off;
+            LblEstado.Text = "Disconnected *";
+            lblPuerto.Text = "Disconnected *";
+            // btn_encender.Enabled = false;
+            DisableBtn(btn_encender);
+            lbl_pressure.Text = " 0 ";
+            //btn_valveTest.Enabled = false;
+            DisableBtn(btn_valveTest);
+
+            Thread.Sleep(2000);
+
+        }
+
     }
 }
