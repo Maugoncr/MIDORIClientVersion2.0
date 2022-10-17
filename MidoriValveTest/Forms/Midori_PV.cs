@@ -66,7 +66,23 @@ namespace MidoriValveTest
 
         public void InitializeSetting() {
             this.FormBorderStyle = FormBorderStyle.None;
-           
+
+            s_inicial = 755;
+            s_final = 760;
+            trackBar2A.Maximum = 760;
+            lbl_T_0.Text = "0";
+            lbl_T_1.Text = "84.44";
+            lbl_T_2.Text = "168.88";
+            lbl_T_3.Text = "253.32";
+            lbl_T_4.Text = "337.76";
+            lbl_T_5.Text = "422.2";
+            lbl_T_6.Text = "506.64";
+            lbl_T_7.Text = "591.08";
+            lbl_T_8.Text = "675.52";
+            lbl_T_9.Text = "760";
+            lbl_units_track.Text = "Torr";
+            lbl_P_unit_top.Text = "Torr";
+
         }
 
        
@@ -3169,3 +3185,5 @@ namespace MidoriValveTest
 
     }
 }
+
+

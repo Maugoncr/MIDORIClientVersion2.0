@@ -8,7 +8,7 @@ namespace MidoriValveTest
 {
     static class Program
     {
-        public static string P_unit = "PSI"; //leer desde aca del archivo de configuracion (hasta etonces sera PSI)
+        public static string P_unit = "Torr"; //leer desde aca del archivo de configuracion (hasta etonces sera PSI)
         public static string AP_unit = "1:1"; //Se utilizara si nos es posible modificar la cuenta de pasos fuera de utilizar grados. 
 
 
