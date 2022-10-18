@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="button6.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnOEM.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAPgAAAAyCAYAAABxohbZAAAABGdBTUEAALGPC/xhBQAABeNJREFUeF7t
         3U9oHFUAx/HGNqmtVhD/oIh604PiyYN/L4J40YMVPehBUfSiF8GrppBuDxYPgrWxMTkEqQVDU2qVpi2t
@@ -149,7 +149,7 @@
         6fIsD+5t5loAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="button5.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnAnalyze.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAPgAAAAyCAYAAABxohbZAAAABGdBTUEAALGPC/xhBQAABeNJREFUeF7t
         3U9oHFUAx/HGNqmtVhD/oIh604PiyYN/L4J40YMVPehBUfSiF8GrppBuDxYPgrWxMTkEqQVDU2qVpi2t
@@ -180,7 +180,7 @@
         6fIsD+5t5loAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="button7.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnChartArchiveAnalyzer.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAPgAAAAyCAYAAABxohbZAAAABGdBTUEAALGPC/xhBQAABeNJREFUeF7t
         3U9oHFUAx/HGNqmtVhD/oIh604PiyYN/L4J40YMVPehBUfSiF8GrppBuDxYPgrWxMTkEqQVDU2qVpi2t
@@ -211,7 +211,7 @@
         6fIsD+5t5loAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="button4.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnClear.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAPgAAAAyCAYAAABxohbZAAAABGdBTUEAALGPC/xhBQAABeNJREFUeF7t
         3U9oHFUAx/HGNqmtVhD/oIh604PiyYN/L4J40YMVPehBUfSiF8GrppBuDxYPgrWxMTkEqQVDU2qVpi2t
@@ -242,7 +242,7 @@
         6fIsD+5t5loAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="button2.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnStopRecord.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAPgAAAAyCAYAAABxohbZAAAABGdBTUEAALGPC/xhBQAABeNJREFUeF7t
         3U9oHFUAx/HGNqmtVhD/oIh604PiyYN/L4J40YMVPehBUfSiF8GrppBuDxYPgrWxMTkEqQVDU2qVpi2t
@@ -273,7 +273,7 @@
         6fIsD+5t5loAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="button1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnStartRecord.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAPgAAAAyCAYAAABxohbZAAAABGdBTUEAALGPC/xhBQAABeNJREFUeF7t
         3U9oHFUAx/HGNqmtVhD/oIh604PiyYN/L4J40YMVPehBUfSiF8GrppBuDxYPgrWxMTkEqQVDU2qVpi2t
@@ -334,7 +334,7 @@
         0RaN0RrN0R4NlmHXj9qVIvsHu1u3sHsrnrMAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btn_apagar.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnCloseGate.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAPgAAAAyCAYAAABxohbZAAAABGdBTUEAALGPC/xhBQAABeNJREFUeF7t
         3U9oHFUAx/HGNqmtVhD/oIh604PiyYN/L4J40YMVPehBUfSiF8GrppBuDxYPgrWxMTkEqQVDU2qVpi2t
@@ -365,7 +365,7 @@
         6fIsD+5t5loAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btn_encender.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnOpenGate.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAPgAAAAyCAYAAABxohbZAAAABGdBTUEAALGPC/xhBQAABeNJREFUeF7t
         3U9oHFUAx/HGNqmtVhD/oIh604PiyYN/L4J40YMVPehBUfSiF8GrppBuDxYPgrWxMTkEqQVDU2qVpi2t
@@ -427,7 +427,7 @@
         6fIsD+5t5loAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btn_S_pressure.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnSetPresion.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAPgAAAAyCAYAAABxohbZAAAABGdBTUEAALGPC/xhBQAABeNJREFUeF7t
         3U9oHFUAx/HGNqmtVhD/oIh604PiyYN/L4J40YMVPehBUfSiF8GrppBuDxYPgrWxMTkEqQVDU2qVpi2t
@@ -768,7 +768,7 @@
         6fIsD+5t5loAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btn_set.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnSetApertura.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAPgAAAAyCAYAAABxohbZAAAABGdBTUEAALGPC/xhBQAABeNJREFUeF7t
         3U9oHFUAx/HGNqmtVhD/oIh604PiyYN/L4J40YMVPehBUfSiF8GrppBuDxYPgrWxMTkEqQVDU2qVpi2t
@@ -1221,7 +1221,7 @@
     <value>254, 53</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>82</value>
+    <value>129</value>
   </metadata>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

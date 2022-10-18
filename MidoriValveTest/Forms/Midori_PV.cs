@@ -91,6 +91,7 @@ namespace MidoriValveTest
         // Funcion de carga de procedimientos iniciales (inicio automatico). 
         private void Form1_Load(object sender, EventArgs e)
         {
+            lbl_presure_chart.Text = "Torr";
             iconTerminal.Enabled = false;
             iconPID.Enabled = false;
             IconSensor.Enabled = false;
@@ -98,10 +99,10 @@ namespace MidoriValveTest
             IconReport.Enabled = false;
             DisableBtn(button3);
             DisableBtn(btn_valveTest);
-            DisableBtn(btn_set);
+            DisableBtn(btnSetApertura);
            // DisableBtn(btn_S_pressure);
-            DisableBtn(btn_encender);
-            DisableBtn(btn_apagar);
+            DisableBtn(btnOpenGate);
+            DisableBtn(btnCloseGate);
             DisableBtn(btnAutoCalibrate);
             DisableBtn(btnPIDAnalisis);
             string[] ports = SerialPort.GetPortNames();          // En este arreglo se almacena todos los puertos seriales "COM" registados por la computadora.
@@ -135,16 +136,16 @@ namespace MidoriValveTest
       
 
            // Boton Chart Analyzer
-            DisableBtn(button7);
+            DisableBtn(btnChartArchiveAnalyzer);
 
-            DisableBtn(button6);
+            DisableBtn(btnOEM);
             // Boton Analyze
-            DisableBtn(button5);
-            DisableBtn(button4);
-            DisableBtn(button2);
+            DisableBtn(btnAnalyze);
+            DisableBtn(btnClear);
+            DisableBtn(btnStopRecord);
 
             //Boton de grabar
-            DisableBtn(button1);
+            DisableBtn(btnStartRecord);
         }
 
         // Metodo para cambiar para remplazar el enable disable button y usar uno general
@@ -201,7 +202,7 @@ namespace MidoriValveTest
             }
 
             // porque?
-            EnableBtn(btn_set);
+            EnableBtn(btnSetApertura);
 
             //Disable SideMenu since you connect again
             iconTerminal.Enabled = false;
@@ -235,9 +236,9 @@ namespace MidoriValveTest
             comboBox1.Enabled = true;
            
             
-            btn_set.Text = "Set Apperture";
+            btnSetApertura.Text = "Set Apperture";
 
-                btn_S_pressure.Text = "Set Target Pressure";
+                btnSetPresion.Text = "Set Target Pressure";
                 trackBar1A.Enabled = false;
                 trackBar2A.Enabled = false;
                 trackBar1A.Value = 0;
@@ -248,10 +249,9 @@ namespace MidoriValveTest
                 picture_frontal.Image = MidoriValveTest.Properties.Resources.Front0;
                 picture_plane.Image.Dispose();
                 picture_plane.Image = MidoriValveTest.Properties.Resources.Verti0B;
-                precision_aperture = 0;
                 lbl_estado.ForeColor = Color.Red;
                 lbl_estado.Text = "Close";
-                DisableBtn(btn_apagar);
+                DisableBtn(btnCloseGate);
                 DisableBtn(btn_90);
                 DisableBtn(btn_80);
                 DisableBtn(btn_70);
@@ -278,9 +278,6 @@ namespace MidoriValveTest
                 red_off.Image.Dispose();
                 red_off.Image = MidoriValveTest.Properties.Resources.led_off_red;
                 lb_CounterTest.Text = "0";
-               
-
-
             }
 
             //Maugoncr// Turn off the led and the same for labels, disable the button of Open Gate
@@ -289,7 +286,7 @@ namespace MidoriValveTest
             LblEstado.Text = "Disconnected *";
             lblPuerto.Text = "Disconnected *";
            // btn_encender.Enabled = false;
-            DisableBtn(btn_encender);
+            DisableBtn(btnOpenGate);
             lbl_pressure.Text = " 0 ";
             //btn_valveTest.Enabled = false;
             DisableBtn(btn_valveTest);
@@ -312,7 +309,7 @@ namespace MidoriValveTest
                     
                     com_led.Image.Dispose();
                     com_led.Image = MidoriValveTest.Properties.Resources.led_on_green;
-                    EnableBtn(btn_encender);
+                    EnableBtn(btnOpenGate);
                     btn_P_conf.Enabled = true;
                     EnableBtn(btn_valveTest);
                     comboBox1.Enabled = false;
@@ -347,9 +344,9 @@ namespace MidoriValveTest
                     EnableBtn(btn_10);
                     EnableBtn(btn_0);
 
-                    EnableBtn(button1);
-                    EnableBtn(button7);
-                    EnableBtn(button5);
+                    EnableBtn(btnStartRecord);
+                    EnableBtn(btnChartArchiveAnalyzer);
+                    EnableBtn(btnAnalyze);
                     
 
                    
@@ -367,28 +364,6 @@ namespace MidoriValveTest
         {
             try
             {
-                //Arduino = new System.IO.Ports.SerialPort();
-                //if (Arduino.IsOpen)
-                //{ Arduino.Close();
-                //    return false;
-                //}
-                //Arduino.PortName = COMM;
-                //Arduino.BaudRate = 9600;  //se estima para test existen distintas datos 115 200  POSIBLE INCOMPATIBILIDAD POR ESTE DATO
-                //Arduino.DtrEnable = false;
-                //Arduino.RtsEnable = false;
-                //Arduino.ReceivedBytesThreshold = 1;
-                //Arduino.ParityReplace = 63;
-                //Arduino.DiscardNull = true; 
-                //Arduino.ReadTimeout = -1;
-                //Arduino.ReadBufferSize = 4096;
-                //Arduino.WriteBufferSize = 2048;
-                //Arduino.WriteTimeout = -1;
-                //Arduino.Parity = System.IO.Ports.Parity.None;
-                //Arduino.DataBits = 8;
-                //Arduino.StopBits = System.IO.Ports.StopBits.One;
-                //Arduino.Open();
-                // Thread.Sleep(4000);
-
                 if (serialPort1.IsOpen)
                 {
                     serialPort1.Close();
@@ -452,8 +427,8 @@ namespace MidoriValveTest
             Current_aperture.Text =  precision_aperture + "°";
             lbl_estado.ForeColor = Color.Red;
             lbl_estado.Text = "Open";
-            DisableBtn(btn_encender);
-            EnableBtn(btn_apagar);
+            DisableBtn(btnOpenGate);
+            EnableBtn(btnCloseGate);
 
             EnableBtn(btn_90);
             EnableBtn(btn_80);
@@ -467,14 +442,17 @@ namespace MidoriValveTest
             EnableBtn(btn_0);
 
             
-            EnableBtn(btn_set);
+            EnableBtn(btnSetApertura);
             EnableBtn(btnInfo);
-            EnableBtn(button7);
-            EnableBtn(button6);
-            EnableBtn(button5);
-            EnableBtn(button4);
-            EnableBtn(button2);
-            EnableBtn(button1);
+            EnableBtn(btnChartArchiveAnalyzer);
+            EnableBtn(btnOEM);
+            EnableBtn(btnAnalyze);
+            //clear
+            EnableBtn(btnClear);
+            //stop
+            EnableBtn(btnStopRecord);
+            // grabar
+            EnableBtn(btnStartRecord);
 
         }
 
@@ -504,11 +482,11 @@ namespace MidoriValveTest
             precision_aperture = 0;
             lbl_estado.ForeColor = Color.Red;
             lbl_estado.Text = "Close";
-            btn_S_pressure.Text = "Set Target Pressure";
-            btn_set.Text = "Set Apperture";
-            EnableBtn(btn_encender);
-            DisableBtn(btn_apagar);   
-            DisableBtn(btn_set);
+            btnSetPresion.Text = "Set Target Pressure";
+            btnSetApertura.Text = "Set Apperture";
+            EnableBtn(btnOpenGate);
+            DisableBtn(btnCloseGate);   
+            DisableBtn(btnSetApertura);
 
         }
 
@@ -539,14 +517,14 @@ namespace MidoriValveTest
             trackBar1A.Value = 0;
            // precision_aperture = 0;
             Current_aperture.Text =  trackBar1.Value+"°";
-            btn_set.Text = "Set Aperture";
+            btnSetApertura.Text = "Set Aperture";
             //btn_set.Enabled = true;
             //lbl_estado.ForeColor = Color.Red;
             //lbl_estado.Text = "Close";
             if (lbl_estado.Text == "Open")
             {
                 //btn_set.Enabled = true;
-                EnableBtn(btn_set);
+                EnableBtn(btnSetApertura);
             }
 
         }
@@ -568,8 +546,8 @@ namespace MidoriValveTest
             if (lbl_estado.Text == "Open")
             {
                 //btn_set.Enabled = true;
-                EnableBtn(btn_set);
-                btn_set.Text = "Set Aperture in 10";
+                EnableBtn(btnSetApertura);
+                btnSetApertura.Text = "Set Aperture in 10";
             }
         }
 
@@ -591,8 +569,8 @@ namespace MidoriValveTest
             if (lbl_estado.Text == "Open")
             {
                 //btn_set.Enabled = true;
-                EnableBtn(btn_set);
-                btn_set.Text = "Set Aperture in 20";
+                EnableBtn(btnSetApertura);
+                btnSetApertura.Text = "Set Aperture in 20";
             }
         }
 
@@ -613,8 +591,8 @@ namespace MidoriValveTest
             if (lbl_estado.Text == "Open")
             {
                 //btn_set.Enabled = true;
-                EnableBtn(btn_set);
-                btn_set.Text = "Set Aperture in 30";
+                EnableBtn(btnSetApertura);
+                btnSetApertura.Text = "Set Aperture in 30";
 
             }
         }
@@ -636,8 +614,8 @@ namespace MidoriValveTest
             if (lbl_estado.Text == "Open")
             {
                 //btn_set.Enabled = true;
-                EnableBtn(btn_set);
-                btn_set.Text = "Set Aperture in 40";
+                EnableBtn(btnSetApertura);
+                btnSetApertura.Text = "Set Aperture in 40";
             }
         }
 
@@ -658,8 +636,8 @@ namespace MidoriValveTest
             if (lbl_estado.Text == "Open")
             {
                 //btn_set.Enabled = true;
-                EnableBtn(btn_set);
-                btn_set.Text = "Set Aperture in 50";
+                EnableBtn(btnSetApertura);
+                btnSetApertura.Text = "Set Aperture in 50";
             }
 
         }
@@ -682,8 +660,8 @@ namespace MidoriValveTest
             if (lbl_estado.Text == "Open")
             {
                 //btn_set.Enabled = true;
-                EnableBtn(btn_set);
-                btn_set.Text = "Set Aperture in 60";
+                EnableBtn(btnSetApertura);
+                btnSetApertura.Text = "Set Aperture in 60";
             }
         }
 
@@ -705,8 +683,8 @@ namespace MidoriValveTest
             if (lbl_estado.Text == "Open")
             {
                 //btn_set.Enabled = true;
-                EnableBtn(btn_set);
-                btn_set.Text = "Set Aperture in 70";
+                EnableBtn(btnSetApertura);
+                btnSetApertura.Text = "Set Aperture in 70";
             }
         }
 
@@ -726,8 +704,8 @@ namespace MidoriValveTest
             if (lbl_estado.Text == "Open")
             {
                
-                EnableBtn(btn_set);
-                btn_set.Text = "Set Aperture in 80";
+                EnableBtn(btnSetApertura);
+                btnSetApertura.Text = "Set Aperture in 80";
             }
 
         }
@@ -750,8 +728,8 @@ namespace MidoriValveTest
 
             if (lbl_estado.Text == "Open")
             {
-                btn_set.Enabled = true;
-                btn_set.Text = "Set Aperture in 90";
+                btnSetApertura.Enabled = true;
+                btnSetApertura.Text = "Set Aperture in 90";
             }
 
         }
@@ -871,7 +849,7 @@ namespace MidoriValveTest
 
 
             //btn_set.Enabled = true;
-            btn_set.Text = "Set Aperture in " + trackBar1.Value+"°";
+            btnSetApertura.Text = "Set Aperture in " + trackBar1.Value+"°";
             //precision_aperture = trackBar1.Value;
 
 
@@ -1070,10 +1048,10 @@ namespace MidoriValveTest
                 rt = 0;
                 star_record = DateTime.Now;
                 //button1.Enabled = false;
-                DisableBtn(button1);
+                DisableBtn(btnStartRecord);
 
                 //button2.Enabled = true;
-                EnableBtn(button2);
+                EnableBtn(btnStopRecord);
                 lbl_record.Text = "Recording...";
              
 
@@ -1132,9 +1110,9 @@ namespace MidoriValveTest
                     }
                 }
                 //button2.Enabled = false;
-                DisableBtn(button2);
+                DisableBtn(btnStopRecord);
                 //button1.Enabled = true;
-                EnableBtn(button1);
+                EnableBtn(btnStartRecord);
                 times.Clear();
                 apertures.Clear();
                 pressures.Clear();
@@ -1378,22 +1356,22 @@ namespace MidoriValveTest
         private void trackBar2_Scroll(object sender, EventArgs e)
         {
             //btn_S_pressure.Enabled = true;
-            EnableBtn(btn_S_pressure);
-            btn_S_pressure.Text = "Set target pressure in " + (float)trackBar2.Value/10000;
+            EnableBtn(btnSetPresion);
+            btnSetPresion.Text = "Set target pressure in " + (float)trackBar2.Value/10000;
 
             switch (lbl_P_unit_top.Text)
             {
                 case "PSI":
-                    btn_S_pressure.Text = "Set target pressure in " + (float)trackBar2.Value / 10000;
+                    btnSetPresion.Text = "Set target pressure in " + (float)trackBar2.Value / 10000;
                     break;
                 case "ATM":
-                    btn_S_pressure.Text = "Set target pressure in " + (float)trackBar2.Value / 1000;
+                    btnSetPresion.Text = "Set target pressure in " + (float)trackBar2.Value / 1000;
                     break;
                 case "mbar":
-                    btn_S_pressure.Text = "Set target pressure in " + (float)trackBar2.Value / 100;
+                    btnSetPresion.Text = "Set target pressure in " + (float)trackBar2.Value / 100;
                     break;
                 case "Torr":
-                    btn_S_pressure.Text = "Set target pressure in " + (float)trackBar2.Value ;
+                    btnSetPresion.Text = "Set target pressure in " + (float)trackBar2.Value ;
                     break;
             }
         }
@@ -1412,9 +1390,9 @@ namespace MidoriValveTest
 
             precision_aperture = trackBar1A.Value;
             Current_aperture.Text =  precision_aperture + "°";
-            btn_set.Text = "Set Aperture";
+            btnSetApertura.Text = "Set Aperture";
             //btn_set.Enabled = false;
-            DisableBtn(btn_set);
+            DisableBtn(btnSetApertura);
 
             lbl_estado.ForeColor = Color.Red;
             lbl_estado.Text = "Open";
@@ -2007,7 +1985,7 @@ namespace MidoriValveTest
             }
 
           
-                btn_S_pressure.Text = "Set Target Pressure";
+                btnSetPresion.Text = "Set Target Pressure";
                 trackBar1A.Enabled = false;
                 trackBar2A.Enabled = false;
                 trackBar1A.Value = 0;
@@ -2021,7 +1999,7 @@ namespace MidoriValveTest
                 precision_aperture = 0;
                 lbl_estado.ForeColor = Color.Red;
                 lbl_estado.Text = "Close";
-                DisableBtn(btn_apagar);
+                DisableBtn(btnCloseGate);
                 DisableBtn(btn_90);
                 DisableBtn(btn_80);
                 DisableBtn(btn_70);
@@ -2056,7 +2034,7 @@ namespace MidoriValveTest
             com_led.Image = MidoriValveTest.Properties.Resources.led_on_red;
             LblEstado.Text = "Disconnected *";
             lblPuerto.Text = "Disconnected *";
-            DisableBtn(btn_encender);
+            DisableBtn(btnOpenGate);
             lbl_pressure.Text = " 0 ";
             DisableBtn(btn_valveTest);
 
@@ -2164,22 +2142,22 @@ namespace MidoriValveTest
 
         private void btn_encender_MouseEnter(object sender, EventArgs e)
         {
-            EnterBtn(btn_encender);
+            EnterBtn(btnOpenGate);
         }
 
         private void btn_encender_MouseLeave(object sender, EventArgs e)
         {
-            LeftBtn(btn_encender);
+            LeftBtn(btnOpenGate);
         }
 
         private void btn_apagar_MouseEnter(object sender, EventArgs e)
         {
-            EnterBtn(btn_apagar);
+            EnterBtn(btnCloseGate);
         }
 
         private void btn_apagar_MouseLeave(object sender, EventArgs e)
         {
-            LeftBtn(btn_apagar);
+            LeftBtn(btnCloseGate);
         }
 
         private void btn_valveTest_MouseEnter(object sender, EventArgs e)
@@ -2204,22 +2182,22 @@ namespace MidoriValveTest
 
         private void btn_set_MouseEnter(object sender, EventArgs e)
         {
-            EnterBtn(btn_set);
+            EnterBtn(btnSetApertura);
         }
 
         private void btn_set_MouseLeave(object sender, EventArgs e)
         {
-            LeftBtn(btn_set);
+            LeftBtn(btnSetApertura);
         }
 
         private void btn_S_pressure_MouseEnter(object sender, EventArgs e)
         {
-            EnterBtn(btn_S_pressure);
+            EnterBtn(btnSetPresion);
         }
 
         private void btn_S_pressure_MouseLeave(object sender, EventArgs e)
         {
-            LeftBtn(btn_S_pressure);
+            LeftBtn(btnSetPresion);
         }
 
         private void btn_90_MouseEnter(object sender, EventArgs e)
@@ -2324,62 +2302,62 @@ namespace MidoriValveTest
 
         private void button1_MouseEnter(object sender, EventArgs e)
         {
-            EnterBtn(button1);
+            EnterBtn(btnStartRecord);
         }
 
         private void button1_MouseLeave(object sender, EventArgs e)
         {
-            LeftBtn(button1);
+            LeftBtn(btnStartRecord);
         }
 
         private void button2_MouseEnter(object sender, EventArgs e)
         {
-            EnterBtn(button2);
+            EnterBtn(btnStopRecord);
         }
 
         private void button2_MouseLeave(object sender, EventArgs e)
         {
-            LeftBtn(button2);
+            LeftBtn(btnStopRecord);
         }
 
         private void button4_MouseEnter(object sender, EventArgs e)
         {
-            EnterBtn(button4);
+            EnterBtn(btnClear);
         }
 
         private void button4_MouseLeave(object sender, EventArgs e)
         {
-            LeftBtn(button4);
+            LeftBtn(btnClear);
         }
 
         private void button7_MouseEnter(object sender, EventArgs e)
         {
-            EnterBtn(button7);
+            EnterBtn(btnChartArchiveAnalyzer);
         }
 
         private void button7_MouseLeave(object sender, EventArgs e)
         {
-            LeftBtn(button7);
+            LeftBtn(btnChartArchiveAnalyzer);
         }
 
         private void button6_MouseEnter(object sender, EventArgs e)
         {
-            EnterBtn(button6);
+            EnterBtn(btnOEM);
         }
 
         private void button6_MouseLeave(object sender, EventArgs e)
         {
-            LeftBtn(button6);
+            LeftBtn(btnOEM);
         }
 
         private void button5_MouseEnter(object sender, EventArgs e)
         {
-            EnterBtn(button5);
+            EnterBtn(btnAnalyze);
         }
 
         private void button5_MouseLeave(object sender, EventArgs e)
         {
-            LeftBtn(button5);
+            LeftBtn(btnAnalyze);
         }
 
       
@@ -2525,30 +2503,30 @@ namespace MidoriValveTest
 
 
             //btn_set.Enabled = true;
-            btn_set.Text = "Set Aperture in " + trackBar1A.Value + "°";
+            btnSetApertura.Text = "Set Aperture in " + trackBar1A.Value + "°";
             //precision_aperture = trackBar1.Value;
         }
 
 
         private void trackBar2A_Scroll(object sender, EventArgs e)
         {
-            EnableBtn(btn_S_pressure);
+            EnableBtn(btnSetPresion);
             float nivel = trackBar2A.Value;
 
 
             switch (lbl_P_unit_top.Text)
             {
                 case "PSI":
-                    btn_S_pressure.Text = "Set target pressure in " + nivel / 100;
+                    btnSetPresion.Text = "Set target pressure in " + nivel / 100;
                     break;
                 case "ATM":
-                    btn_S_pressure.Text = "Set target pressure in " + nivel / 1000;
+                    btnSetPresion.Text = "Set target pressure in " + nivel / 1000;
                     break;
                 case "mbar":
-                    btn_S_pressure.Text = "Set target pressure in " + nivel;
+                    btnSetPresion.Text = "Set target pressure in " + nivel;
                     break;
                 case "Torr":
-                    btn_S_pressure.Text = "Set target pressure in " + nivel;
+                    btnSetPresion.Text = "Set target pressure in " + nivel;
                     break;
             }
         }
@@ -2835,11 +2813,11 @@ namespace MidoriValveTest
                 picture_plane.Image = Properties.Resources.Verti0B;
                 lbl_estado.ForeColor = Color.Red;
                 lbl_estado.Text = "Close";
-                btn_S_pressure.Text = "Set Target Pressure";
-                btn_set.Text = "Set Apperture";
-                EnableBtn(btn_encender);
-                DisableBtn(btn_apagar);
-                DisableBtn(btn_set);
+                btnSetPresion.Text = "Set Target Pressure";
+                btnSetApertura.Text = "Set Apperture";
+                EnableBtn(btnOpenGate);
+                DisableBtn(btnCloseGate);
+                DisableBtn(btnSetApertura);
 
                 if (record == true)
                 {
@@ -3091,7 +3069,7 @@ namespace MidoriValveTest
             }
 
             
-            EnableBtn(btn_set);
+            EnableBtn(btnSetApertura);
 
             //Disable SideMenu since you connect again
             iconTerminal.Enabled = false;
@@ -3121,8 +3099,8 @@ namespace MidoriValveTest
             i = false;
             timerForData.Stop();
             comboBox1.Enabled = true;
-            btn_set.Text = "Set Apperture";
-            btn_S_pressure.Text = "Set Target Pressure";
+            btnSetApertura.Text = "Set Apperture";
+            btnSetPresion.Text = "Set Target Pressure";
             trackBar1A.Enabled = false;
             trackBar2A.Enabled = false;
             trackBar1A.Value = 0;
@@ -3136,7 +3114,7 @@ namespace MidoriValveTest
             precision_aperture = 0;
             lbl_estado.ForeColor = Color.Red;
             lbl_estado.Text = "Close";
-            DisableBtn(btn_apagar);
+            DisableBtn(btnCloseGate);
             DisableBtn(btn_90);
             DisableBtn(btn_80);
             DisableBtn(btn_70);
@@ -3174,7 +3152,7 @@ namespace MidoriValveTest
             LblEstado.Text = "Disconnected *";
             lblPuerto.Text = "Disconnected *";
             // btn_encender.Enabled = false;
-            DisableBtn(btn_encender);
+            DisableBtn(btnOpenGate);
             lbl_pressure.Text = " 0 ";
             //btn_valveTest.Enabled = false;
             DisableBtn(btn_valveTest);
