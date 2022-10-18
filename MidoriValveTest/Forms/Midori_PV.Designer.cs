@@ -31,10 +31,10 @@ namespace MidoriValveTest
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Midori_PV));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series13 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series14 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.LblEstado = new System.Windows.Forms.Label();
@@ -807,48 +807,48 @@ namespace MidoriValveTest
             this.chart1.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
             this.chart1.BorderSkin.BackColor = System.Drawing.Color.Black;
             this.chart1.BorderSkin.BorderColor = System.Drawing.Color.Empty;
-            chartArea6.AxisX.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.True;
-            chartArea6.AxisX.IntervalOffsetType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Seconds;
-            chartArea6.AxisX.MajorGrid.LineColor = System.Drawing.Color.White;
-            chartArea6.AxisX2.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
-            chartArea6.AxisY.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.True;
-            chartArea6.AxisY.MajorGrid.LineColor = System.Drawing.Color.Silver;
-            chartArea6.AxisY.Minimum = 0D;
-            chartArea6.AxisY.ScaleBreakStyle.LineColor = System.Drawing.Color.White;
-            chartArea6.AxisY.ScaleView.MinSize = 1D;
-            chartArea6.AxisY2.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.True;
-            chartArea6.AxisY2.MajorGrid.LineColor = System.Drawing.Color.White;
-            chartArea6.AxisY2.ScaleBreakStyle.BreakLineStyle = System.Windows.Forms.DataVisualization.Charting.BreakLineStyle.None;
-            chartArea6.AxisY2.ScaleBreakStyle.StartFromZero = System.Windows.Forms.DataVisualization.Charting.StartFromZero.Yes;
-            chartArea6.BackColor = System.Drawing.Color.Transparent;
-            chartArea6.BackSecondaryColor = System.Drawing.Color.White;
-            chartArea6.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea6);
-            legend6.BackColor = System.Drawing.Color.Gainsboro;
-            legend6.ItemColumnSpacing = 30;
-            legend6.Name = "Legend1";
-            legend6.TitleAlignment = System.Drawing.StringAlignment.Near;
-            this.chart1.Legends.Add(legend6);
+            chartArea7.AxisX.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.True;
+            chartArea7.AxisX.IntervalOffsetType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Seconds;
+            chartArea7.AxisX.MajorGrid.LineColor = System.Drawing.Color.White;
+            chartArea7.AxisX2.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
+            chartArea7.AxisY.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.True;
+            chartArea7.AxisY.MajorGrid.LineColor = System.Drawing.Color.Silver;
+            chartArea7.AxisY.Minimum = 0D;
+            chartArea7.AxisY.ScaleBreakStyle.LineColor = System.Drawing.Color.White;
+            chartArea7.AxisY.ScaleView.MinSize = 1D;
+            chartArea7.AxisY2.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.True;
+            chartArea7.AxisY2.MajorGrid.LineColor = System.Drawing.Color.White;
+            chartArea7.AxisY2.ScaleBreakStyle.BreakLineStyle = System.Windows.Forms.DataVisualization.Charting.BreakLineStyle.None;
+            chartArea7.AxisY2.ScaleBreakStyle.StartFromZero = System.Windows.Forms.DataVisualization.Charting.StartFromZero.Yes;
+            chartArea7.BackColor = System.Drawing.Color.Transparent;
+            chartArea7.BackSecondaryColor = System.Drawing.Color.White;
+            chartArea7.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea7);
+            legend7.BackColor = System.Drawing.Color.Gainsboro;
+            legend7.ItemColumnSpacing = 30;
+            legend7.Name = "Legend1";
+            legend7.TitleAlignment = System.Drawing.StringAlignment.Near;
+            this.chart1.Legends.Add(legend7);
             this.chart1.Location = new System.Drawing.Point(6, 29);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Grayscale;
-            series11.ChartArea = "ChartArea1";
-            series11.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastLine;
-            series11.Color = System.Drawing.Color.Green;
-            series11.Legend = "Legend1";
-            series11.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Square;
-            series11.Name = "Pressure";
-            series11.YAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
-            series11.YValuesPerPoint = 4;
-            series12.ChartArea = "ChartArea1";
-            series12.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastLine;
-            series12.Color = System.Drawing.SystemColors.MenuHighlight;
-            series12.Legend = "Legend1";
-            series12.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Square;
-            series12.Name = "Aperture value";
-            series12.ShadowColor = System.Drawing.Color.Silver;
-            this.chart1.Series.Add(series11);
-            this.chart1.Series.Add(series12);
+            series13.ChartArea = "ChartArea1";
+            series13.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastLine;
+            series13.Color = System.Drawing.Color.Green;
+            series13.Legend = "Legend1";
+            series13.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Square;
+            series13.Name = "Pressure";
+            series13.YAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
+            series13.YValuesPerPoint = 4;
+            series14.ChartArea = "ChartArea1";
+            series14.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastLine;
+            series14.Color = System.Drawing.SystemColors.MenuHighlight;
+            series14.Legend = "Legend1";
+            series14.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Square;
+            series14.Name = "Aperture value";
+            series14.ShadowColor = System.Drawing.Color.Silver;
+            this.chart1.Series.Add(series13);
+            this.chart1.Series.Add(series14);
             this.chart1.Size = new System.Drawing.Size(1057, 899);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
@@ -2538,6 +2538,7 @@ namespace MidoriValveTest
             this.lbSendPID.Size = new System.Drawing.Size(223, 29);
             this.lbSendPID.TabIndex = 68;
             this.lbSendPID.Text = "Test Pressure send";
+            this.lbSendPID.Visible = false;
             // 
             // lbPIDSent
             // 
@@ -2547,6 +2548,7 @@ namespace MidoriValveTest
             this.lbPIDSent.Size = new System.Drawing.Size(165, 29);
             this.lbPIDSent.TabIndex = 69;
             this.lbPIDSent.Text = "Test PID send";
+            this.lbPIDSent.Visible = false;
             // 
             // ReadExistTimer
             // 
