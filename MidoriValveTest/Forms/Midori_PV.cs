@@ -470,8 +470,10 @@ namespace MidoriValveTest
             //    Thread.Sleep(50);
             //}
             //trackBar1.Enabled = false;
-            trackBar2A.Enabled = false;
-            trackBar2A.Value = 0;
+
+           // trackBar2A.Enabled = false;
+           // trackBar2A.Value = 0;
+
             trackBar1A.Value = 0;
             precision_aperture = 0;
             Current_aperture.Text =  precision_aperture + "°";
@@ -479,7 +481,6 @@ namespace MidoriValveTest
             picture_frontal.Image = MidoriValveTest.Properties.Resources.Front0;
             picture_plane.Image.Dispose();
             picture_plane.Image = MidoriValveTest.Properties.Resources.Verti0B;
-            precision_aperture = 0;
             lbl_estado.ForeColor = Color.Red;
             lbl_estado.Text = "Close";
             btnSetPresion.Text = "Set Target Pressure";
