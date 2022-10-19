@@ -72,7 +72,7 @@ namespace MidoriValveTest.Forms
             }
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
+        private void pictureBox2_Click_1(object sender, EventArgs e)
         {
             timer1.Interval = 1;
             action = enmAction.close;

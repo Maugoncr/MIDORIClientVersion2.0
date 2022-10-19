@@ -51,7 +51,7 @@ private void timer1_Tick(object sender, EventArgs e)
             if (counter == limit)
             {
                 
-                menssager.TestFinished();
+                //menssager.TestFinished();
                 btnTestStart.Enabled=false;
                 NumOfCycles.Enabled = false;
                 timer1.Stop();
@@ -66,7 +66,7 @@ private void timer1_Tick(object sender, EventArgs e)
         {
             counter = 0;            
             txt_cycles.Text = "0";
-            menssager.resetCycles();
+           // menssager.resetCycles();
             button1.Enabled=false;
 
         }
@@ -79,7 +79,7 @@ private void timer1_Tick(object sender, EventArgs e)
                 timer1.Start();
                 greenlight = true;
                 yellowlight = false;
-                menssager.StartCrono();
+              //  menssager.StartCrono();
             
 
         }
@@ -93,7 +93,7 @@ private void timer1_Tick(object sender, EventArgs e)
         {
             timer1.Stop();
             yellowlight = true;
-            menssager.StopCrono();
+          //  menssager.StopCrono();
             button1.Enabled = true;
 
         }
@@ -107,7 +107,7 @@ private void timer1_Tick(object sender, EventArgs e)
             limit = 0;
             NumOfCycles.Value = 0;
             txt_cycles.Text = "0";
-            menssager.Clear();
+           // menssager.Clear();
             btnTestStart.Enabled = false;
             NumOfCycles.Enabled = true;
 
