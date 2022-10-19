@@ -616,98 +616,7 @@ namespace MidoriValveTest
         }
 
         
-        private string ObtenerData(string full, int opcion)
-        {
-
-            string test = full;
-            test.Trim();
-            bool firtIn = false;
-            bool secondIn = false;
-            string Temp = "";
-            string Pressure = "";
-            for (int i = 0; i < test.Length; i++)
-            {
-                if (test.Substring(i, 1).Equals("$"))
-                {
-                    break;
-                }
-                if (secondIn == true)
-                {
-                    Pressure += test.Substring(i, 1);
-                }
-                if (test.Substring(i, 1).Equals(","))
-                {
-                    firtIn = false;
-                    secondIn = true;
-                }
-                if (firtIn == true)
-                {
-                    Temp += test.Substring(i, 1);
-                }
-                if (test.Substring(i, 1).Equals("A"))
-                {
-                    firtIn = true;
-                }
-            }
-            Temp.Replace("A", "");
-            Pressure.Replace("$", "");
-
-            if (opcion == 1)
-            {
-                return Temp;
-            }
-            else
-            {
-                try
-                {
-                    if (lbl_P_unit_top.Text == "PSI")
-                    {
-                        if (Pressure != "")
-                        {
-                            double presionPSI = Math.Round(Convert.ToDouble(Pressure) / 51.715, 4);
-
-
-                            return presionPSI.ToString();
-                        }
-                        return "0";
-                    }
-                    else if (lbl_P_unit_top.Text == "ATM")
-                    {
-                        if (Pressure != "")
-                        {
-                            double presionATM = Math.Round(Convert.ToDouble(Pressure) / 760, 4);
-
-
-                            return presionATM.ToString();
-                        }
-                        return "0";
-                    }
-                    else if (lbl_P_unit_top.Text == "mbar")
-                    {
-                        if (Pressure != "")
-                        {
-                            double presionMBAR = Math.Round(Convert.ToDouble(Pressure) * 1.33322, 4);
-
-
-                            return presionMBAR.ToString();
-                        }
-                        return "0";
-                    }
-                    else
-                    {
-                        // Torr
-                        return Pressure;
-                    }
-                }
-                catch (Exception)
-                {
-                    return "0";
-                }
-                
-            }
-
-
-        }
+       
 
 
 
@@ -1772,8 +1681,9 @@ namespace MidoriValveTest
         //Reset this flag
         Boolean i = false;
         string capturadatos;
-        string presionChart;
-        string temperaturaLabel;
+        public string presionChart;
+        public string temperaturaLabel;
+        public string presionSetPoint;
 
         private void serialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
@@ -1792,9 +1702,8 @@ namespace MidoriValveTest
                         //lbl_Test.Invoke(new Action(() => lbl_Test.Text = serialPort1.ReadLine().ToString()));
                         lbl_Test.Text = serialPort1.ReadLine();
                         capturadatos = serialPort1.ReadLine();
-                        presionChart = ObtenerData(capturadatos, 2);
-                        temperaturaLabel = ObtenerData(capturadatos, 1);
-                        //serialPort1.DiscardInBuffer();
+                        ObtenerData(capturadatos);
+                        serialPort1.DiscardInBuffer();
                     }
                 }
             }
@@ -1805,18 +1714,110 @@ namespace MidoriValveTest
             }
         }
 
-        
+        private void ObtenerData(string full)
+        {
+
+            string test = full;
+            test.Trim();
+            bool firtIn = false;
+            bool secondIn = false;
+            bool thirdIn = false;
+            string Temp = "";
+            string Pressure = "";
+            string PressureSetPoint = "";
+            // A120,250J180$
+
+            for (int i = 0; i < test.Length; i++)
+            {
+                if (test.Substring(i, 1).Equals("$"))
+                {
+                    break;
+                }
+                if (thirdIn == true)
+                {
+                    PressureSetPoint += test.Substring(i, 1);
+                }
+                if (test.Substring(i, 1).Equals("J"))
+                {
+                    secondIn = false;
+                    thirdIn = true;
+                }
+                if (secondIn == true)
+                {
+                    Pressure += test.Substring(i, 1);
+                }
+                if (test.Substring(i, 1).Equals(","))
+                {
+                    firtIn = false;
+                    secondIn = true;
+                }
+                if (firtIn == true)
+                {
+                    Temp += test.Substring(i, 1);
+                }
+                if (test.Substring(i, 1).Equals("A"))
+                {
+                    firtIn = true;
+                }
+            }
+            Temp.Replace("A", "");
+            Pressure.Replace("$", "");
+            PressureSetPoint.Replace("J", "");
+
+           
+            temperaturaLabel = Temp;
+            presionSetPoint = PressureSetPoint;
+
+            try
+            {
+                switch (lbl_P_unit_top.Text)
+                {
+                    case "PSI":
+                        if (Pressure != "")
+                        {
+                            double presionPSI = Math.Round(Convert.ToDouble(Pressure) / 51.715, 4);
+                            presionChart = presionPSI.ToString();
+                        }
+                        break;
+                    case "mbar":
+                        if (Pressure != "")
+                        {
+                            double presionMBAR = Math.Round(Convert.ToDouble(Pressure) * 1.33322, 4);
+                            presionChart = presionMBAR.ToString();
+                        }
+                        break;
+                    case "ATM":
+                        if (Pressure != "")
+                        {
+                            double presionATM = Math.Round(Convert.ToDouble(Pressure) / 760, 4);
+                            presionChart = presionATM.ToString();
+                        }
+                        break;
+                    case "Torr":
+                        presionChart = Pressure;
+                        break;
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+          
+        }
+
+
         private void timerForData_Tick(object sender, EventArgs e)
         {
             rt = rt + 100;
             temp = rt / 1000;
 
 
-            if (serialPort1.IsOpen && i == true && presionChart != null && temperaturaLabel != null)
+            if (serialPort1.IsOpen && i == true && presionChart != null && temperaturaLabel != null && presionSetPoint != null)
             {
                 chart1.Series["Aperture value"].Points.AddXY(temp.ToString(), precision_aperture.ToString());
                 chart1.Series["Pressure"].Points.AddXY(temp.ToString(), presionChart.ToString());
 
+                lbSetPointPressure.Text = presionSetPoint;
                 lbl_pressure.Text = (presionChart);
                 lb_Temperature.Text = temperaturaLabel + " °C";
                 chart1.ChartAreas[0].RecalculateAxesScale();
