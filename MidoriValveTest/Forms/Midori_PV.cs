@@ -31,6 +31,7 @@ namespace MidoriValveTest
         public static bool EnviarPID = false;       // flag for Sent the PID
         double rt = 0;                              // Time X from chart
         double temp = 0;                            // Time in ms
+        bool MostrarSetPoint = false;
 
         DateTime star_record = new DateTime();
         DateTime end_record = new DateTime();
@@ -124,6 +125,7 @@ namespace MidoriValveTest
             pressures = new List<string>();
             datetimes = new List<string>();
             EnviarPID = false;
+            MostrarSetPoint = false;
 
             // Return all labels to default text
 
@@ -136,7 +138,7 @@ namespace MidoriValveTest
             Current_aperture.Text = "0°";
             lb_Temperature.Text = " 0 °C";
             lbl_pressure.Text = "0";
-            lbSetPointPressure.Text = "0";
+            lbSetPointPressure.Text = "---";
 
             //Return texts btn to default
 
@@ -1817,7 +1819,10 @@ namespace MidoriValveTest
                 chart1.Series["Aperture value"].Points.AddXY(temp.ToString(), precision_aperture.ToString());
                 chart1.Series["Pressure"].Points.AddXY(temp.ToString(), presionChart.ToString());
 
-                lbSetPointPressure.Text = presionSetPoint;
+                if (MostrarSetPoint)
+                {
+                    lbSetPointPressure.Text = presionSetPoint;
+                }
                 lbl_pressure.Text = (presionChart);
                 lb_Temperature.Text = temperaturaLabel + " °C";
                 chart1.ChartAreas[0].RecalculateAxesScale();
@@ -2084,12 +2089,15 @@ namespace MidoriValveTest
                 serialPort1.Write("P");
                 btnStartPID.Text = "Stop PID";
                 InicioStartPID = false;
+                MostrarSetPoint = true;
             }
             else
             {
                 serialPort1.Write("T");
                 btnStartPID.Text = "Start PID";
                 InicioStartPID = true;
+                MostrarSetPoint = false;
+                lbSetPointPressure.Text = "---";
             }
 
 
