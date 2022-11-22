@@ -170,6 +170,7 @@ namespace MidoriValveTest
             DisableBtn(btnPIDAnalisis);
             DisableBtn(btnAutoCalibrate);
             DisableBtn(btnOEM);
+            DisableBtn(btnConnect);
             iconPID.Enabled = false;
             txtSetPresion.Enabled = false;
 
@@ -284,7 +285,7 @@ namespace MidoriValveTest
 
 
                     // Menu settings
-                    btn_menu.Enabled = true;
+                    btnMenu.Enabled = true;
                     iconTerminal.Enabled = true;
                     iconPID.Enabled = true;
                     IconSensor.Enabled = true;
@@ -876,16 +877,6 @@ namespace MidoriValveTest
             }
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            if(connect==true)
-            {
-                LateralNav.Size = new Size(419, 1019);
-            }
-            
-          
-        }
-
         private void pictureBox3_Click(object sender, EventArgs e)
         {
             LateralNav.Size = new Size(0, 1019);
@@ -1174,11 +1165,6 @@ namespace MidoriValveTest
                 frm.BringToFront();
                 return;
             }
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
 
         }
 
@@ -2186,86 +2172,6 @@ namespace MidoriValveTest
         private void btnOffMANValve_MouseEnter(object sender, EventArgs e)
         {
             EncenderBTN(btnOffMANValve);
-        }
-        public void Apagar()
-        {
-            if (serialPort1.IsOpen)
-            {
-                serialPort1.Close();
-
-            }
-            EnableBtn(btnSetApertura);
-            iconTerminal.Enabled = false;
-            iconPID.Enabled = false;
-            IconSensor.Enabled = false;
-            IconTrace.Enabled = false;
-            IconReport.Enabled = false;
-            btnAutoCalibrate.Enabled = false;
-            btnPIDAnalisis.Enabled = false;
-            DisableBtn(btnConnect);
-            DisableBtn(btnStartPID);
-            string[] ports = SerialPort.GetPortNames();
-            //Maugoncr//Valide COM ports
-            cbSelectionCOM.Items.Clear();
-            cbSelectionCOM.Items.AddRange(ports);
-            // SECTION ABOUT CHART
-            chart1.Series["Aperture value"].Points.Clear();
-            chart1.Series["Pressure"].Points.Clear();
-            ChartArea CA = chart1.ChartAreas[0];
-            CA.CursorX.AutoScroll = true;
-            //Restart the chart timer
-            i = false;
-            timerForData.Stop();
-            cbSelectionCOM.Enabled = true;
-            btnSetApertura.Text = "Set Apperture";
-            btnSetPresion.Text = "Set Target Pressure";
-            trackBar1A.Enabled = false;
-            trackBar2A.Enabled = false;
-            trackBar1A.Value = 0;
-            trackBar2A.Value = 0;
-            precision_aperture = 0;
-            Current_aperture.Text = precision_aperture + "°";
-            picture_frontal.Image.Dispose();
-            picture_frontal.Image = MidoriValveTest.Properties.Resources.Front0;
-            picture_plane.Image.Dispose();
-            picture_plane.Image = MidoriValveTest.Properties.Resources.Verti0B;
-            precision_aperture = 0;
-            lbl_estado.ForeColor = Color.Red;
-            lbl_estado.Text = "Close";
-            DisableBtn(btnCloseGate);
-            DisableBtn(btn_90);
-            DisableBtn(btn_80);
-            DisableBtn(btn_70);
-            DisableBtn(btn_60);
-            DisableBtn(btn_50);
-            DisableBtn(btn_40);
-            DisableBtn(btn_30);
-            DisableBtn(btn_20);
-            DisableBtn(btn_10);
-            DisableBtn(btn_0);
-            if (DateStartedTest.Text != "-/-/-")
-            {
-                TestCicles.greenlight = false;
-                TestCicles.counter = 0;
-                DateStartedTest.Text = "-/-/-";
-                DateEndedTest.Text = "-/-/-";
-                green_off.Image.Dispose();
-                green_off.Image = MidoriValveTest.Properties.Resources.led_off_green;
-                yellow_off.Image.Dispose();
-                yellow_off.Image = MidoriValveTest.Properties.Resources.led_off_yellow;
-                red_off.Image.Dispose();
-                red_off.Image = MidoriValveTest.Properties.Resources.led_off_red;
-                lb_CounterTest.Text = "0";
-            }
-            //Maugoncr// Turn off the led and the same for labels, disable the button of Open Gate
-            com_led.Image.Dispose();
-            com_led.Image = MidoriValveTest.Properties.Resources.led_off;
-            LblEstado.Text = "Disconnected *";
-            lblPuerto.Text = "Disconnected *";
-            DisableBtn(btnOpenGate);
-            lbl_pressure.Text = " 0 ";
-            DisableBtn(btn_valveTest);
-            Thread.Sleep(2000);
         }
 
         private void txtSetPresion_KeyPress(object sender, KeyPressEventArgs e)
