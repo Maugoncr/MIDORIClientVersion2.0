@@ -1793,6 +1793,9 @@ namespace MidoriValveTest
           
         }
 
+        int Axys2Min = 0;
+        int Axys2Max = 1000;
+
 
         private void timerForData_Tick(object sender, EventArgs e)
         {
@@ -1811,7 +1814,10 @@ namespace MidoriValveTest
                 }
                 lbl_pressure.Text = (presionChart);
                 lb_Temperature.Text = temperaturaLabel + " °C";
-                chart1.ChartAreas[0].RecalculateAxesScale();
+                chart1.ChartAreas[0].AxisY2.Minimum = Axys2Min;
+                chart1.ChartAreas[0].AxisY.Minimum = 0;
+                chart1.ChartAreas[0].AxisY.Maximum = 100;
+                chart1.ChartAreas[0].AxisY2.Maximum = Axys2Max;
 
             }
 
@@ -2230,6 +2236,51 @@ namespace MidoriValveTest
                         }
                     }
                     break;
+            }
+        }
+
+        int scales = 3;
+
+        private void btnPlusScale_Click(object sender, EventArgs e)
+        {
+            if (scales == 3)
+            {
+                Axys2Max = 1000;
+                Axys2Min = 0;
+            }
+            else if (scales == 2)
+            {
+                scales++;
+                Axys2Max = 500;
+                Axys2Min = 0;
+            }
+            else if (scales == 1)
+            {
+                scales++;
+                Axys2Max = 100;
+                Axys2Min = 0;
+            }
+
+        }
+
+        private void btnLessScale_Click(object sender, EventArgs e)
+        {
+            if (scales == 3)
+            {
+                scales--;
+                Axys2Max = 1000;
+                Axys2Min = 0;
+            }
+            else if (scales == 2)
+            {
+                scales--;
+                Axys2Max = 500;
+                Axys2Min = 0;
+            }
+            else if (scales == 1)
+            {
+                Axys2Max = 100;
+                Axys2Min = 0;
             }
         }
     }
