@@ -126,6 +126,9 @@ namespace MidoriValveTest
             datetimes = new List<string>();
             EnviarPID = false;
             MostrarSetPoint = false;
+            Manual = true;
+            Auto = false;
+            AxisY2Maximo= 1000;
 
             // Return all labels to default text
 
@@ -277,11 +280,11 @@ namespace MidoriValveTest
                     com_led.Image = MidoriValveTest.Properties.Resources.led_on_green;
                     EnableBtn(btnOpenGate);
                     btn_P_conf.Enabled = true;
-                    EnableBtn(btn_valveTest);
+                   // EnableBtn(btn_valveTest);
                     cbSelectionCOM.Enabled = false;
                     DisableBtn(btnConnect);
                     EnableBtn(btnStartPID);
-                    EnableBtn(btnOnMANValve);
+                   // EnableBtn(btnOnMANValve);
 
 
                     // Menu settings
@@ -400,7 +403,7 @@ namespace MidoriValveTest
 
             
             EnableBtn(btnSetApertura);
-            EnableBtn(btnInfo);
+           // EnableBtn(btnInfo);
             EnableBtn(btnChartArchiveAnalyzer);
             EnableBtn(btnOEM);
             EnableBtn(btnAnalyze);
@@ -1252,11 +1255,11 @@ namespace MidoriValveTest
                 btn.ForeColor = Color.Black;
                 if (btn.Name == "btnOnMANValve")
                 {
-                    btnOnMANValve.IconColor = Color.Black;
+                    //btnOnMANValve.IconColor = Color.Black;
                 }
                 if (btn.Name == "btnOffMANValve")
                 {
-                    btnOffMANValve.IconColor = Color.Black;
+                   // btnOffMANValve.IconColor = Color.Black;
                 }
             }
             else
@@ -1319,22 +1322,22 @@ namespace MidoriValveTest
 
         private void btn_valveTest_MouseEnter(object sender, EventArgs e)
         {
-            EnterBtn(btn_valveTest);
+          //  EnterBtn(btn_valveTest);
         }
 
         private void btn_valveTest_MouseLeave(object sender, EventArgs e)
         {
-            LeftBtn(btn_valveTest);
+          //  LeftBtn(btn_valveTest);
         }
 
         private void btnInfo_MouseEnter(object sender, EventArgs e)
         {
-            EnterBtn(btnInfo);
+          //  EnterBtn(btnInfo);
         }
 
         private void btnInfo_MouseLeave(object sender, EventArgs e)
         {
-            LeftBtn(btnInfo);
+          //  LeftBtn(btnInfo);
         }
 
         private void btn_set_MouseEnter(object sender, EventArgs e)
@@ -1793,10 +1796,6 @@ namespace MidoriValveTest
           
         }
 
-        int Axys2Min = 0;
-        int Axys2Max = 1000;
-
-
         private void timerForData_Tick(object sender, EventArgs e)
         {
             rt = rt + 100;
@@ -1814,10 +1813,21 @@ namespace MidoriValveTest
                 }
                 lbl_pressure.Text = (presionChart);
                 lb_Temperature.Text = temperaturaLabel + " °C";
-                chart1.ChartAreas[0].AxisY2.Minimum = Axys2Min;
-                chart1.ChartAreas[0].AxisY.Minimum = 0;
-                chart1.ChartAreas[0].AxisY.Maximum = 100;
-                chart1.ChartAreas[0].AxisY2.Maximum = Axys2Max;
+
+                if (Auto)
+                {
+                    chart1.ChartAreas[0].AxisY2.Maximum = Double.NaN;
+                    chart1.ChartAreas[0].AxisY2.Minimum = Double.NaN;
+                    chart1.ChartAreas[0].RecalculateAxesScale();
+                }
+                if (Manual)
+                {
+                    chart1.ChartAreas[0].AxisY.Minimum = 0;
+                    chart1.ChartAreas[0].AxisY.Maximum = 100;
+                    chart1.ChartAreas[0].AxisY2.Minimum = 0;
+                    chart1.ChartAreas[0].AxisY2.Maximum = AxisY2Maximo;
+                }
+               
 
             }
 
@@ -2121,39 +2131,7 @@ namespace MidoriValveTest
             Form_Alert frm = new Form_Alert();
             frm.showAlert(msg, type);
         }
-        private void btnOnMANValve_Click(object sender, EventArgs e)
-        {
-            if (btnOnMANValve.Enabled == true)
-            {
-                lbStatusMANValve.Text = "ON";
-                this.Alert("Successfully opened", Form_Alert.enmType.Success);
-                EnableBtn(btnOffMANValve);
-                btnOnMANValve.Enabled = false;
-            }
-        }
-        private void btnOffMANValve_Click(object sender, EventArgs e)
-        {
-            if (btnOffMANValve.Enabled == true)
-            {
-                lbStatusMANValve.Text = "OFF";
-                this.Alert("Successfully closed", Form_Alert.enmType.Success);
-                EnableBtn(btnOnMANValve);
-                btnOffMANValve.Enabled = false;
-            }
-          
-        }
-        private void btnOffMANValve_MouseLeave(object sender, EventArgs e)
-        {
-            LeftBtn(btnOffMANValve);
-        }
-        private void btnOnMANValve_MouseLeave(object sender, EventArgs e)
-        {
-            LeftBtn(btnOnMANValve);
-        }
-        private void btnOnMANValve_MouseEnter(object sender, EventArgs e)
-        {
-            EncenderBTN(btnOnMANValve);
-        }
+     
         private void EncenderBTN(Button btn)
         {
             if (btn.Enabled == true)
@@ -2161,23 +2139,18 @@ namespace MidoriValveTest
                 if (btn.Name == "btnOnMANValve")
                 {
                     btn.ForeColor = Color.White;
-                    btnOnMANValve.IconColor = Color.White;
+                   // btnOnMANValve.IconColor = Color.White;
                     btn.BackgroundImage.Dispose();
                     btn.BackgroundImage = Properties.Resources.btnOn;
                 }
                 else
                 {
                     btn.ForeColor = Color.White;
-                    btnOffMANValve.IconColor = Color.White;
+                    //btnOffMANValve.IconColor = Color.White;
                     btn.BackgroundImage.Dispose();
                     btn.BackgroundImage = Properties.Resources.btnOff;
                 }
             }
-        }
-
-        private void btnOffMANValve_MouseEnter(object sender, EventArgs e)
-        {
-            EncenderBTN(btnOffMANValve);
         }
 
         private void txtSetPresion_KeyPress(object sender, KeyPressEventArgs e)
@@ -2239,49 +2212,45 @@ namespace MidoriValveTest
             }
         }
 
-        int scales = 3;
 
-        private void btnPlusScale_Click(object sender, EventArgs e)
+        int AxisY2Maximo = 1000;
+        bool Auto = false;
+        bool Manual = false;
+
+        //0-1000
+        private void torrToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (scales == 3)
-            {
-                Axys2Max = 1000;
-                Axys2Min = 0;
-            }
-            else if (scales == 2)
-            {
-                scales++;
-                Axys2Max = 500;
-                Axys2Min = 0;
-            }
-            else if (scales == 1)
-            {
-                scales++;
-                Axys2Max = 100;
-                Axys2Min = 0;
-            }
-
+            Auto = false;
+            Manual = true;
+            AxisY2Maximo = 1000;
+        }
+        //0-500
+        private void torrToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Auto = false;
+            Manual = true;
+            AxisY2Maximo = 500;
         }
 
-        private void btnLessScale_Click(object sender, EventArgs e)
+        // 0-100
+        private void torrToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            if (scales == 3)
-            {
-                scales--;
-                Axys2Max = 1000;
-                Axys2Min = 0;
-            }
-            else if (scales == 2)
-            {
-                scales--;
-                Axys2Max = 500;
-                Axys2Min = 0;
-            }
-            else if (scales == 1)
-            {
-                Axys2Max = 100;
-                Axys2Min = 0;
-            }
+            Auto = false;
+            Manual = true;
+            AxisY2Maximo = 100;
+        }
+
+        //Auto
+        private void scaleAutoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Auto = true;
+            Manual = false;
+            AxisY2Maximo = 1000;
+        }
+
+        private void groupBox4_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
