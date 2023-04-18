@@ -785,8 +785,6 @@ namespace MidoriValveTest
             {
                 ca.chart1.Series["Aperture value"].Points.Add(chart1.Series["Aperture value"].Points[i]);
                 ca.chart1.Series["Pressure"].Points.Add(chart1.Series["Pressure"].Points[i]);
-               
-
             }
            
             ca.ShowDialog();
@@ -2249,6 +2247,16 @@ namespace MidoriValveTest
         }
 
         private void groupBox4_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnOEM_Click(object sender, EventArgs e)
         {
 
         }
