@@ -257,12 +257,17 @@ namespace MidoriValveTest
         private void btnRestart_Click(object sender, EventArgs e)
         {
             OffEverything();
+            com_led.Image.Dispose();
+            com_led.Image = Properties.Resources.led_off;
             this.Alert("Successfully restarted", Form_Alert.enmType.Success);
         }
 
         private void btnStop_Click(object sender, EventArgs e)
         {
             OffEverything();
+            com_led.Image.Dispose();
+            com_led.Image = Properties.Resources.led_on_red;
+
             this.Alert("Successfully stoped", Form_Alert.enmType.Success);
         }
 
@@ -2246,19 +2251,14 @@ namespace MidoriValveTest
             AxisY2Maximo = 1000;
         }
 
-        private void groupBox4_Enter(object sender, EventArgs e)
+       
+
+        private void btnClear_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void timer2_Tick(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnOEM_Click(object sender, EventArgs e)
-        {
-
+            times.Clear();
+            apertures.Clear();
+            pressures.Clear();
+            datetimes.Clear();
         }
     }
 }

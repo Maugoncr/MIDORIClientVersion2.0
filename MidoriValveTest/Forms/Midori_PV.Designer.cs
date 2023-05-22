@@ -305,7 +305,6 @@ namespace MidoriValveTest
             this.groupBox4.TabIndex = 19;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Real Time Chart";
-            this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter);
             // 
             // lbSetPointPressure
             // 
@@ -388,9 +387,8 @@ namespace MidoriValveTest
             this.btnOEM.Name = "btnOEM";
             this.btnOEM.Size = new System.Drawing.Size(136, 51);
             this.btnOEM.TabIndex = 25;
-            this.btnOEM.Text = "OEM";
+            this.btnOEM.Text = "EMO";
             this.btnOEM.UseVisualStyleBackColor = false;
-            this.btnOEM.Click += new System.EventHandler(this.btnOEM_Click);
             this.btnOEM.MouseEnter += new System.EventHandler(this.button6_MouseEnter);
             this.btnOEM.MouseLeave += new System.EventHandler(this.button6_MouseLeave);
             // 
@@ -409,6 +407,7 @@ namespace MidoriValveTest
             this.btnAnalyze.TabIndex = 26;
             this.btnAnalyze.Text = "Analyze";
             this.btnAnalyze.UseVisualStyleBackColor = false;
+            this.btnAnalyze.Visible = false;
             this.btnAnalyze.Click += new System.EventHandler(this.button5_Click);
             this.btnAnalyze.MouseEnter += new System.EventHandler(this.button5_MouseEnter);
             this.btnAnalyze.MouseLeave += new System.EventHandler(this.button5_MouseLeave);
@@ -470,6 +469,7 @@ namespace MidoriValveTest
             this.btnClear.TabIndex = 24;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             this.btnClear.MouseEnter += new System.EventHandler(this.button4_MouseEnter);
             this.btnClear.MouseLeave += new System.EventHandler(this.button4_MouseLeave);
             // 
@@ -2104,10 +2104,6 @@ namespace MidoriValveTest
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(46, 23);
             this.panel9.TabIndex = 0;
-            // 
-            // timer2
-            // 
-            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
             // groupBox5
             // 
