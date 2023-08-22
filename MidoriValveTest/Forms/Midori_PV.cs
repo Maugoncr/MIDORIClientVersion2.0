@@ -42,6 +42,8 @@ namespace MidoriValveTest
         private List<string> pressures = new List<string>();
         private List<string> datetimes = new List<string>();
 
+       
+
         //var for menu
         private const int widthSlide = 200;
         private const int widthSlideIcon = 46;
@@ -2264,6 +2266,11 @@ namespace MidoriValveTest
             apertures.Clear();
             pressures.Clear();
             datetimes.Clear();
+        }
+
+        private void IconReport_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
