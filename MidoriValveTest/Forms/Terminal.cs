@@ -53,15 +53,15 @@ namespace MidoriValveTest
 
 
                 case "getCom":
-                    txt_response.Text = "Current apperture: " + Arduino.PortName;
+                    txt_response.Text = "Current Aperture: " + Arduino.PortName;
                     RTXT_history.AppendText("Com port active: " + Arduino.PortName + ", [" + DateTime.Now.ToString("MM/dd/yyyy hh:mm:ss tt") + "]" + "\r\n");
                     break;
 
 
-                case "getApperture":
+                case "getAperture":
                    // MessageBox.Show(mvt.precision_aperture.ToString());
-                    txt_response.Text = "Current apperture: " + mvt.precision_aperture.ToString();
-                    RTXT_history.AppendText("Current apperture: " + mvt.precision_aperture.ToString() + ", [" + DateTime.Now.ToString("MM/dd/yyyy hh:mm:ss tt") + "]" + "\r\n");
+                    txt_response.Text = "Current Aperture: " + mvt.precision_aperture.ToString();
+                    RTXT_history.AppendText("Current Aperture: " + mvt.precision_aperture.ToString() + ", [" + DateTime.Now.ToString("MM/dd/yyyy hh:mm:ss tt") + "]" + "\r\n");
                     break;
 
 
@@ -69,7 +69,7 @@ namespace MidoriValveTest
                     txt_response.Text = "Software version: 1.3.2" ;
                     RTXT_history.AppendText("Software version: 1.3.2"+ ", [" + DateTime.Now.ToString("MM/dd/yyyy hh:mm:ss tt") + "]" + "\r\n");
                     break;
-                case "setApperture":
+                case "setAperture":
                     break;
 
                  default:

@@ -24,8 +24,8 @@ namespace MidoriValveTest
     {
         //------------------- Work variable ------------
         bool record=false;                          // flag for record data
-        public int precision_aperture= 0;           // apperture
-        int base_value = 0;                         // ranges for apperture 
+        public int precision_aperture= 0;           // Aperture
+        int base_value = 0;                         // ranges for Aperture 
         bool InicioStartPID = true;                 // Flag for btnStarPID sent P or T
         bool connect = false;                       // flag for connect status
         public static bool EnviarPID = false;       // flag for Sent the PID
@@ -147,7 +147,7 @@ namespace MidoriValveTest
 
             //Return texts btn to default
 
-            btnSetApertura.Text = "Set Apperture";
+            btnSetApertura.Text = "Set Aperture";
             btnSetPresion.Text = "Set Target Pressure";
             btnStartPID.Text = "Start PID";
             btnAutoCalibrate.Text = "Autocalibration";
@@ -438,7 +438,7 @@ namespace MidoriValveTest
             lbl_estado.ForeColor = Color.Red;
             lbl_estado.Text = "Close";
             btnSetPresion.Text = "Set Target Pressure";
-            btnSetApertura.Text = "Set Apperture";
+            btnSetApertura.Text = "Set Aperture";
             EnableBtn(btnOpenGate);
             DisableBtn(btnCloseGate);   
             DisableBtn(btnSetApertura);
@@ -742,7 +742,7 @@ namespace MidoriValveTest
                         file.WriteLine("#Datetime: " + star_record.ToString("yyyy/MM/dd - hh:mm:ss:ff tt"));
                         file.WriteLine("#Data Time range: [" + star_record.ToString(" hh:mm:ss:ff tt") + " - " +end_record.ToString(" hh:mm:ss:ff tt") + "]");
                         file.WriteLine("#Data |Time,seconds,[s],ChartAxisX ");
-                        file.WriteLine("#Data |Apperture,grades,[°],ChartAxisY1 ");
+                        file.WriteLine("#Data |Aperture,grades,[°],ChartAxisY1 ");
                         file.WriteLine("#Data |Pressure,pounds per square inch,[psi],ChartAxisY2 ");
                         file.WriteLine("#------------------------------------------------------------------");
                         file.WriteLine("#PARAMETER    |Chart Type = valve record");
@@ -752,7 +752,7 @@ namespace MidoriValveTest
                         file.WriteLine("#PARAMETER    |Position Unit = 0 - 90 =");
 
                         file.WriteLine("#------------------------------------------------------------------");
-                        file.WriteLine("-|-  Time  -|-  Apperture  -|-  Pressure  -|-  DateTime  -|-");
+                        file.WriteLine("-|-  Time  -|-  Aperture  -|-  Pressure  -|-  DateTime  -|-");
 
                         file.WriteLine("#------------------------------------------------------------------");
                         for (int i = 0; i < times.Count; i++)
@@ -848,7 +848,7 @@ namespace MidoriValveTest
 
                                 }
 
-                                    if (lines[i] == "-|-  Time  -|-  Apperture  -|-  Pressure  -|-  DateTime  -|-" && lines[i+1]== "#------------------------------------------------------------------") 
+                                    if (lines[i] == "-|-  Time  -|-  Aperture  -|-  Pressure  -|-  DateTime  -|-" && lines[i+1]== "#------------------------------------------------------------------") 
                                 {
                                     initial_line = i + 2;
                                 }
@@ -1910,7 +1910,7 @@ namespace MidoriValveTest
 
                                 }
 
-                                if (lines[i] == "-|-  Time  -|-  Apperture  -|-  Pressure  -|-  DateTime  -|-" && lines[i + 1] == "#------------------------------------------------------------------")
+                                if (lines[i] == "-|-  Time  -|-  Aperture  -|-  Pressure  -|-  DateTime  -|-" && lines[i + 1] == "#------------------------------------------------------------------")
                                 {
                                     initial_line = i + 2;
                                 }
@@ -2008,7 +2008,7 @@ namespace MidoriValveTest
                 lbl_estado.ForeColor = Color.Red;
                 lbl_estado.Text = "Close";
                 btnSetPresion.Text = "Set Target Pressure";
-                btnSetApertura.Text = "Set Apperture";
+                btnSetApertura.Text = "Set Aperture";
                 EnableBtn(btnOpenGate);
                 DisableBtn(btnCloseGate);
                 DisableBtn(btnSetApertura);
@@ -2035,7 +2035,7 @@ namespace MidoriValveTest
                             file.WriteLine("#Datetime: " + star_record.ToString("yyyy/MM/dd - hh:mm:ss:ff tt"));
                             file.WriteLine("#Data Time range: [" + star_record.ToString(" hh:mm:ss:ff tt") + " - " + end_record.ToString(" hh:mm:ss:ff tt") + "]");
                             file.WriteLine("#Data |Time,seconds,[s],ChartAxisX ");
-                            file.WriteLine("#Data |Apperture,grades,[°],ChartAxisY1 ");
+                            file.WriteLine("#Data |Aperture,grades,[°],ChartAxisY1 ");
                             file.WriteLine("#Data |Pressure,pounds per square inch,[psi],ChartAxisY2 ");
                             file.WriteLine("#------------------------------------------------------------------");
                             file.WriteLine("#PARAMETER    |Chart Type = valve record");
@@ -2045,7 +2045,7 @@ namespace MidoriValveTest
                             file.WriteLine("#PARAMETER    |Position Unit = 0 - 90 =");
 
                             file.WriteLine("#------------------------------------------------------------------");
-                            file.WriteLine("-|-  Time  -|-  Apperture  -|-  Pressure  -|-  DateTime  -|-");
+                            file.WriteLine("-|-  Time  -|-  Aperture  -|-  Pressure  -|-  DateTime  -|-");
 
                             file.WriteLine("#------------------------------------------------------------------");
                             for (int i = 0; i < times.Count; i++)

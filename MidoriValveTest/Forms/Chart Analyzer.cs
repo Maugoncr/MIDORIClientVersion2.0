@@ -160,7 +160,7 @@ namespace MidoriValveTest
                     file.WriteLine("#Datetime: " + date.AddMilliseconds(-40).ToString("yyyy/MM/dd - hh:mm:ss:ff tt"));
                     file.WriteLine("#Data Time range: [" + date.AddMilliseconds(-40 * chart1.Series[0].Points.Count).ToString(" hh:mm:ss:ff tt") + " - " + date.AddMilliseconds(-40).ToString(" hh:mm:ss:ff tt") + "]");
                     file.WriteLine("#Data |Time,seconds,[s],ChartAxisX ");
-                    file.WriteLine("#Data |Apperture,grades,[°],ChartAxisY1 ");
+                    file.WriteLine("#Data |Aperture,grades,[°],ChartAxisY1 ");
                     file.WriteLine("#Data |Pressure,pounds per square inch,[psi],ChartAxisY2 ");
                     file.WriteLine("#------------------------------------------------------------------");
                     file.WriteLine("#PARAMETER    |Chart Type = valve chart capture");
@@ -170,7 +170,7 @@ namespace MidoriValveTest
                     file.WriteLine("#PARAMETER    |Position Unit = 0 - 90 =");
 
                     file.WriteLine("#------------------------------------------------------------------");
-                    file.WriteLine("-|-  Time  -|-  Apperture  -|-  Pressure  -|-  DateTime  -|-");
+                    file.WriteLine("-|-  Time  -|-  Aperture  -|-  Pressure  -|-  DateTime  -|-");
 
                     file.WriteLine("#------------------------------------------------------------------");
                     for (int i = 0; i < times.Count; i++)

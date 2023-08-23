@@ -93,7 +93,7 @@ namespace MidoriValveTest
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(96, 16);
             this.label3.TabIndex = 27;
-            this.label3.Text = "Test Apperture";
+            this.label3.Text = "Test Aperture";
             this.label3.UseWaitCursor = true;
             // 
             // label2
