@@ -154,6 +154,7 @@ namespace MidoriValveTest
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lblfecha = new System.Windows.Forms.Label();
             this.PanelNav = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
             this.IconMinima = new FontAwesome.Sharp.IconButton();
             this.lbl_Test = new System.Windows.Forms.Label();
             this.IconMaxin = new FontAwesome.Sharp.IconButton();
@@ -179,7 +180,6 @@ namespace MidoriValveTest
             this.timerForData = new System.Windows.Forms.Timer(this.components);
             this.lbSendPID = new System.Windows.Forms.Label();
             this.lbPIDSent = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -1834,6 +1834,18 @@ namespace MidoriValveTest
             this.PanelNav.TabIndex = 36;
             this.PanelNav.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelNav_MouseDown);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(1036, 21);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(81, 13);
+            this.label5.TabIndex = 70;
+            this.label5.Text = "200-3234401";
+            // 
             // IconMinima
             // 
             this.IconMinima.Dock = System.Windows.Forms.DockStyle.Right;
@@ -2185,18 +2197,6 @@ namespace MidoriValveTest
             this.lbPIDSent.TabIndex = 69;
             this.lbPIDSent.Text = "Test PID send";
             this.lbPIDSent.Visible = false;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(1036, 21);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(67, 13);
-            this.label5.TabIndex = 70;
-            this.label5.Text = "200-32309";
             // 
             // Midori_PV
             // 
