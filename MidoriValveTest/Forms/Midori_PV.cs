@@ -2272,6 +2272,15 @@ namespace MidoriValveTest
         {
 
         }
+
+        private void btnOEM_Click(object sender, EventArgs e)
+        {
+            OffEverything();
+            com_led.Image.Dispose();
+            com_led.Image = Properties.Resources.led_on_red;
+
+            this.Alert("Successfully stoped", Form_Alert.enmType.Success);
+        }
     }
 }
 
